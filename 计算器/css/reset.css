@@ -1,0 +1,16 @@
+body,h1,h2,h3,h4,h5,h6,p,img,input,button,textarea,a{
+    margin:0;
+    padding:0;
+}
+img{
+    display: block;
+}
+.clearfix::after{
+    display: block;
+    width:0;
+    height:0;
+    clear: both;
+}
+a{
+    text-decoration: none;
+}

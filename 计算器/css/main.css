@@ -1,0 +1,153 @@
+.caculator{
+    width:500px;
+    height: 800px;
+    margin:0 auto;
+    margin-top:20px;
+    color:#fff;
+    font-size:16px;
+}
+/* screen */
+.screen{
+    padding:20px 15px;
+    background: #020204;
+}
+.common{
+    width:460px;
+    margin: 0 auto;
+}
+.model{
+    float:right;
+    margin-right:5px;
+}
+.resultArea{
+    position: relative;
+    margin-top:20px;
+    height: 50px;
+    border:10px solid #b1b2b7;
+    border-radius:5px;
+    background: #47483a;
+    overflow: hidden;
+}
+.result-text{
+  color:#fff;
+  font-size:30px;
+  font-weight:bold;
+}
+.mfunction,.result{
+    color:#000;
+}
+.mfunction{
+    display: none;
+    position: absolute; 
+    left:50px;
+    width:10px;
+    height: 10px;
+    font-size:8px;
+    text-align: center;
+}
+.resultArea{
+    overflow: hidden;
+}
+.result{
+    position: absolute; 
+    width:440px;
+    height: 28px;
+    line-height: 28px;
+    top:20px;
+    text-align: right; 
+    overflow: hidden;
+}
+/* btnArea*/
+.caculator-btnArea{
+    width:500px;
+    background:#cecdc8;
+    overflow: hidden;
+    padding-bottom: 50px;
+}
+.nagetive{
+    width:460px;
+    text-align:right;
+    padding-top:5px;
+    overflow: hidden;
+}
+ .btn{
+    display: block;
+    width:71.66666px; 
+    height: 30px;
+    text-align: center; 
+    line-height: 30px; 
+    color:#fff; 
+    margin-top:10px;
+    margin-right: 5px;
+    transition: all 0.3s; 
+    border-radius: 4px;  
+    background:#0c0b11;
+} 
+ .nagetive .btn:hover,.btn:hover{
+    background:#666;
+} 
+.nagetive a{
+    float:right;
+}
+.mfunction-btn{
+    overflow: hidden;
+}
+.mfunction-btn a{
+    float:left;
+}
+
+.function-btn{
+    float:left;
+}
+.function-btn a{
+    margin-right:0px;
+}
+.numbtn{
+    float: left;
+    width:225px;
+     margin-left:5px; 
+    overflow: hidden;
+}
+.numbtn a{
+    float: left;
+}
+.numbtn a:nth-child(3),
+.numbtn a:nth-child(6),
+.numbtn a:nth-child(9),
+.numbtn a:nth-child(12){
+    margin-right: 0px;
+}
+.operation{
+    float: right;
+    margin-right: 5px;  
+    width:148.5px;
+    overflow: hidden;
+}
+.operation a{
+    float: left;
+     margin-right: 0px; 
+}
+.operation a:nth-child(1),
+.operation a:nth-child(3),
+.operation a:nth-child(5){
+    margin-right: 5px;
+}
+.add-btn{
+    height: 70px;
+    line-height: 70px;
+}
+.red-btn{
+    background:#952949;
+    transition:all 0.3s;
+}
+.red-btn:hover{
+    background:#ff0000;
+}
+.num-btn{
+    background:#616b6c;
+    transition:all 0.3s;
+}
+.num-btn:hover{
+    background: #535353;
+}
+
