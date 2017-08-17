@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>滚动条</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .demo {
+            height: 300px;
+             overflow-y:scroll; 
+        }
+
+        #image {
+            position: relative;
+            height: 3000px;
+        }
+         #image1,#image2{
+            position: absolute;
+        } 
+         #image1 {
+            top: 500px;
+            left: 150px;
+        }
+
+         #image2 {
+            top: 500px;
+            right:150px; 
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oScroll=document.getElementsByClassName("demo")[0];
+            var oDiv = document.getElementById("image")
+            var oImgs=document.getElementsByTagName("img");
+
+            //获得scroll信息
+            function getscroll(w) {
+                var w = w || window;
+                var d = w.document;
+                if (w.pageXOffset != null) {
+                    return { x: w.pageXOffset, y: w.pageYOffset }
+                }
+                else if (document.compatMode == "CSS1Compat") {
+                    return { x: d.documentElement.scrollLeft, y: d.documentElement.scrollTop }
+                    return { x: d.body.scrollLeft, y: d.body.scrollTop };
+                }
+            }
+            function scroll() {
+                //获取滚动前位置信息
+                var obj=oImgs;
+                var scroll = getscroll();
+                var scrollY = scroll.y;
+                var offsetY = obj[0].offsetTop;
+                var viewY = obj[0].getBoundingClientRect().top;
+                var step = event.wheelDelta
+                obj[0].style.top = obj[1].style.top =scrollY + "px";
+            }
+            //注册鼠标滚轮事件
+            oScroll.onscroll= function () {
+                scroll();
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="demo">
+        <div id="image">
+            <img id="image1"src="../images/ad.jpg" alt="左侧"/>
+            <img id="image2"src="../images/ad.jpg" alt="右侧"/>
+        </div>
+    </div>
+</body>
+
+</html>

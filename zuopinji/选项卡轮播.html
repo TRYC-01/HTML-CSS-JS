@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>选项卡轮播</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .demo {
+            width: 890px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin: 20px auto;
+            color: #111;
+        }
+
+        .tab,
+        .bar {
+            list-style: none;
+        }
+
+        .tab li {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #ccc;
+        }
+
+        .bar {
+            width: 100px;
+            float: right;
+        }
+
+         .bar li {
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+             background: #fff;  
+        } 
+
+        .tab li,
+        .bar li {
+            transition: all 1.5s;
+        }
+
+        a {
+            text-decoration: none;
+            color: #111;
+        }
+
+        .tab .active {
+            background: #f00;
+        }
+
+           .bar .active {
+            background: #111;
+        }   
+
+        .active a {
+            color: #fff;
+        }
+
+        .show {
+            display: inline-block;
+        }
+
+        .hide,
+        img {
+            display: none;
+        }
+    </style>
+    <script>
+        // window.onload = function () {
+        //     //**定义主导航起始位置
+        //     var p=document.getElementsByTagName("p")[0];
+        //     var cur = 0;
+        //     var t = 5500;//轮播定时时间
+        //     var t1 = 1000;//bar轮播定时
+        //     function show() { 
+        //         var barcur = 0;
+        //         var startT=new Date();
+        //         var tab = document.getElementsByClassName("tab")[0];
+        //         var li = tab.getElementsByTagName("li");
+        //         var n=0;
+        //         if (cur >= li.length - 1) {
+        //             cur = 0;
+        //         } else { cur++ }
+        //         w = (cur == 0) ? li.length - 1 : cur - 1;
+        //         for (var i = 0; i < li.length; i++) {
+        //             li[i].className = "";
+        //         }
+        //         li[w].className = "active";
+        //         imgdiv(w);
+        //         var timer = setTimeout(show, t);
+        //         return function moveLi() {
+        //             var endT=new Date();
+        //             var times=(endT-startT);
+        //             var bar = document.getElementsByClassName("bar");
+        //             var oLi = bar[w];
+        //             var li = oLi.getElementsByTagName("li");
+        //             if(times%t==0){
+        //                 barcur=0;
+        //                 index=0;
+        //             }
+        //             else {
+        //                 if (barcur >= li.length - 1) {
+        //                     barcur = 0;
+        //                 }
+        //                 else { barcur++ }
+        //                 index = (barcur == 0) ? li.length - 1 : barcur - 1;
+        //             }
+        //             // alert("tab:"+w+"\nbar:"+index)
+        //             for (var i = 0; i < li.length; i++) {
+        //                 li[i].className = "";
+        //             }
+        //             li[index].className = "active";
+        //             movepic(w, index);
+        //         };
+        //     }
+        //     // show;
+        //     setInterval(show(), t1);
+        //     //catogoryI对应div显示
+        //     function imgdiv(index, li) {
+        //         var oImg = document.getElementsByClassName("content")[0];
+        //         var img = oImg.getElementsByTagName("div");
+        //         for (var i = 0; i < img.length; i++) {
+        //             img[i].className = "hide";
+        //         }
+        //         img[index].className = "show";
+        //     }
+        //     // 二级catogory li显示
+        //     function movepic(index, li) {
+        //         var content = document.getElementsByClassName("content")[0];
+        //         var oImg = content.getElementsByTagName("div");
+        //         var img = oImg[index].getElementsByTagName("img");
+        //         for (var i = 0; i < img.length; i++) {
+        //             img[i].className = ""
+        //         }
+        //         img[li].className = "show";
+        //     }
+        // }
+
+
+        window.onload = function () {
+            var tab = document.getElementsByClassName("tab")[0];
+            var li = tab.getElementsByTagName("li");
+            var bar = document.getElementsByClassName("bar");
+            var div = document.getElementsByClassName("content")[0];
+            var imgdiv = div.getElementsByTagName("div");
+            var bardiv = document.getElementsByClassName("bar");
+            // var li = liII.getElementsByTagName("li");
+            var content = document.getElementsByClassName("content")[0];
+            var picdiv = content.getElementsByTagName("div");
+            // var img = picdiv[w].getElementsByTagName("img");
+            function tabc(index) {
+                for (var i = 0; i < li.length; i++) {
+                    li[i].className = "";
+                } li[index].className = "active";
+            }
+            function imgdivc(index) {
+                for (var i = 0; i < bar.length; i++) {
+                    imgdiv[i].className = "hide";
+                } imgdiv[index].className = "";
+            }
+            function bars(index,wDiv){
+                var ele=bardiv[wDiv];
+                var eles=ele.getElementsByTagName("li");
+                for(var i=0;i<eles.length;i++){
+                    eles[i].className=""
+                }eles[index].className="active";
+            }
+            function imgs(index,wDiv){
+                var ele=picdiv[wDiv];
+                var eles=ele.getElementsByTagName("img");
+                for(var i=0;i<eles.length;i++){
+                    eles[i].className="";
+                }eles[index].className="show";
+            }
+           var barlength=bardiv[0].getElementsByTagName("li").length;
+            var cur = 0;//tab位置
+            var barCur = 0;//侧边li位置及相应图片位置
+            function move() {
+                var timer = setInterval(function () { 
+                    if (barCur >= barlength - 1) {
+                        barCur = 0;
+                    } else { barCur++; }
+
+                    if (barCur % 4 == 0) {
+                        if (cur >= li.length - 1) {
+                            cur = 0;
+                        } else { cur++ }
+                    }
+                    tabc(cur); 
+                    imgdivc(cur);
+                    bars(barCur,cur);
+                    imgs(barCur,cur);
+                }, 2000)
+            }
+            move();
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="demo">
+        <p><p>
+        <ul class="tab">
+            <li class="active"><a href="#">生活用品</a></li>
+            <li class=""><a href="#">生活家电</a></li>
+
+             <li class=""><a href="#">撸阿鲁</a></li>
+            <!-- <li class=""><a href="#">生活家电</a></li>  -->
+        </ul>
+        <div class="content">
+            <div class="life img">
+                <img class="show" src="../images/596ec2f8N08a0e350.jpg" alt="">
+                <img class="" src="../images/5970583aN7129112f.jpg" alt="">
+                <img class="" src="../images/59702128Nf76c73aa.jpg" alt="">
+                <img class="" src="../images/59717309Nb3c094a4.jpg" alt="">
+                <ul class="bar">
+                    <li class="active"><a href="#">冰爽一夏</a></li>
+                    <li class=""><a href="#">纸品自营</a></li>
+                    <li class=""><a href="#">男士护理</a></li>
+                    <li class=""><a href="#">新品聚惠</a></li>
+                </ul>
+            </div>
+            <div class="equipment img hide">
+                <img class="show" src="../images/597021bcNf9ae7946.jpg" alt="">
+                <img class="" src="../images/5971b809N6c73fcb4.jpg" alt="">
+                <img class="" src="../images/5966d44fNda4026f1.jpg" alt="">
+                <img class="" src="../images/596f35a3N755e94c8.jpg" alt="">
+                <ul class="bar">
+                    <li class="active"><a href="#">大屏电视</a></li>
+                    <li class=""><a href="#">5折限量</a></li>
+                    <li class=""><a href="#">女王手机</a></li>
+                    <li class=""><a href="#">家电狂欢</a></li>
+                </ul>
+            </div>
+
+
+
+             <div class="life img hide">
+                <img class="show" src="../images/597055bbNfc8df337.jpg" alt="">
+                <img class="" src="../images/5976f05eNb313f61c.jpg" alt="">
+                <img class="" src="../images/5976d0bdN18a69f48.jpg" alt="">
+                <img class="" src="../images/596ee3cfNe2fdaa10.jpg" alt="">
+                <ul class="bar">
+                    <li class="active"><a href="#">键盘侠</a></li>
+                    <li class=""><a href="#">充气娃娃</a></li>
+                    <li class=""><a href="#">右手</a></li>
+                    <li class=""><a href="#">那时年少</a></li>
+                </ul>
+            </div>
+            <!-- <div class="equipment img hide">
+                <img class="show" src="../images/597021bcNf9ae7946.jpg" alt="">
+                <img class="" src="../images/5971b809N6c73fcb4.jpg" alt="">
+                <img class="" src="../images/5966d44fNda4026f1.jpg" alt="">
+                <img class="" src="../images/596f35a3N755e94c8.jpg" alt="">
+                <ul class="bar">
+                    <li class="active"><a href="#">大屏电视</a></li>
+                    <li class=""><a href="#">5折限量</a></li>
+                    <li class=""><a href="#">女王手机</a></li>
+                    <li class=""><a href="#">家电狂欢</a></li>
+                </ul>
+            </div>  -->
+
+        </div>
+    </div>
+</body>
+
+</html>

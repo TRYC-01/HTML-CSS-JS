@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>单元行上鼠标悬停提示</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .demo {
+            margin: 0 auto;
+        }
+
+        .list {
+            width: 280px;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+
+        .list-li {
+            /* position: relative; */
+            margin: 8px auto;
+            list-style: decimal inside;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .link {
+            text-decoration: none;
+            color: #0a8cd2
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+
+        .tooltiptext {
+            position: absolute;
+            display: none;
+            font-size: 12px;
+            border-radius: 2px;
+            background: #000;
+            color: #fff;
+            opacity: 0.7;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var tit = document.getElementsByTagName("a");
+            var listli = document.getElementsByClassName("list-li");
+            var tip = document.createElement("div");
+            tip.className = "tooltiptext";
+            document.body.appendChild(tip);
+            for (i = 0; i < tit.length; i++) {
+                tit[i].onmousemove = function () {
+                    var title = this.getAttribute("data-title");
+                    tip.innerHTML = title;
+                    tip.style.display = "block";
+                    tip.style.top = event.pageY + 10 + "px";
+                    tip.style.left = event.pageX + 10 + "px";
+                }
+                tit[i].onmouseout = function () {
+                    tip.style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="demo">
+        <ol class="list">
+            <li class="list-li"><a class="link" data-title='铁道部门:火车票丢失需"先补买再退款"' href="#">铁道部门:火车票丢失需"先补买再退款"</a></li>
+            <li class="list-li"><a class="link" data-title="新修订新疆宗教事务条例施行 禁止宣扬极端思想" href="#">新修订新疆宗教事务条例施行 禁止宣扬极端思想</a></li>
+            <li class="list-li"><a class="link" data-title="长征火箭从天而降瞬间被拍下 民众围观(图)" href="#">长征火箭从天而降瞬间被拍下 民众围观(图)</a></li>
+            <li class="list-li"><a class="link" data-title="呼格父母:今后不再上访 打算先给儿子买个好墓地" href="#">呼格父母:今后不再上访 打算先给儿子买个好墓地</a></li>
+            <li class="list-li"><a class="link" data-title="中国驻印尼使馆:印尼未对持普通护照中方人免签" href="#">中国驻印尼使馆:印尼未对持普通护照中方人免签</a></li>
+            <li class="list-li"><a class="link" data-title="陕西圈养大熊猫发生犬瘟热 一8岁大熊猫死亡" href="#">陕西圈养大熊猫发生犬瘟热 一8岁大熊猫死亡</a></li>
+        </ol>
+    </div>
+</body>
+
+</html>

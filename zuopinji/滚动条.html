@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>滚动条</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .demo {
+            width: 1000px;
+            margin: 0 auto;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .scroll {
+            position: relative;
+            width: 400px;
+            height: 600px;
+            margin: 30px auto;
+            overflow: hidden;
+            border: 1px solid #eee;
+            background: #888;
+        }
+
+        .divbar {
+            position: absolute;
+            left: 97%;
+            top: 0;
+            width: 10px;
+            height: 100%;
+            border: 1px solid #f90;
+            background: #f90;
+            z-index: 3333;
+        }
+
+        .content {
+            position: absolute;
+            width: 400px;
+            padding: 10px;
+        }
+
+        .scrollbar {
+            position: absolute;
+            width: 8px;
+            height: 10%;
+            border: 1px solid #888;
+            background: #888;
+        }
+
+        .top {
+            position: absolute;
+            width: 400px;
+            height: 10px;
+            background: #0e1;
+            z-index: 111111;
+        }
+
+        .topbar {
+            position: absolute;
+            width: 25%;
+            height: 10px;
+            background: #555;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            //获取滚动条偏移量以便将坐标转换为文档坐标
+            function getscroll(w) {
+                var w = w || window;
+                if (w.pageXOffset != null) {
+                    return { x: w.pageXOffset, y: w.pageYOffset };
+                }
+                var d = w.document;
+                if (document.compatMode == "CSS1Compat") {
+                    return { x: d.documentElement.scrollLeft, y: d.documentElement.scrollTop };
+                    return { x: d.body.scrollLeft, y: d.body.scrollTop }
+                }
+            }
+            var oContent = document.getElementsByClassName("content")[0];
+            var oScroll = document.getElementsByClassName("scroll")[0];
+            var oDivBar = document.getElementsByClassName("divbar")[0];
+            var oBar = document.getElementsByClassName("scrollbar")[0];
+            var topbar = document.getElementsByClassName("topbar")[0];
+            var top = document.getElementsByClassName("top");
+            var rangeY = oScroll.clientHeight - oBar.clientHeight;
+            var rangeX = oScroll.clientWidth - topbar.clientWidth;
+            //当内容溢出时显示滚动条
+            toggle();
+            function toggle() {
+                if (oContent.clientHeight < oScroll.clientHeight) {
+                    oDivBar.style.display = "none";
+                }
+                else {
+                    oScroll.onmousewheel = function () {
+                        wheel(oBar, oContent, event)
+                    }
+
+                    function wheel(obj, relObj, event) {
+                        var startY = obj.offsetTop;
+                        var relObjY = relObj.offsetTop;
+                        var step = Math.floor(event.wheelDelta / 10)
+                        if ((startY - step) < 0) {
+                            obj.style.top = 0 + "px";
+                            relObj.style.top = 0 + "px";
+                        }
+                        else if ((startY - step) > rangeY) {
+                            obj.style.top = rangeY + "px";
+                            relObj.style.top = -rangeY + "px";
+                        }
+                        else {
+                            obj.style.top = startY - Math.floor(event.wheelDelta / 10) + "px";
+                            relObj.style.top = relObjY + Math.floor(event.wheelDelta / 10) + "px";
+                        }
+                        if (event.stopPropagation) event.stopPropagation();
+                        else if (event.cancelBubble) event.cancelBubble = true;
+                        //阻止事件默认操作
+                        if (event.preventDefault) event.preventDefault();
+                        else if (event.returnValue) event.returnValue = false;
+                    }
+                }
+            }
+            topbar.onmousedown = function () {
+                topmove(topbar, oContent, event)
+            }
+            function topmove(obj, relObj, event) {
+                // 为mousedown下的事件注册mousemove事件
+                var d = document;
+                var scroll = getscroll();
+                var curX = event.clientX + scroll.x;
+                var curY = event.clientY + scroll.y;
+                var objX = obj.offsetLeft;
+                var objY = obj.offsetTop;
+                var deltaX = curX - objX;
+                var deltaY = curY - objY;
+                d.addEventListener("mousemove", movehandler, true);
+                function movehandler(e) {
+                    var e = e || event;
+                    var pos = (e.clientX + scroll.x) - deltaX;
+                    if (pos < 0) {
+                        relObj.style.left = obj.style.left = 0 + "px";
+                    }
+                    else if (pos > rangeX) {
+                        obj.style.left = rangeX + "px";
+                        relObj.style.left = -rangeX + "px";
+                    }
+                    else {
+                        obj.style.left = pos + "px";
+                        relObj.style.left = -pos + "px";
+                    }
+
+                }
+                d.addEventListener("mouseup", uphandler, true);
+                if (event.stopPropagation) event.stopPropagation();
+                else if (event.cancelBubble) event.cancelBubble = true;
+                if (event.preventDefault) event.preventDefault();
+                else if (event.returnValue) event.returnValue = false;
+                function uphandler(e) {
+                    var e = e || window.event;
+                    d.removeEventListener("mouseup", uphandler, true);
+                    d.removeEventListener("mousemove", movehandler, true);
+                }
+            }
+            oBar.onmousedown = function () {
+                drag(this, oContent, event);
+            }
+            function drag(obj, target, event) {
+                //鼠标初始位置，转换为文档坐标
+                var scroll = getscroll();
+                var startX = event.clientX + scroll.x;
+                var startY = event.clientY + scroll.y;
+                // 待拖动元素初始位置
+                var origX = obj.offsetLeft;
+                var origY = obj.offsetTop;
+                //mousedown事件鼠标相对于目标对象左上角的位置
+                var deltaX = startX - origX;
+                var deltaY = startY - origY;
+                //注册用于响应mousedown事件的mousemove和mouseup
+                if (document.addEventListener) {
+                    document.addEventListener("mousemove", moveHandler, true);
+                    document.addEventListener("mouseup", upHandler, true);
+                }
+                else if (document.attachEvent) {
+                    obj.setCapture();
+                    obj.attachEvent("onmousemove", moveHandler);
+                    obj.attachEvent("onmouseup", upHandler);
+                    obj.attachEvent("onlosecapture", upHandler);
+                }
+                //不让其他元素看到
+                if (event.stopPropagation) event.stopPropagation();
+                else event.cancelBubble() = true;
+                //阻止默认操作
+                if (event.preventDefault) event.preventDefault();
+                else event.returnValue = false;
+                function moveHandler(e) {
+                    var e = e || window.event;
+                    var scroll = getscroll();
+                    var pos = e.clientY + scroll.y - deltaY;
+                    if (pos < 0) { pos = 0; }
+                    else if (pos > rangeY) { pos = range; }
+                    obj.style.top = pos + "px";
+                    oContent.style.top = -pos + "px";
+                }
+                function upHandler(e) {
+                    var e = e || window.event;
+                    if (document.removeEventListener) {
+                        document.removeEventListener("mouseup", upHandler, true);
+                        document.removeEventListener("mousemove", moveHandler, true);
+                    }
+                    else if (document.detachEvent) {
+                        obj.detachEvent("onlosecapture", upHandler);
+                        obj.detachEvent("onmouseup", upHandler);
+                        obj.detachEvent("onmousemove", moveHandler);
+                        obj.releaseCapture();
+                    }
+                    if (e.stopPropagation) e.stopPropagation();
+                    else e.cancelBubble = true;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="demo">
+        <p id="s"></p>
+        <div class="scroll">
+            <div class="top">
+                <div class="topbar"></div>
+            </div>
+            <div class="divbar">
+                <div class="scrollbar"></div>
+            </div>
+            <div class="content">
+                <h1>蜀道难</h1>
+                <p class="">
+                    噫吁嚱！危呼高哉！
+                </p>
+                <p class="">
+                    蜀道之难难于上青天。
+                </p>
+                <p class="">
+                    蚕丛及鱼凫，开国何茫然。
+                </p>
+                <p class="">
+                    尔来四万八千岁，始与秦塞通人烟。
+                </p>
+                <p class="">
+                    西当太白有鸟道，可以横绝峨嵋巅。
+                </p>
+                <p class="">
+                    地崩山摧壮士死，然后天梯石栈相钩连。
+                </p>
+                <p class="">
+                    上有六龙回日之高标，下有冲波逆折之回川。
+                </p>
+                <p class="">
+                    黄鹤之飞尚不得，猿猱欲度愁攀缘。
+                </p>
+                <p class="">
+                    青泥何盘盘，百步九折萦岩峦。
+                </p>
+                <p class="">
+                    扪参历井仰胁息，以手抚膺坐长叹。
+                </p>
+                <p class="">
+                    问君西游何时还，畏途巉岩不可攀。
+                </p>
+                <p class="">
+                    但见悲鸟号古木，雄飞雌从绕林间。
+                </p>
+                <p class="">
+                    又闻子规啼夜月，愁空山。
+                </p>
+                <p class="">
+                    蜀道之难难于上青天，使人听此凋朱颜。
+                </p>
+                <p class="">
+                    连峰去天不盈尺，枯松倒挂倚绝壁。
+                </p>
+                <p class="">
+                    飞湍瀑流争喧豗，石冰崖转石万壑雷。
+                </p>
+                <p class="">
+                    其险也若此，嗟尔远道之人，胡为呼来哉。
+                </p>
+                <p class="">
+                    剑阁峥嵘而崔嵬，一夫当关，万夫莫开。
+                </p>
+                <p class="">
+                    所守或匪亲，化为狼与豺。
+                </p>
+                <p class="">
+                    朝避猛虎，夕避长蛇。
+                </p>
+                <p class="">
+                    磨牙吮血，杀人如麻。
+                </p>
+                <p class="">
+                    锦城虽云乐，不如早还家。
+                </p>
+                <p class="">
+                    蜀道之难难于上青天，侧身西望长咨嗟。
+                </p>
+                <p class="">
+                    goodbye
+                </p>
+                <p class="">
+                    goodbye
+                </p>
+                <p class="">
+                    goodbye
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

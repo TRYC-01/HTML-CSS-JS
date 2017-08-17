@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>tab榜单</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .wrap{
+            width:300px;
+            margin:0 auto;
+            font-size:20px;
+        }
+        #IOS,#andro{
+            display: block;
+            float:left;
+            width:144px;
+            height:40px;
+            line-height: 40px;
+            color:#888;
+            padding:2px;  
+            margin:0px;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+        .platformname{
+            color:rgb(230,130,1);
+        }
+        .black{
+            color:#111;
+        }
+        .active{
+            border-top-width: 2px;
+            border-top-style: solid;
+            border-top-color:  rgb(240,130,1);
+            background: #fff;
+        }
+        .nagetive{
+            background: #eee;
+            border:1px solid #ccc; 
+        }
+        .list{
+            clear: both;
+        }
+        ul{
+            list-style: none;
+            width:300px;
+            padding:5px;
+        }
+        li{
+            border-bottom:1px solid #ccc;
+            padding: 5px 0;
+            height: 36px;  
+            overflow: hidden; 
+        }
+        .no1,.no2{
+            background: rgb(200,130,1);
+        }
+        h1{
+            font-size:16px;
+            height: 30px;
+        }
+        
+        .gamename{
+            text-decoration: none;
+            color:#666;
+            letter-spacing: 1px;
+            margin-left:20px;
+        }
+        .gamename:hover{
+            color:rgb(250,130,1);
+        }
+        img{
+            margin: 20px 10px 0 50px;
+        }
+        .info{
+            display: inline-block;
+            height:50px;
+            padding:5px;
+        }
+        .info span{
+            color:#888;
+        }
+        p.info .fans{
+            padding:5px;
+            color:rgb(240,130,1);
+        }
+        .down{
+            display: inline-block;
+            width:50px;
+            padding:2px;
+            text-align: center;
+            text-decoration: none;
+            background: rgb(230,130,1);
+            color:#fff;
+
+        }
+        .info a:hover{
+            background: rgb(240,120,1);
+        }
+        .no1,.no2,.no3,.no,.focus{
+            display: inline-block;
+            width:30px;
+            height: 30px;
+            font-size:20px;
+            line-height: 30px;
+            margin-top:2px;
+            text-align: center;
+            color: #fff;
+        }
+        .no3{
+             color:#fff;
+            background: rgb(180,130,1);
+        }
+        .no{
+            color:#fff;
+            background: #bbb;
+        }
+        .hidden{
+            display:none;
+        }
+        .toggle{
+            height:129px;
+        }
+         .focus{
+            background:rgb(250,130,1);
+        } 
+    </style>
+    <script>
+    window.onload=function(){
+        var oWrap=document.getElementsByClassName("wrap")[0];
+        var oTab=oWrap.getElementsByTagName("div");
+        var oUl=document.getElementsByClassName("list");
+        var lis=document.getElementsByTagName("li");
+        var h=lis[0].scrollHeight;
+        for(var i=0;i<lis.length;i++){
+                lis[i].onmouseover=function(){
+                    toggle(this,h)
+                }     
+        }
+        function toggle(obj,h){
+            var span=obj.querySelector("span");
+            var par=obj.parentNode;
+            var lis=par.getElementsByTagName("li");
+            for(var i=0;i<lis.length;i++){
+                lis[i].style.height=36+"px";
+            }
+            obj.style.height=h+"px";
+            var cls=span.className;
+            span.className="focus";
+            obj.onmouseout=function(){
+                span.className=cls;
+            }
+        }
+
+        for(var i=0;i<oTab.length;i++){
+            oTab[i].index=i;
+            oTab[i].onmouseover=function(){
+                show(this,oUl)
+            }
+        }
+        //显示对应标签排行榜
+        function show(obj,target){
+            for(var j=0;j<oTab.length;j++){
+                oTab[j].className="nagetive";
+            }obj.className="active";
+            for(var i=0;i<target.length;i++){
+                target[i].style.display="none";
+            }
+            target[obj.index].style.display="block"
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="active"id="andro"><span class="platformname">安卓</span><span class="black">风云榜</span></div>
+        <div class="nagetive"id="IOS"><span class="">IOS</span><span class="">风云榜</span></div>
+        <ul class="list">
+              <li class="toggle">
+                <h1><span class="no1">1</span><a href="#"class="gamename">魔力宝贝(风靡亚洲)</a></h1>
+                <a><img src="../images/1 (2).jpg"></img></a>
+                <p class="info">
+                    <span>人气:</span><span class="fans">183324</span><br/>
+                    <span>类型:网络游戏</span><br/>
+                    <a href="" class="down">下载</a>
+                </p>
+            </li>
+              <li>
+                <h1><span class="no2">2</span><a href="#"class="gamename">去吧皮卡丘</a></h1>
+                <a><img src="../images/1 (2).jpg"></img></a>
+                <p class="info">
+                    <span>人气:</span><span class="fans">181360</span><br/>
+                    <span>类型:网络游戏</span><br/>
+                    <a href="#" class="down">下载</a>
+                </p>
+            </li>
+              <li>
+                <h1><span class="no3">3</span><a href="#"class="gamename">剑魂之刃(手操之王)</a></h1>
+                <a><img src="../images/1 (2).jpg"></img></a>
+                <p class="info">
+                    <span>人气:</span><span class="fans">181348</span><br/>
+                    <span>类型:网络游戏</span><br/>
+                    <a href="#" class="down">下载</a>
+                </p>
+            </li>
+              <li>
+                <h1><span class="no">4</span><a href="#"class="gamename">神之刃(神之作)</a></h1>
+                <a><img src="../images/1 (2).jpg"></img></a>
+                <p class="info">
+                    <span>人气:</span><span class="fans">181234</span><br/>
+                    <span>类型:网络游戏</span><br/>
+                    <a href="#" class="down">下载</a>
+                </p>
+            </li>
+              <li>
+                <h1><span class="no">5</span><a href="#"class="gamename">刀塔传奇</a></h1>
+                <a><img src="../images/1 (2).jpg"></img></a>
+                <p class="info">
+                    <span>人气:</span><span class="fans">180971</span><br/>
+                    <span>类型:网络游戏</span><br/>
+                    <a href="#" class="down">下载</a>
+                </p>
+            </li>
+              <li>
+                <h1><span class="no">6</span><a href="#"class="gamename">时空猎人(街机格斗)</a></h1>
+                <a><img src="../images/1 (2).jpg"></img></a>
+                <p class="info">
+                    <span>人气:</span><span class="fans">163312</span><br/>
+                    <span>类型:网络游戏</span><br/>
+                    <a href="#" class="down">下载</a>
+                </p>
+            </li>
+              <li>
+                <h1><span class="no">7</span><a href="#"class="gamename">海岛大作战-海岛奇兵</a></h1>
+                <a><img src="../images/1 (2).jpg"></img></a>
+                <p class="info">
+                    <span>人气:</span><span class="fans">159934</span><br/>
+                    <span>类型:网络游戏</span><br/>
+                    <a href="#" class="down">下载</a>
+                </p>
+            </li>
+              <li>
+                <h1><span class="no">8</span><a href="#"class="gamename">天天世界杯-软妹最爱</a></h1>
+                <a><img src="../images/1 (2).jpg"></img></a>
+                <p class="info">
+                    <span>人气:</span><span class="fans">150098</span><br/>
+                    <span>类型:网络游戏</span><br/>
+                    <a href="#" class="down">下载</a>
+                </p>
+            </li>
+              <li>
+                <h1><span class="no">9</span><a href="#"class="gamename">暖暖环游世界</a></h1>
+                <a><img src="../images/1 (2).jpg"></img></a>
+                <p class="info">
+                    <span>人气:</span><span class="fans">150098</span><br/>
+                    <span>类型:网络游戏</span><br/>
+                    <a href="#" class="down">下载</a>
+                </p>
+            </li>
+            <li>
+                <h1><span class="no">10</span><a href="#"class="gamename">苍穹之剑</a></h1>
+                <a><img src="../images/1 (2).jpg"></img></a>
+                <p class="info">
+                    <span>人气:</span><span class="fans">142297</span><br/>
+                    <span>类型:网络游戏</span><br/>
+                    <a href="#" class="down">下载</a>
+                </p>
+            </li>
+        </ul>
+
+        <ul class="hidden list">
+              <li class="toggle">
+                <h1><span class="no1">1</span><a href="#"class="gamename">时空猎人(街机格斗)</a></h1>
+                <a><img src="../images/1 (2).jpg"></img></a>
+                <p class="info">
+                    <span>人气:</span><span class="fans">123453</span><br/>
+                    <span>类型:动作冒险</span><br/>
+                    <a href="#" class="down">下载</a>
+                </p>
+            </li>
+              <li>
+                <h1><span class="no2">2</span><a href="#"class="gamename">梦想海贼王(跨服战)</a></h1>
+                <a><img src="../images/1 (2).jpg"></img></a>
+                <p class="info">
+                    <span>人气:</span><span class="fans">120322</span><br/>
+                    <span>类型:卡片棋牌</span><br/>
+                    <a href="#" class="down">下载</a>
+                </p>
+            </li>
+              <li>
+                <h1><span class="no3">3</span><a href="#"class="gamename">放开那三国</a></h1>
+                <a><img src="../images/1 (2).jpg"></img></a>
+                <p class="info">
+                    <span>人气:</span><span class="fans">120100</span><br/>
+                    <span>类型:卡片棋牌</span><br/>
+                    <a href="#" class="down">下载</a>
+                </p>
+            </li>
+              <li>
+                <h1><span class="no">4</span><a href="#"class="gamename">神之刃(神之作)</a></h1>
+                <a><img src="../images/1 (2).jpg"></img></a>
+                <p class="info">
+                    <span>人气:</span><span class="fans">120099</span><br/>
+                    <span>类型:动作冒险</span><br/>
+                    <a href="#" class="down">下载</a>
+                </p>
+            </li>
+              <li>
+                <h1><span class="no">5</span><a href="#"class="gamename">花样爷爷官方版手游</a></h1>
+                <a><img src="../images/1 (2).jpg"></img></a>
+                <p class="info">
+                    <span>人气:</span><span class="fans">120034</span><br/>
+                    <span>类型:网络游戏</span><br/>
+                    <a href="#" class="down">下载</a>
+                </p>
+            </li>
+              <li>
+                <h1><span class="no">6</span><a href="#"class="gamename">神雕侠侣(正版手游)</a></h1>
+                <a><img src="../images/1 (2).jpg"></img></a>
+                <p class="info">
+                    <span>人气:</span><span class="fans">120032</span><br/>
+                    <span>类型:角色扮演</span><br/>
+                    <a href="#" class="down">下载</a>
+                </p>
+            </li>
+              <li>
+                <h1><span class="no">7</span><a href="#"class="gamename">我叫MT:小小魔兽</a></h1>
+                <a><img src="../images/1 (2).jpg"></img></a>
+                <p class="info">
+                    <span>人气:</span><span class="fans">110344</span><br/>
+                    <span>类型:休闲益智</span><br/>
+                    <a href="#" class="down">下载</a>
+                </p>
+            </li>
+              <li>
+                <h1><span class="no">8</span><a href="#"class="gamename">忘仙</a></h1>
+                <a><img src="../images/1 (2).jpg"></img></a>
+                <p class="info">
+                    <span>人气:</span><span class="fans">110003</span><br/>
+                    <span>类型:角色扮演</span><br/>
+                    <a href="#" class="down">下载</a>
+                </p>
+            </li>
+              <li>
+                <h1><span class="no">9</span><a href="#"class="gamename">王者之剑(暗黑格斗)</a></h1>
+                <a><img src="../images/1 (2).jpg"></img></a>
+                <p class="info">
+                    <span>人气:</span><span class="fans">100324</span><br/>
+                    <span>类型:动作冒险</span><br/>
+                    <a href="#" class="down">下载</a>
+                </p>
+            </li>
+            <li>
+                <h1><span class="no">10</span><a href="#"class="gamename">大掌门(第一武侠)</a></h1>
+                <a><img src="../images/1 (2).jpg"></img></a>
+                <p class="info">
+                    <span>人气:</span><span class="fans">100001</span><br/>
+                    <span>类型:卡片棋牌</span><br/>
+                    <a href="#" class="down">下载</a>
+                </p>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>无刷新切换皮肤</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link id="style"title="default"rel="stylesheet"type="text/css" href="../css/default.css"/>  
+    <link title="green"rel="stylesheet"type="text/css" href="../css/green.css"disabled="disabled"/>  
+    <link title="yellow"rel="stylesheet"type="text/css" href="../css/yellow.css"disabled="disabled"/>  
+<style>
+        .demo {
+            width: 500px;
+            margin: 150px auto;
+            text-align: center;
+        }
+
+        .default {
+            background-color: #0af;
+        }
+
+        .yellow {
+            background-color: #e38d13;
+        }
+
+        .green {
+            background-color: #3f2;
+        }
+
+        .btn {
+            width: 100px;
+            border-radius: 5px;
+            margin-left: 10px;
+            padding: 10px;
+            color: #fff;
+            box-shadow: 1px 1px #888;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var btn=document.getElementsByClassName("btn");
+            var css=["default.css","yellow.css","green.css"];
+            var style=document.getElementById("style");
+            function changestyle(){
+                for(i=0;i<btn.length;i++){
+                    btn[i].index=i;
+                    btn[i].onclick=function(){
+                        setstyle(css[this.index])
+                    }
+                }
+            }
+            changestyle();
+            function setstyle(href) {
+                style.href="../css/"+href;
+                // setcookie("css",href,1)
+            }
+                // function setcookie(key,value,day){
+                //     var d=new Date();
+                //     d.setDate((d.getDate)+day);
+                //     document.cookie=key+"="+value+";expires="+d;
+                // }
+                // function getcookie(key){
+                //     var list=document.cookie.split(";");
+                //     for(i=0;i<list.length;i++){
+                //         var one=list[i].split("=");
+                //         if(one[0]==key){
+                //             return one[1];
+                //         }
+                //     }
+                //     retrun;
+                // }
+                // function delcookie(){
+                //     setcookie(key,1,-1)
+                // }  
+        }
+    </script>
+</head>
+
+<body>
+    <div class="demo">
+        <button class="btn default">默认</button>
+        <button class="btn yellow">黄色</button>
+        <button class="btn green">绿色</button>
+    </div>
+</body>
+
+</html>

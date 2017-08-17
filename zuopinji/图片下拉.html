@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>图片下拉</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap {
+            color: #fff;
+            margin: 10px auto;
+            font-size: 12px;
+            background: #fff;
+        }
+
+        .content {
+            width: 900px;
+            margin: 0 auto;
+        }
+
+        .caption,
+        h3 {
+            color: rgb(10, 140, 210);
+        }
+
+        .hor {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: flex-end;
+        }
+
+        .horizion {
+            /* display:flex; */
+            background: rgb(255, 122, 1);
+        }
+
+        #hor1 {
+            width: 73%;
+            height: 2px;
+        }
+
+        #hor2 {
+            width: 24%;
+            height: 4px;
+            border-top-left-radius: 15px 2px;
+        }
+
+        .mainbody {
+            margin: 5px auto;
+        }
+
+        .list-items {
+            position: relative;
+            list-style: none;
+            display: inline-block;
+            width: 200px;
+            height: 220px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+        }
+        img{
+             width:186px; 
+             margin:7px;
+        }
+        .slide,
+        .slidelayer {
+            position: absolute;
+            text-align: center;
+            top: -220px;
+            padding: 8px;
+            width: 184px;
+            height: 204px;
+            margin: 0 auto;
+        }
+
+        .slide {
+            background: #111;
+            opacity: 0.7;
+            z-index: 1111;
+        }
+
+        .slidelayer {
+            z-index: 111111;
+        }
+
+        h2 {
+            font-size: 16px;
+            text-align: left;
+        }
+
+        p {
+            font-size: 14px;
+            text-align: left;
+            padding: 20px 0;
+            margin-bottom: 50px;
+        }
+
+        .start {
+            left: 10px;
+            bottom: 20px;
+            color: #fff;
+            background: rgb(255, 122, 1);
+        }
+
+        .more {
+            right: 10px;
+            bottom: 20px;
+            color: #111;
+            background: #fff;
+        }
+
+        .start,
+        .more {
+            display: inline-block;
+            position: absolute;
+            width: 40%;
+            height:25px;
+            line-height: 25px;
+            margin: 0 auto;
+            padding: 2px;
+            text-align: center;
+            font-size: 12px;
+            text-decoration: none;
+        }
+
+        .start:hover {
+            background: rgb(255, 100, 1);
+        }
+
+        .left {
+            float: left;
+            margin-left: 5px;
+            padding: 5px 0;
+        }
+
+        h3 {
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        .info {
+            color: #555;
+            font-size: 10px;
+        }
+
+        .outer {
+            float: right;
+            position: relative;
+            right: 6px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            text-align: center;
+            color: #ccc;
+            background: rgb(220, 220, 220);
+        }
+
+        .inner {
+            width: 40px;
+            height: 40px;
+            margin: 2px auto;
+            border-radius: 50%;
+            line-height: 40px;
+            color: #555;
+            letter-spacing: 1px;
+            background: rgb(240, 240, 240);
+        }
+
+        .big {
+            font-size: 20px;
+        }
+
+        .yellow {
+            color: rgb(255, 100, 1);
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var slidelayer = document.getElementsByClassName("slidelayer")
+            var lis = document.getElementsByClassName("list-items");
+            var slide = document.getElementsByClassName("slide");
+            var h3 = document.getElementsByTagName('h3');
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].timer = null;
+                lis[i].index = i;
+                lis[i].addEventListener("mouseenter", function () { 
+                    toggle(this, this.index, 0);
+                }, false)
+                lis[i].addEventListener("mouseleave", function () {
+                    toggle(this, this.index, -260);
+                }, false)
+            }
+            function toggle(obj, index, target) {
+                console.log(obj.timer)
+                clearInterval(obj.timer);
+                if(target==0){
+                    h3[index].className="yellow";
+                    obj.style.cursor="pointer";
+                }
+                else{
+                    h3[index].className="";
+                    obj.style.cursor="initial";
+                }
+                obj.timer = setInterval(function () {
+                    var slidelayer = document.getElementsByClassName("slidelayer")
+                    var slide = document.getElementsByClassName("slide");
+                    var curY = slide[index].offsetTop;
+                    var speed = (target - curY) / 2;
+                    speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed)
+                    if (speed != 0) {
+                        slidelayer[index].style.top = slide[index].style.top = curY + speed + "px";
+                    }
+                    else {
+                        clearInterval(obj.timer);
+                    }
+                }, 80);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="content">
+            <h1 class="caption">热门网页游戏推荐</h1>
+            <div class="hor">
+                <div id="hor1" class="horizion"></div>
+                <div id="hor2" class="horizion"></div>
+            </div>
+            <div class="mainbody">
+                <ul class="intro">
+                    <li class="list-items">
+                        <div class="slide">
+                        </div>
+                        <div class="slidelayer">
+                            <h2>大天使之剑</h2>
+                            <p>大天使之剑-传承MU经典网游精髓</p>
+                            <a class="start" href="#">开始游戏</a>
+                            <a class="more" href="#">更多平台</a>
+                        </div>
+                        <div class="slidebottom">
+                            <img src="../images/1 (1).jpg" alt="大天使之剑" />
+                            <div>
+                                <div class="left">
+                                    <h3>大天使之剑</h3>
+                                    <span class="info">战争策略</span>
+                                    <span class="info">|</span>
+                                    <span class="info">百度游戏</span>
+                                </div>
+                                <div class="outer">
+                                    <div class="inner">
+                                        <span class="big">9</span>.<span class="small">9</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-items">
+                        <div class="slide">
+                        </div>
+                        <div class="slidelayer">
+                            <h2>将神online</h2>
+                            <p>三国页游《将神》，3D游戏,排兵布阵</p>
+                            <a class="start" href="#">开始游戏</a>
+                            <a class="more" href="#">更多平台</a>
+                        </div>
+                        <div class="slidebottom">
+                            <img src="../images/2 (1).jpg" alt="大天使之剑" />
+                            <div>
+                                <div class="left">
+                                    <h3>将神onli...</h3>
+                                    <span class="info">战争策略</span>
+                                    <span class="info">|</span>
+                                    <span class="info">心动游戏</span>
+                                </div>
+                                <div class="outer">
+                                    <div class="inner">
+                                        <span class="big">9</span>.<span class="small">7</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-items">
+                        <div class="slide">
+                        </div>
+                        <div class="slidelayer">
+                            <h2>魅影传说</h2>
+                            <p>跨越时空征战,掀起万人PK狂潮!</p>
+                            <a class="start" href="#">开始游戏</a>
+                            <a class="more" href="#">更多平台</a>
+                        </div>
+                        <div class="slidebottom">
+                            <img src="../images/3 (1).jpg" alt="大天使之剑" />
+                            <div>
+                                <div class="left">
+                                    <h3>魅影传说</h3>
+                                    <span class="info">角色扮演</span>
+                                    <span class="info">|</span>
+                                    <span class="info">51.com</span>
+                                </div>
+                                <div class="outer">
+                                    <div class="inner">
+                                        <span class="big">9</span>.<span class="small">8</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-items">
+                        <div class="slide">
+                        </div>
+                        <div class="slidelayer">
+                            <h2>赤月传说</h2>
+                            <p>经典传奇全新微端技术的即时战斗网页游戏</p>
+                            <a class="start" href="#">开始游戏</a>
+                            <a class="more" href="#">更多平台</a>
+                        </div>
+                        <div class="slidebottom">
+                            <img src="../images/4 (1).jpg" alt="大天使之剑" />
+                            <div>
+                                <div class="left">
+                                    <h3>赤月传说</h3>
+                                    <span class="info">角色扮演</span>
+                                    <span class="info">|</span>
+                                    <span class="info">9377</span>
+                                </div>
+                                <div class="outer">
+                                    <div class="inner">
+                                        <span class="big">9</span>.<span class="small">9</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-items">
+                        <div class="slide">
+                        </div>
+                        <div class="slidelayer">
+                            <h2>黑暗之光OL</h2>
+                            <p>3D硬杀格斗双端网游,打造魔幻传奇!</p>
+                            <a class="start" href="#">开始游戏</a>
+                            <a class="more" href="#">更多平台</a>
+                        </div>
+                        <div class="slidebottom">
+                            <img src="../images/5 (1).jpg" alt="大天使之剑" />
+                            <div>
+                                <div class="left">
+                                    <h3>黑暗之光OL</h3>
+                                    <span class="info">角色扮演</span>
+                                    <span class="info">|</span>
+                                    <span class="info">51.com</span>
+                                </div>
+                                <div class="outer">
+                                    <div class="inner">
+                                        <span class="big">9</span>.<span class="small">9</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-items">
+                        <div class="slide">
+                        </div>
+                        <div class="slidelayer">
+                            <h2>雷霆之怒</h2>
+                            <p>雷霆万钧,战火纷飞,全球首发页游,重塑经典</p>
+                            <a class="start" href="#">开始游戏</a>
+                            <a class="more" href="#">更多平台</a>
+                        </div>
+                        <div class="slidebottom">
+                            <img src="../images/6 (1).jpg" alt="雷霆之怒" />
+                            <div>
+                                <div class="left">
+                                    <h3>雷霆之怒</h3>
+                                    <span class="info">角色扮演</span>
+                                    <span class="info">|</span>
+                                    <span class="info">9377</span>
+                                </div>
+                                <div class="outer">
+                                    <div class="inner">
+                                        <span class="big">9</span>.<span class="small">8</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-items">
+                        <div class="slide">
+                        </div>
+                        <div class="slidelayer">
+                            <h2>将神2</h2>
+                            <p>将神-新资料片，风云再起，神兵再临</p>
+                            <a class="start" href="#">开始游戏</a>
+                            <a class="more" href="#">更多平台</a>
+                        </div>
+                        <div class="slidebottom">
+                            <img src="../images/7 (1).jpg" alt="将神2" />
+                            <div>
+                                <div class="left">
+                                    <h3>大天使之剑</h3>
+                                    <span class="info">战争策略</span>
+                                    <span class="info">|</span>
+                                    <span class="info">心动游戏</span>
+                                </div>
+                                <div class="outer">
+                                    <div class="inner">
+                                        <span class="big">9</span>.<span class="small">6</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-items">
+                        <div class="slide">
+                        </div>
+                        <div class="slidelayer">
+                            <h2>烈焰</h2>
+                            <p>传奇烈焰震撼来袭，热血多彩的游戏PK体验</p>
+                            <a class="start" href="#">开始游戏</a>
+                            <a class="more" href="#">更多平台</a>
+                        </div>
+                        <div class="slidebottom">
+                            <img src="../images/8.jpg" alt="烈焰" />
+                            <div>
+                                <div class="left">
+                                    <h3>烈焰</h3>
+                                    <span class="info">角色扮演</span>
+                                    <span class="info">|</span>
+                                    <span class="info">9377</span>
+                                </div>
+                                <div class="outer">
+                                    <div class="inner">
+                                        <span class="big">9</span>.<span class="small">9</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

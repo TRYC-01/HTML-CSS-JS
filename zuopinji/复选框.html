@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>全选复选框</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .choice {
+            width: 200px;
+            height: 200px;
+            margin: 50px auto;
+        }
+
+        .choice div {
+            margin: 3px auto;
+            color: seagreen;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var btn = document.getElementsByClassName("btn")[0];
+            var cbox = document.getElementsByClassName("cbox");  
+            btn.onchange = function () {
+               for(i=0;i<cbox.length;i++){
+                   cbox[i].checked=this.checked;
+               }  
+            }
+            for(i=0;i<cbox.length;i++){
+                cbox[i].onchange=function(){
+                    if(btn.checked){
+                        btn.checked=this.checked;
+                    }
+                }
+            }
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="choice">
+        <div><input type="checkbox" name="multipleChoose" class="btn">全选</div>
+        <div><input type="checkbox" name="multipleChoose" class="cbox">:选项1</div>
+        <div><input type="checkbox" name="multipleChoose" class="cbox">:选项2</div>
+        <div><input type="checkbox" name="multipleChoose" class="cbox">:选项3</div>
+        <div><input type="checkbox" name="multipleChoose" class="cbox">:选项4</div>
+        <div><input type="checkbox" name="multipleChoose" class="cbox">:选项5</div>
+        <div><input type="checkbox" name="multipleChoose" class="cbox">:选项6</div>
+        <div><input type="checkbox" name="multipleChoose" class="cbox">:选项7</div>
+        <div><input type="checkbox" name="multipleChoose" class="cbox">:选项8</div>
+        <div><input type="checkbox" name="multipleChoose" class="cbox">:选项9</div>
+        <div><input type="checkbox" name="multipleChoose" class="cbox">:选项10</div>
+    </div>
+</body>
+
+</html>

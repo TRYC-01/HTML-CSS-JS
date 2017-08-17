@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>  
+<script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>  
+<title>模态弹出窗的使用</title>
+<style>
+    .wrap{
+        width:1000px;
+        margin:200px auto;
+        text-align:center;
+    }
+    a{
+        box-shadow: 0px 1px royalblue;
+        transition:tranform 2s;
+    }
+    a:hover{
+        transform: scale(1.1,1.5);
+    }
+</style>
+</head>
+<body>
+<div class="wrap">
+<!--下面是代码任务部分-->
+<!-- href触发模态弹出窗元素 -->
+<a class="btn btn-primary"data-toggle="modal" href="#mymodal-link">通过链接href属性触发</a>
+<!-- 模态弹出窗内容 -->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"aria-hidden="true" id="mymodal-link">
+    <div class="modal-dialog">
+    	<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true ">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title ">模态弹出窗标题</h4>
+			</div>
+			<div class="modal-body ">
+				<p class="text-danger">模态弹出窗主体内容:使用链接a元素的href属性替代data-target属性，data-toggle="modal"不变，模态框中关闭按钮属性则用自定义属性data-dismiss="modal"</p>
+			</div>
+			<div class="modal-footer ">
+				<button type="button " class="btn btn-default" data-dismiss="modal">关闭</button>
+				<button type="button " class="btn btn-primary">保存</button>
+			</div>
+		</div>
+	</div>
+</div>
+<h1 class="text-danger">hello,world</h1>
+
+
+<!-- data-target触发模态弹出窗元素 -->
+<button class="btn btn-primary " type="button"data-target="#mymodal-data"data-toggle="modal">通过data-target触发</button>
+<!-- 模态弹出窗内容 -->
+<div class="modal fade" id="mymodal-data" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+	<div class="modal-dialog modal-sm"><!-- modal-sm:small size. modal-lg:big size -->
+		<div class="modal-content ">
+			<div class="modal-header ">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title text-primary">模态弹出窗标题</h4>
+			</div>
+			<div class="modal-body">
+				<p class="text-danger">模态弹出窗主体内容:使用data-target="#ID名"或css类名，一般使用ID名，因其唯一;data-toggle="modal"来定义触发模态框弹出及隐藏。当不想模态框有淡入淡出效果是，将modal类的fade类去除即可</p>
+                
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button><!-- data-dismiss值后面带有空格，页面的关闭按钮就没有效果 -->
+				<button type="button" class="btn btn-primary">保存</button>
+			</div>
+		</div>
+	</div>
+    <img src="F:/web练习/project/images/modaldialog.jpg" alt="模态框属性值说明"/> 
+</div>
+<div class="dropdown">
+	<button class="btn btn-primary dropdown-toogle"data-toggle="dropdown">1	
+	</button>
+	<ul class="dropdown-menu">
+			<a href="#">12222</li>
+			<li>23333333</li>
+			<li>322222222222222222</li>
+		</ul>
+
+</div>
+</div>
+
+</body>
+</html>
+
+

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>文本自动滚动</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap {
+            width: 1000px;
+            margin: 100px auto;
+            font-family: sans-serif;
+            font-size: 26px;
+            text-align: center;
+            color: rgb(255,100,0);
+            background: #ccc;
+        }
+        .roll{
+            height:500px;
+             overflow: hidden; 
+        }
+
+        .caption {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .list {
+            list-style: none;
+            margin: 0 auto;
+        }
+
+        .pagra {
+            margin: 0 auto;
+            margin:20px auto;  
+        }
+
+        hr {
+            border-width: 5px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+                var pagra = document.getElementsByClassName("pagra");
+                var roll=document.getElementsByClassName("roll")[0];
+                var list = document.getElementsByClassName("list")[0];
+            function move(){
+                act(list,"marginTop",-30,function(){
+                    list.appendChild(pagra[0]);
+                    list.style.marginTop=0;
+                    setTimeout(function(){
+                        move()
+                    },1000)
+
+                })
+            }
+            move();
+            function style(obj,attr){
+                if(obj.currentStyle){
+                    return obj.currentStyle[attr];
+                }else {
+                    return getComputedStyle(obj,null)[attr];
+                }
+            }
+
+            function act(obj,attr,target,callback){
+                clearInterval(obj.timer);
+                obj.timer=setInterval(function(){
+                    var cur=parseInt(style(obj,attr));
+                    var speed=(target-cur)/6;
+                    var stop=true;
+                    speed=speed>0?Math.ceil(speed):Math.floor(speed);
+                    if(target!=cur){
+                        stop=false;
+                    }
+                    obj.style[attr]=speed+cur+"px";
+                    if(stop){
+                        clearInterval(obj.timer);
+                        obj.timer=null;
+                        callback&&callback.call(obj);
+                    }
+                },20)
+            }
+            
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="wrap">
+        <p class="caption">蜀道难-李白</p>
+        <div class="roll">
+        <ul class="list">
+            <li class="pagra">
+                <hr/>
+            </li>
+            <li class="pagra">噫吁嚱！危呼高哉！</li>
+            <li class="pagra">蜀道之难难于上青天。</li>
+            <li class="pagra">蚕丛及鱼凫，开国何茫然。</li>
+            <li class="pagra">尔来四万八千岁，始与秦塞通人烟。</li>
+            <li class="pagra">西当太白有鸟道，可以横绝峨嵋巅。</li>
+            <li class="pagra">地崩山摧壮士死，然后天梯石栈相钩连。</li>
+            <li class="pagra">上有六龙回日之高标，下有冲波逆折之回川。</li>
+            <li class="pagra">黄鹤之飞尚不得，猿猱欲度愁攀缘。</li>
+            <li class="pagra">青泥何盘盘，百步九折萦岩峦。</li>
+            <li class="pagra">扪参历井仰胁息，以手抚膺坐长叹。</li>
+            <li class="pagra">问君西游何时还，畏途岩不可攀。</li>
+            <li class="pagra">但见悲鸟号古木，雄飞雌从绕林间。</li>
+            <li class="pagra">又闻子规啼夜月，愁空山。</li>
+            <li class="pagra">蜀道之难难于上青天，使人听此凋朱颜。</li>
+            <li class="pagra">连峰去天不盈尺，枯松倒挂倚绝壁。</li>
+            <li class="pagra">飞湍瀑流争喧，石冰崖转石万壑雷。</li>
+            <li class="pagra">其险也若此，嗟尔远道之人，胡为呼来哉。</li>
+            <li class="pagra">剑阁峥嵘而崔嵬，一夫当关，万夫莫开。</li>
+            <li class="pagra">所守或匪亲，化为狼与豺。</li>
+            <li class="pagra">朝避猛虎，夕避长蛇。</li>
+            <li class="pagra">磨牙吮血，杀人如麻。</li>
+            <li class="pagra">锦城虽云乐，不如早还家。</li>
+            <li class="pagra">蜀道之难难于上青天，侧身西望长咨嗟。</li>
+        </ul>
+        </div>
+    </div>
+</body>
+
+</html>

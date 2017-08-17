@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>文本内容关键字过滤</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .wrap {
+            margin: 20px auto;
+            width: 500px;
+        }
+
+        .in,
+        .out {
+             width: 100%; 
+            position: relative;
+            margin: 0 auto;
+        }
+
+        span {
+            position: absolute;
+            left: -10px;
+            top: 0px;
+            font-weight: bold;
+            color:#f00;
+        }
+
+        textarea {
+             width: 100%; 
+            height: 300px;
+            margin-left: 30px;
+            font-size:20px;
+            resize:none;/* 固定大小 */
+            background-color:#ccc;
+        }
+
+        .btn {
+            width: 100px;
+            border-radius: 2px;
+            text-align: center;
+            background-color: #88e;
+            color: #fff;
+            margin: 0 0 10px 200px;
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var btn = document.getElementsByClassName("btn")[0];
+            var text = document.getElementsByClassName("text-in")[0];
+            var textout = document.getElementsByClassName("text-out")[0];
+            var obj = {
+                操: "*",
+                日本: "**",
+                傻逼: "**",
+            }
+            btn.onclick = function () {
+                var newText = text.value;
+                for (p in obj) {
+                    var pattern = new RegExp(p, "g");
+                    newText = newText.replace(pattern, obj[p]);
+                } textout.value = newText;
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="in">
+            <span>备注</span>
+            <textarea class="text-in" cols="30" rows="10" placeholder="操|日本|傻逼 将会过滤"></textarea>
+        </div>
+        <input class="btn" type="button" value="过滤">
+        <div class="out">
+            <span>备注</span>
+            <textarea class="text-out" cols="30" rows="10"></textarea>
+        </div>
+    </div>
+</body>
+
+</html>

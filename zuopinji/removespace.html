@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>去除空字符</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        div{
+            width:500px;
+            height:500px;
+            margin:250px auto;
+        }
+        .cl{
+            background:gray;
+        }
+        </style>
+        <script>
+            window.onload=function(){
+                var obj=document.getElementsByClassName("obj")[0];//***** value属性为表单属性,但是此处不能直接把value值赋予obj，这是为什么呢
+                var result=document.getElementsByClassName("result");
+                var cl=document.getElementsByClassName("cl");
+                cl[0].onclick=function(){
+                    var pattern=/\s+/g;//****匹配一个或多个空格
+                    result[0].value=obj.value.replace(pattern,"")
+                    obj.value="";
+                }
+            }
+        </script>
+    </head>
+    <body>
+    <div>
+        <p>移除空白</p>
+        <input class="obj"type="text"placeholder="请输入字符"><!-- input为块级元素 -->
+        <input class="result"type="text"placeholder="筛选结果">
+        <input class="cl"type="button"value="remove">
+    </div>
+    </body>
+</html>

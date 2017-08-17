@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>表格添加与删除</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .demo {
+            margin: 20px auto;
+            text-align: center;
+        }
+        #add{
+            background:#2f2;
+        }
+        #del{
+            background:#f22;
+        }
+        #table {
+            width: 800px;
+            margin: 30px auto;
+            border: 2px solid black;
+        }
+
+        #table tr:nth-child(1) {
+            background: #ccc;
+        }
+
+        tr:nth-child(odd) {
+            background: #ff6100;
+        }
+
+        tr:nth-child(even) {
+            background: #ffb400
+        }
+
+        tr:nth-child(odd):hover {
+            background: #ccc;
+        }
+
+        tr:nth-child(even):hover {
+            background: #eee;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var tstyle = document.getElementById("table");
+            tstyle.rules = "all";
+            var tb = document.getElementById("tbody");
+            var add = document.getElementById("add");
+            var del = document.getElementById("del");
+            add.addEventListener("click", act);
+            del.addEventListener("click", act);
+            function act() {
+                if (this.id == "add") {
+                    var tr = document.createElement("tr");
+                    var grade = document.getElementById("grade");
+                    var firstname = document.getElementById("firstname");
+                    var points = document.getElementById("points");
+                    var sex = document.getElementById("sex");
+                    tr.innerHTML = "<td>" + grade.value + "</td><td>" + firstname.value + "</td><td>" + points.value + "</td><td>" + sex.value + "</td><td><a class='del'href='#'>del</a></td>"
+                    tb.appendChild(tr);
+                }
+                else if (this.id == "del") {
+                    if (tb.childElementCount == 1) return;
+                    tb.removeChild(tb.lastChild);
+                }
+            }
+            // var delinline = function () {
+            //     var a = document.getElementsByTagName("a");
+            //     for (i = 0; i < a.length; i++) {
+            //         // a[i].index=i;
+            //         a[i].addEventListener("click", function () {
+            //             // tb.removeChild(tb.children[this.index+1]);
+            //             tb.removeChild(this.parentNode.parentNode);
+            //         })
+            //     }
+            // }
+            document.addEventListener('click', function (e) {
+                var target = e.target;
+                if (e.target.className.indexOf('del') != -1) {
+                    tb.removeChild(target.parentNode.parentNode);
+                }
+            }, false);
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="demo">
+        <span>班级</span><input id="grade" type="text">
+        <span>姓名</span><input id="firstname" type="text">
+        <span>成绩</span><input id="points" type="text">
+        <span>性别</span><input id="sex" type="text">
+
+        <button class="btn" id="add">添加</button>
+        <button class="btn" id="del">删除</button>
+        <table id="table">
+            <caption>XX高中三年级月考成绩表</caption>
+            <tbody id="tbody">
+                <tr>
+                    <th>班级</th>
+                    <th>姓名</th>
+                    <th>成绩</th>
+                    <th>性别</th>
+                    <th>操作</th>
+                </tr>
+                <tr>
+                    <td>3(1)</td>
+                    <td>小明</td>
+                    <td>550</td>
+                    <td>男</td>
+                    <td><a class="del" href="#">del</a></td>
+                </tr>
+                <tr>
+                    <td>3(4)</td>
+                    <td>小红</td>
+                    <td>580</td>
+                    <td>女</td>
+                    <td><a class="del" href="#">del</a></td>
+                </tr>
+                <tr>
+                    <td>3(7)</td>
+                    <td>小李</td>
+                    <td>470</td>
+                    <td>男</td>
+                    <td><a class="del" href="#">del</a></td>
+                </tr>
+                <tr>
+                    <td>3(1)</td>
+                    <td>小王</td>
+                    <td>650</td>
+                    <td>男</td>
+                    <td><a class="del" href="#">del</a></td>
+                </tr>
+                <tr>
+                    <td>3(4)</td>
+                    <td>小郭</td>
+                    <td>580</td>
+                    <td>男</td>
+                    <td><a class="del" href="#">del</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

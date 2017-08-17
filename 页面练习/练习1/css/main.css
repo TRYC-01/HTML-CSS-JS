@@ -1,0 +1,318 @@
+body{
+    font-size:14px;
+}
+/**top**/
+.wraper{
+    width:1500px;
+    margin: 0 auto; 
+}
+.top{
+    width:1500px;
+}
+.topAbove{
+    width:1100px;
+    height:110px;
+    margin:0 auto;
+}
+/** topLogo**/
+.topLogo{
+    float: left;
+    width:181px;
+    height:54px;
+    margin-top:40px;
+    background:url(../images/logo.png);
+}
+.logo{
+    display: block;
+    height:54px;
+}
+
+/**topNav**/
+.topNav{
+    float: right;    
+    font-size:14px;
+}
+.topNavBar{
+    float: left;
+    margin-top:44px;
+     margin-left:50px;    
+}
+.topNavBar a{
+    color:#3b3b3b;
+}
+/**topBelow**/
+ .topBelow{
+    /* background: #3f3f3f; */
+    height: 570px; 
+    position: relative;
+    border-bottom:4px solid #f34949;
+    overflow: hidden;
+} 
+
+ .topText{
+    position: absolute;
+    width:1500px;
+    top:210px;  
+    color:#fff; 
+} 
+.topCaption{
+    margin:0 auto;
+    width:776px;
+    height:117px;
+    background: url(../images/8.png);
+}
+.topSubCaption{
+        margin-top:18px;
+        font-size:16px;
+        text-align: center;  
+}
+.topSubCaptionL,.topSubCaptionR{
+    display: inline-block;
+    /* margin:0 27px; */
+    width:40px;
+    height: 1px;  
+    vertical-align: middle;
+    background:#fff;
+}
+.topSubCaptionL{
+    margin-right: 26px;
+}
+.topSubCaptionR{
+        margin-left: 26px;
+}
+/*****middle***/
+.middle{
+    height: 2087px;
+    backface-visibility: #fff;
+}
+.middleContainer{
+    width: 1100px;
+    height: 2087px;
+    margin:0 auto;
+}
+/*middle menu*/
+.middleMenu{
+    position: relative;
+    height: 596px;
+    margin-bottom:200px;
+}
+.middleText{
+    position: absolute;
+    left:50%;
+    top:0;
+    margin-left:-78px;
+    width:156px; 
+    height: 71px; 
+    background: #f34949;
+    color:#fff;
+    text-align: center;
+    line-height: 60px;  
+    font-size:20px;
+}
+   .middleText::after{
+    /* position: absolute;  */
+    /* left:0;
+    bottom:0;  */
+    /* width:0; 
+    height: 0; */
+    display: block;
+    content:"";
+    border-left:78px solid transparent; 
+    border-right: 78px solid transparent; 
+    border-bottom: 11px solid #fff; 
+}   
+.menu{
+    width:156px;
+    height: 60px;
+}
+ .menuListDiv{
+    position: relative; 
+    height:445px;
+    width:1100px;
+    top:152px;
+    color:#000;
+    overflow: hidden;
+} 
+.menuList{
+    width:1160px;
+    overflow: hidden;
+}
+.menuItem{
+    float:left;
+    width:520px;
+    margin-right: 60px;
+    margin-bottom: 62px;
+    overflow: hidden;
+}
+.menuItemTitle{
+    width:230px;
+    /* height:36px; */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+ .menuItemTitle,.menuItemLine{
+    float: left;
+} 
+.menuItemPrice{
+    float: right;
+    margin-right:31px;
+}
+.menuItemTitle h3{
+    color:#555555;
+}
+.menudetail{
+    margin-top:8px;
+    color:#b7b7b7;
+    font-size:12px; 
+}
+  .menuItemLine{
+    margin-top:10px;
+    width:192px;
+    height: 1px;
+    background: #e3e1e1;
+}  
+.menuMore{
+    display: inline-block;
+    position: absolute;
+    left:50%;
+    bottom:0;
+    margin-left:-65px;
+    width:131px;
+    height:32px;
+    color:#b7b7b7;
+    text-align: center;
+    line-height: 32px;
+    border:1px solid #ccc;
+}
+.icon{
+    display: inline-block;
+    width:11px;
+    height: 7px;
+    margin-left:12px;
+    background:url(../images/icon.png);
+}
+/**middleDishes**/
+.middleDishes{
+    height: 362px;
+    /* overflow: hidden;  */
+    margin-bottom:201px;
+}
+.middleDishesTitle{
+    line-height: 26px; 
+    overflow: hidden; 
+}
+.middleDishesCaption,.middleDishesCaptionLine{
+    float:left;
+}
+.middleDishesCaption{
+    font-size:20px;
+    color:#3b3b3b;
+    margin-right:20px;
+}
+.middleDishesCaptionLine{
+    width:200px;
+    height: 1px;
+    margin-top:13px; 
+    background:#e5e3e3;
+}
+.circlesGroup{
+    float:right;
+    font-size:0;
+}
+.circle{
+    display: inline-block;
+    width:9px;
+    height: 9px;
+    margin-left:11px;
+    border-radius: 50%;
+    background:#dedede;
+     vertical-align: middle;
+}
+.active{
+    background:#9b9b9b;
+}
+.middleDishesList{
+    clear:both; 
+    width:1165px;
+    margin-top:78px;
+    margin-bottom:200px;
+    overflow: hidden;
+}
+.middleDishesItem{
+    float:left;
+    width:230px;
+    margin-right:60px;
+}
+.dishesLink h3{
+    overflow: hidden;
+    margin-top:30px; 
+}
+.dishesName{
+    float:left;
+    color:#555555;
+}
+.dishesPrice{
+    float:right;
+    color:#555555;
+}
+.st{
+     margin-top:10px; 
+     display: inline-block;
+     width:12px;
+     height: 13px;
+     margin-right:5px;
+     background-repeat:no-repeat;
+     background-image:url(../images/starszuhe.png);
+}
+.nostars{
+    background-position:0 -12px;
+}
+/**middleGallery**/
+.middleGallery{
+    height: 530px;
+    overflow: hidden;
+}
+.middleGalleryPics{
+    height:382px;
+    margin-top:130px;
+    overflow: hidden;
+}
+.middleGalleryColL,.middleGalleryColM,.middleGalleryColR{
+    float: left;
+}
+.middleGalleryColL{
+    width:353px;
+}
+.middleGalleryColM{
+    width:287px;
+}
+.middleGalleryColR{
+    width:460px;
+}
+/***footer*/
+.footer{
+    width:1500px;
+    height: 318px;
+    background:#3b3b3b;
+    color:#ebebeb;
+    font-size:16px;
+}
+.footerContainer{
+    width:1100px;
+    margin:0 auto; 
+}
+.footerCol{
+    float: left; 
+    width:230px;
+    margin-right:60px;
+    margin-top:100px; 
+    line-height:1.8;
+}
+.footer .footerCol:nth-child(4){
+    margin-top:84px;
+    margin-right: 0;
+}
+.footerCol a{
+    color:#ebebeb;
+}

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>作品集</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /** {
+            margin: 0;
+            padding: 0;
+        }*/
+        /*通配符去除所有样式*/
+
+        /*body {
+            background-image: url(F:/web练习/project/images/7.jpg);
+            background-size: 100%;
+            background-attachment: fixed;
+        }*/
+
+        .container {
+            /*定义外部容器宽度，居中布局，带有边框*/
+            width: 400px;
+            margin: 50px auto;
+            border: 1px solid lightgrey;
+        }
+
+        .project {
+            font-size: 16px;
+        }
+
+        p {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .base {
+            border-bottom: 1px solid lightslategray;
+            margin: 0;
+        }
+
+        h1,
+        .show li {
+            margin: 0 10px;
+            /*设置点击章节时背景颜色间无空白*/
+            box-sizing: border-box;
+            padding: 20px 0;
+            font-size: 20px;
+            color:royalblue;
+            list-style: none;
+            width: 90%;
+            transition: padding-left 1.5s;
+        }
+
+        h1:hover,
+        .show li:hover {
+            color: white;
+            background-color: green;
+            padding-left: 35px;
+            border-radius: 3px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .show li,
+        {
+            list-style: none;
+            margin-left: 10px;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var clickH1 = document.getElementsByClassName("captionClick");
+            var ullist = document.getElementsByTagName("ul");
+
+            for (i = 0; i < clickH1.length; i++) {
+                clickH1[i].index = i;//****for循环是立即输出所有的i，i最终为一个确定值，因此我们定义一个index索引
+                clickH1[i].onclick = function () {//注册事件
+                    if (ullist[this.index].className === "show") {//当前点击对应ul为显示时
+                        for (var j = 0; j < ullist.length; j++) {//****遍历ul元素，所有设置为隐藏
+                            ullist[j].className = "hide";
+                        }
+                    }
+                    else {//当前点击对于ul为隐藏时
+                        for (var k = 0; k < ullist.length; k++) { /***因为其他ul元素有没有显示的我们不清楚，因此要保证其他的元素隐藏***/ullist[k].className = "hide"; }
+                        ullist[this.index].className = "show";//然后让对应的ul显示
+                    }
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <div>
+
+        <div class="container">
+            <p>前端技能练习</p>
+            <ol id="object" class="project">
+                <li class="base project1">
+
+                    <a class="captionClick" href="#1">
+                        <!-- ***href设置为""时，出现js运行失常现象 -->
+                        <h1>第一章 表单常用代码</h1>
+                    </a>
+
+                    <ul class="hide">
+                        <a href="#">
+                           <a href="removespace.html" target="_blank"> <li>去除字符串左右的空格</li></a>
+                        </a>
+                        <a href="checking-the-input.html" target="_blank">
+                            <li>验证用户是否输入</li>
+                        </a>
+                        </a>
+                        <a href="#1">
+                            <li>禁止用户输入</li>
+                        </a>
+                        <a href="#2">
+                            <li>关闭用户中文输入法</li>
+                        </a>
+                        <a href="禁止复制和粘贴.html"target="_blank">
+                            <li>禁止用户复制和粘贴</li>
+                        </a>
+                        <a href="numberonly.html"target="_blank">
+                            <li>限制只能输入数字</li>
+                        </a>
+                        <a href="#5">
+                            <li>限制字符串数字</li>
+                        </a>
+                        <a href="提示剩余可输入数字.html"target="_blank">
+                            <li>仿微博提示可输入剩余数字</li>
+                        </a>
+                        <a href="文本自动滚动.html"target="_blank">
+                            <li>换行文本自动滚动</li>
+                        </a>
+                        <a href="#">
+                            <li>Ctrl+Return提交表单</li>
+                        </a>
+                        <a href="文本内容关键字过滤.html"target="_blank">
+                            <li>文本内容进行关键字过滤</li>
+                        </a>
+                        <a href="复选框.html"target="_blank">
+                            <li>全选反选少选复选框</li>
+                        </a>
+                        <a href="addSelection.html"target="_blank">
+                            <li>动态操作下拉选项</li>
+                        </a>
+                        <a href="级联菜单.html"target="_blank">
+                            <li>级联菜单</li>
+                        </a>
+                        <a href="可输入的下拉框.html"target="_blank">
+                            <li>可添加的下拉选项</li>
+                        </a>
+                    </ul>
+                </li>
+                <li class="base">
+                    <a class="captionClick" href="#2">
+                        <h1>第二章 常用图片相关代码</h1>
+                    </a>
+                    <ul class="hide">
+                        <a href="#">
+                            <li>可添加的下拉选项</li>
+                        </a>
+                        <a href="imagescale.html"target="_blank">
+                            <li>图片放大效果</li>
+                        </a>
+                        <a href="图片逐渐放大.html"target="_blank">
+                            <li>点击图片逐渐放大</li>
+                        </a>
+                    </ul>
+                </li>
+                <li class="base">
+                    <a class="captionClick" href="#3">
+                        <h1>第三章 内容展示常用代码</h1>
+                    </a>
+                    <ul class="hide">
+                        <a href="单元行悬停提示.html"target="_blank">
+                            <li>单元行上鼠标悬停提示</li>
+                        </a>
+                        <a href="无刷新切换皮肤.html"target="_blank">
+                            <li>无刷新切换皮肤，刷新后保存</li>
+                        </a>
+                        <a href="表格删除与添加.html"target="_blank">
+                            <li>隔行换色鼠标经过换色</li>
+                        </a>
+                        <a href="表格删除与添加.html"target="_blank">
+                            <li>添加或删除表格行</li>
+                        </a>
+                        <a href="弹出层.html"target="_blank">
+                            <li>可拖动的弹出层</li>
+                        </a>
+                        <a href="选项卡轮播.html"target="_blank">
+                            <li>选项卡轮播</li>
+                        </a>
+                        <a href="滚动条.html"target="_blank">
+                            <li>模拟滚动条</li>
+                        </a>
+                        <a href="#">
+                            <li>缓动的对联广告</li>
+                        </a>
+                        <a href="#">
+                            <li>拖动滑块验证</li>
+                        </a>
+                    </ul>
+                </li>
+                <li class="base">
+                    <a class="captionClick" href="#4">
+                        <h1>第四章 常用图片轮换</h1>
+                    </a>
+                    <ul class="hide">
+                        <a href="百度爱玩图片轮换.html"target="_blank">
+                            <li>百度爱玩-图片轮换</li>
+                        </a>
+                        <a href="图片下拉.html"target="_blank">
+                            <li>百度爱玩-遮罩下拉</li>
+                        </a>
+                        <a href="tab榜单.html"target="_blank">
+                            <li>百度爱玩-榜单tab切换</li>
+                        </a>
+                        <a href="css3弹出层.html"target="_blank">
+                            <li>CSS3弹出层</li>
+                        </a>
+                        <a href="#">
+                            <li>米4-活动页面</li>
+                        </a>
+                        <a href="#">
+                            <li>百度爱玩-图片轮换</li>
+                        </a>
+                        <a href="#">
+                            <li>百度微购-中秋送好礼</li>
+                        </a>
+                        <a href="#">
+                            <li>商品分类</li>
+                        </a>
+                        <a href="#">
+                            <li>渐显的tab菜单2</li>
+                        </a>
+                        <a href="#">
+                            <li>经典图片轮播-单个滚动</li>
+                        </a>
+                        <a href="#">
+                            <li>经典图片轮播-整个翻页</li>
+                        </a>
+                    </ul>
+                </li>
+                <li class="base">
+                    <a class="captionClick" href="#5">
+                        <h1>第五章 移动端效果</h1>
+                    </a>
+                    <ul class="hide">
+                        <a href="#">
+                            <li>选项卡切换</li>
+                        </a>
+                    </ul>
+                </li>
+                <li class="base">
+                    <a class="captionClick" href="#6">
+                        <h1>第六章 时间日期效果</h1>
+                    </a>
+                    <ul class="hide">
+                        <a href="#">
+                            <li>全日历</li>
+                        </a>
+                        <a href="#">
+                            <li>Canvas实现小时钟</li>
+                        </a>
+                    </ul>
+                </li>
+                <li class="base">
+                    <a class="captionClick" href="#7">
+                        <h1>第七章 其他练习</h1>
+                    </a>
+                    <ul class="hide">
+                        <a href="#">
+                            <li>去除字符串左右的空格</li>
+                        </a>
+                        <a href="页面加载进度显示.html">
+                            <li>页面加载进度显示</li>
+                        </a>
+                        <a href="modaldialog.html">
+                            <li>模态框弹出使用</li>
+                        </a>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+</body>
+
+</html>

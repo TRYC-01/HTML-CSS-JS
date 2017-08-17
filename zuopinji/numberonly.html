@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        window.onload = function () {
+            //判断函数
+            var is = function () {
+                var y = false;
+                var elt = document.getElementById("username");
+                var val = elt.value;
+                for (i = 0; i < val.length; i++) {
+                    if (isNaN(val[i])|| val[i] === " ") {
+                        return y = true;
+                    }
+                }
+
+
+                return y;
+            }
+            var obj = document.getElementById("sub");
+            //事件处理程序
+            obj.onclick = function () {
+                if (is()) {
+                    alert("请输入数字")
+                }
+                else return true;
+            }
+        }
+</script>
+<style>
+.container{
+    margin-top:200px;
+    text-align:center;
+}
+</style>
+</head>
+
+<body>
+    <div class="container">
+    <input id="username" type="text" name="userName" placeholder="请输入数字">
+    <input id="sub" type="submit" value="提交">
+    </div>
+</body>
+
+</html>

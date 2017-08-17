@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>级联菜单</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .wrap {
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .cities {
+            display: none;
+        }
+    </style>
+    <script>
+        //笨方法，先把所有DOM写好，隐藏所有城市列表
+        window.onload = function () {
+            var provinces = document.getElementsByClassName("province")[0];
+            var province = provinces.getElementsByTagName("option");
+            var cities = document.getElementsByClassName("cities");
+            cities[0].style.display="inline-block";
+            provinces.onchange = function () {
+                for (i = 0; i < province.length; i++) {
+                    cities[i].style.display = "none";
+                    if (province[i].selected) {
+                        cities[i].style.display = "inline-block";
+                    }
+
+                }
+                
+
+
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <select class="province">
+        <option>北京市</option>
+        <option>天津市</option>
+        <option>河北省</option>
+        <option>山西省</option>
+        <option>内蒙古</option>
+        <option>辽宁省</option>
+        <option>吉林省</option>
+        <option>黑龙江省</option>
+        <option>上海市</option>
+        <option>江苏省</option>
+        <option>浙江省</option>
+        <option>安徽省</option>
+        <option>福建省</option>
+        <option>江西省</option>
+        <option>山东省</option>
+        <option>河南省</option>
+        <option>湖北省</option>
+        <option>湖南省</option>
+        <option>广东省</option>
+        <option>广西自治区</option>
+        <option>海南省</option>
+        <option>重庆市</option>
+        <option>四川省</option>
+        <option>贵州省</option>
+        <option>云南省</option>
+        <option>西藏自治区</option>
+        <option>陕西省</option>
+        <option>甘肃省</option>
+        <option>青海省</option>
+        <option>宁夏回族自治区</option>
+        <option>新疆维吾尔自治区</option>
+        <option>香港特别行政区</option>
+        <option>澳门特别行政区</option>
+        <option>台湾省</option>
+        <option>其他</option>
+    </select>
+        <select class="cities">
+            <option>北京</option>
+            <option>东城区</option>
+            <option>西城区</option>
+            <option>崇文区</option>
+            <option>宣武区</option>
+            <option>朝阳区</option>
+            <option>朝阳区</option>
+            <option>丰台区</option>
+            <option>石景山区</option>
+            <option>海淀区</option>
+            <option>门头沟区</option>
+            <option>房山区</option>
+            <option>通州区</option>
+            <option>顺义区</option>
+            <option>昌平区</option>
+            <option>大兴区</option>
+            <option>怀柔区</option>
+            <option>平谷区</option>
+            <option>密云县</option>
+            <option>延庆县</option>
+            <option>其他</option>
+        </select>
+        <select class="cities">
+            <option>和平区</option>
+            <option>河东区</option>
+            <option>河西区</option>
+            <option>南开区</option>
+            <option>红桥区</option>
+            <option>塘沽区</option>
+            <option>汉沽区</option>
+            <option>大港区</option>
+            <option>西青区</option>
+            <option>津南区</option>
+            <option>武清区</option>
+            <option>蓟县</option>
+            <option>宁河县</option>
+            <option>静海县</option>
+            <option>其他</option>
+        </select>
+        <select class="cities">
+            <option>石家庄市</option>
+            <option>张家口市</option>
+            <option>承德市</option>
+            <option>秦皇岛市</option>
+            <option>唐山市</option>
+            <option>廊坊市</option>
+            <option>衡水市</option>
+            <option>沧州市</option>
+            <option>邢台市</option>
+            <option>邯郸市</option>
+            <option>保定市</option>
+            <option>其他</option>
+        </select>
+        <select class="cities">
+            <option>太原市</option>
+            <option>朔州市</option>
+            <option>大同市</option>
+            <option>长治市</option>
+            <option>晋城市</option>
+            <option>忻州市</option>
+            <option>晋中市</option>
+            <option>临汾市</option>
+            <option>吕梁市</option>
+            <option>运城市</option>
+            <option>其他</option>
+        </select>
+        <select class="cities">
+            <option>呼和浩特市</option>
+            <option>包头市</option>
+            <option>赤峰市</option>
+            <option>呼伦贝尔市</option>
+            <option>鄂尔多斯市</option>
+            <option>乌兰察布市</option>
+            <option>巴彦卓尔市</option>
+            <option>兴安盟</option>
+            <option>阿拉善盟</option>
+            <option>锡林郭勒盟</option>
+            <option>其他</option>
+        </select>
+        <select class="cities">
+            <option>沈阳市</option>
+            <option>朝阳市</option>
+            <option>阜新市</option>
+            <option>铁岭市</option>
+            <option>抚顺市</option>
+            <option>丹东市</option>
+            <option>本溪市</option>
+            <option>辽阳市</option>
+            <option>鞍山市</option>
+            <option>大连市</option>
+            <option>营口市</option>
+            <option>盘锦市</option>
+            <option>锦州市</option>
+            <option>葫芦岛市</option>
+            <option>其他</option>
+        </select>
+        <select class="cities">
+            <option>长春市</option>
+            <option>白城市</option>
+            <option>吉林市</option>
+            <option>四平市</option>
+            <option>辽源市</option>
+            <option>通化市</option>
+            <option>白山市</option>
+            <option>延边朝鲜族自治州</option>
+            <option>其他</option>
+        </select>
+        <select class="cities">
+            <option>哈尔滨市</option>
+            <option>七台河市</option>
+            <option>黑河市</option>
+            <option>大庆市</option>
+            <option>齐齐哈尔市</option>
+            <option>伊春市</option>
+            <option>佳木斯市</option>
+            <option>双鸭山市</option>
+            <option>鸡西市</option>
+            <option>大兴安岭地区（加格达奇）</option>
+            <option>牡丹江</option>
+            <option>鹤岗市</option>
+            <option>绥化市</option>
+            <option>其他</option>
+        </select>
+        <select class="cities">
+            <option>黄浦区</option>
+            <option>卢湾区</option>
+            <option>徐汇区</option>
+            <option>长宁区</option>
+            <option>静安区</option>
+            <option>普陀区</option>
+            <option>闸北区</option>
+            <option>虹口区</option>
+            <option>杨浦区</option>
+            <option>闵行区</option>
+            <option>宝山区</option>
+            <option>嘉定区</option>
+            <option>浦东新区</option>
+            <option>金山区</option>
+            <option>松江区</option>
+            <option>青浦区</option>
+            <option>南汇区</option>
+            <option>奉贤区</option>
+            <option>崇明县</option>
+            <option>其他</option>
+        </select>
+        <select class="cities">
+            <option>南京市</option>
+            <option>徐州市</option>
+            <option>连云港市</option>
+            <option>宿迁市</option>
+            <option>淮安市</option>
+            <option>盐城市</option>
+            <option>扬州市</option>
+            <option>泰州市</option>
+            <option>南通市</option>
+            <option>镇江市</option>
+            <option>常州市</option>
+            <option>无锡市</option>
+            <option>苏州市</option>
+            <option>其他</option>
+        </select>
+        <select class="cities">
+            <option>杭州市</option>
+            <option>湖州市</option>
+            <option>嘉兴市</option>
+            <option>舟山市</option>
+            <option>宁波市</option>
+            <option>绍兴市</option>
+            <option>衢州市</option>
+            <option>金华市</option>
+            <option>台州市</option>
+            <option>温州市</option>
+            <option>丽水市</option>
+            <option>其他</option>
+        </select>
+        <select class="cities">
+            <option>合肥市</option>
+            <option>宿州市</option>
+            <option>淮北市</option>
+            <option>亳州市</option>
+            <option>阜阳市</option>
+            <option>蚌埠市</option>
+            <option>淮南市</option>
+            <option>滁州市</option>
+            <option>马鞍山市</option>
+            <option>芜湖市</option>
+            <option>铜陵市</option>
+            <option>安庆市</option>
+            <option>黄山市</option>
+            <option>六安市</option>
+            <option>巢湖市</option>
+            <option>池州市</option>
+            <option>宜城市</option>
+            <option>其他</option>
+        </select>
+        <select class="cities">
+            <option>福州市</option>
+            <option>南平市</option>
+            <option>莆田市</option>
+            <option>三明市</option>
+            <option>泉州市</option>
+            <option>厦门市</option>
+            <option>漳州市</option>
+            <option>龙岩市</option>
+            <option>宁德市</option>
+            <option>其他</option>
+        </select>
+        <select class="cities">
+            <option>南昌市</option>
+            <option>九江市</option>
+            <option>景德镇市</option>
+            <option>鹰潭市</option>
+            <option>新余市</option>
+            <option>萍乡市</option>
+            <option>赣州市</option>
+            <option>上饶市</option>
+            <option>抚州市</option>
+            <option>宜春市</option>
+            <option>吉安市</option>
+            <option>其他</option>
+        </select>
+        <select class="cities">
+            <option>济南市</option>
+            <option>聊城市</option>
+            <option>德州市</option>
+            <option>东营市</option>
+            <option>淄博市</option>
+            <option>潍坊市</option>
+            <option>烟台市</option>
+            <option>威海市</option>
+            <option>青岛市</option>
+            <option>日照市</option>
+            <option>临沂市</option>
+            <option>枣庄市</option>
+            <option>济宁市</option>
+            <option>泰安市</option>
+            <option>莱芜市</option>
+            <option>滨州市</option>
+            <option>菏泽市</option>
+            <option>其他</option>
+        </select>
+        <select class="cities">
+            <option>郑州市</option>
+            <option>三门峡市</option>
+            <option>洛阳市</option>
+            <option>焦作市</option>
+            <option>新乡市</option>
+            <option>鹤壁市</option>
+            <option>安阳市</option>
+            <option>濮阳市</option>
+            <option>开封市</option>
+            <option>商丘市</option>
+            <option>许昌市</option>
+            <option>漯河市</option>
+            <option>平顶山市</option>
+            <option>南阳市</option>
+            <option>信阳市</option>
+            <option>周口市</option>
+            <option>驻马店市</option>
+            <option>其他</option>
+        </select>
+        <select class="cities">
+            <option>武汉市</option>
+            <option>十堰市</option>
+            <option>襄樊市</option>
+            <option>荆门市</option>
+            <option>孝感市</option>
+            <option>黄冈市</option>
+            <option>鄂州市</option>
+            <option>黄石市</option>
+            <option>咸宁市</option>
+            <option>荆州市</option>
+            <option>宜昌市</option>
+            <option>随州市</option>
+            <option>恩施土家族苗族自治州</option>
+            <option>仙桃市</option>
+            <option>天门市</option>
+            <option>潜江市</option>
+            <option>神农架林区</option>
+            <option>其他</option>
+        </select>
+        <select class="cities">
+            <option>长沙市</option>
+            <option>张家界市</option>
+            <option>常德市</option>
+            <option>益阳市</option>
+            <option>岳阳市</option>
+            <option>株洲市</option>
+            <option>湘潭市</option>
+            <option>衡阳市</option>
+            <option>郴州市</option>
+            <option>永州市</option>
+            <option>邵阳市</option>
+            <option>怀化市</option>
+            <option>娄底市</option>
+            <option>湘西土家族苗族自治州</option>
+            <option>其他</option>
+        </select>
+        <select class="cities">
+            <option>广州市</option>
+            <option>清远市</option>
+            <option>韶关市</option>
+            <option>河源市</option>
+            <option>梅州市</option>
+            <option>湖州市</option>
+            <option>汕头市</option>
+            <option>揭阳市</option>
+            <option>汕尾市</option>
+            <option>惠州市</option>
+            <option>东莞市</option>
+            <option>深圳市</option>
+            <option>珠海市</option>
+            <option>中山市</option>
+            <option>江门市</option>
+            <option>佛山市</option>
+            <option>肇庆市</option>
+            <option>云浮市</option>
+            <option>阳江市</option>
+            <option>茂名市</option>
+            <option>湛江市</option>
+            <option>其他</option>
+        </select>
+        <select class="cities">
+            <option>南宁市</option>
+            <option>桂林市</option>
+            <option>柳州市</option>
+            <option>梧州市</option>
+            <option>贵港市</option>
+            <option>玉林市</option>
+            <option>钦州市</option>
+            <option>北海市</option>
+            <option>防城港市</option>
+            <option>崇左市</option>
+            <option>百色市</option>
+            <option>河池市</option>
+            <option>来宾市</option>
+            <option>贺州市</option>
+            <option>其他</option>
+        </select>
+        <select class="cities">
+            <option>海口市</option>
+            <option>三亚市</option>
+            <option>其他</option>
+        </select>
+        <select class="cities">
+            <option>渝中区</option>
+            <option>大渡口区</option>
+            <option>江北区</option>
+            <option>沙坪坝区</option>
+            <option>九龙坡区</option>
+            <option>南岸区</option>
+            <option>北碚区</option>
+            <option>万盛区</option>
+            <option>双桥区</option>
+            <option>渝北区</option>
+            <option>巴南区</option>
+            <option>万州区</option>
+            <option>涪陵区</option>
+            <option>黔江区</option>
+            <option>长寿区</option>
+            <option>合川市</option>
+            <option>永川市</option>
+            <option>江津市</option>
+            <option>南川市</option>
+            <option>綦江县</option>
+            <option>潼南县</option>
+            <option>铜梁县</option>
+            <option>大足县</option>
+            <option>璧山县</option>
+            <option>垫江县</option>
+            <option>武隆县</option>
+            <option>丰都县</option>
+            <option>城口县</option>
+            <option>开县</option>
+            <option>巫溪县</option>
+            <option>巫山县</option>
+            <option>奉节县</option>
+            <option>云阳县</option>
+            <option>忠县</option>
+            <option>石柱土家族自治县</option>
+            <option>彭水苗族土家族自治县</option>
+            <option>酉阳土家族苗族自治县</option>
+            <option>秀山土家族苗族自治县</option>
+            <option>其他</option>
+        </select>
+        <select class="cities">
+            <option>成都市</option>
+            <option>广元市</option>
+            <option>绵阳市</option>
+            <option>德阳市</option>
+            <option>南充市</option>
+            <option>广安市</option>
+            <option>遂宁市</option>
+            <option>内江市</option>
+            <option>乐山市</option>
+            <option>自贡市</option>
+            <option>泸州市</option>
+            <option>宜宾市</option>
+            <option>攀枝花市</option>
+            <option>巴中市</option>
+            <option>资阳市</option>
+            <option>眉山市</option>
+            <option>雅安</option>
+            <option>阿坝藏族羌族自治州</option>
+            <option>甘孜藏族自治州</option>
+            <option>凉山彝族自治州县</option>
+            <option>其他</option>
+        </select>
+        <select class="cities">
+            <option>贵阳市</option>
+            <option>六盘水市</option>
+            <option>遵义市</option>
+            <option>安顺市</option>
+            <option>毕节地区</option>
+            <option>铜仁地区</option>
+            <option>黔东南苗族侗族自治州</option>
+            <option>黔南布依族苗族自治州</option>
+            <option>黔西南布依族苗族自治州</option>
+            <option>其他</option>
+        </select>
+        <select class="cities">
+            <option>昆明市</option>
+            <option>曲靖市</option>
+            <option>玉溪市</option>
+            <option>保山市</option>
+            <option>昭通市</option>
+            <option>丽江市</option>
+            <option>普洱市</option>
+            <option>临沧市</option>
+            <option>宁德市</option>
+            <option>德宏傣族景颇族自治州</option>
+            <option>怒江傈僳族自治州</option>
+            <option>楚雄彝族自治州</option>
+            <option>红河哈尼族彝族自治州</option>
+            <option>文山壮族苗族自治州</option>
+            <option>大理白族自治州</option>
+            <option>迪庆藏族 自治州</option>
+            <option>西双版纳傣族自治州</option>
+            <option>其他</option>
+        </select>
+        <select class="cities">
+            <option>拉萨市</option>
+            <option>那曲地区</option>
+            <option>昌都地区</option>
+            <option>林芝地区</option>
+            <option>山南地区</option>
+            <option>日喀则地区</option>
+            <option>阿里地区</option>
+            <option>其他</option>
+        </select>
+        <select class="cities">
+            <option>西安市</option>
+            <option>延安市</option>
+            <option>铜州市</option>
+            <option>渭南市</option>
+            <option>咸阳市</option>
+            <option>宝鸡市</option>
+            <option>汉中市</option>
+            <option>安康市</option>
+            <option>商洛市</option>
+            <option>其他</option>
+        </select>
+        <select class="cities">
+            <option>兰州市</option>
+            <option>嘉峪关市</option>
+            <option>金昌市</option>
+            <option>白银市</option>
+            <option>天水市</option>
+            <option>武威市</option>
+            <option>酒泉市</option>
+            <option>张掖市</option>
+            <option>庆阳市</option>
+            <option>平凉市</option>
+            <option>定西市</option>
+            <option>陇南市</option>
+            <option>临夏回族自治州</option>
+            <option>甘南藏族自治州</option>
+            <option>其他</option>
+        </select>
+        <select class="cities">
+            <option>西宁市</option>
+            <option>海东地区</option>
+            <option>海北藏族自治州</option>
+            <option>黄南藏族自治州</option>
+            <option>玉树藏族自治州</option>
+            <option>海南藏族自治州</option>
+            <option>果洛藏族自治州</option>
+            <option>海西蒙古族藏族自治州</option>
+            <option>其他</option>
+        </select>
+        <select class="cities">
+            <option>银川市</option>
+            <option>石嘴山市</option>
+            <option>吴忠市</option>
+            <option>固原市</option>
+            <option>中卫市</option>
+            <option>其他</option>
+        </select>
+        <select class="cities">
+            <option value=""></option>
+        </select>
+        <select class="cities">
+            <option>香港岛</option>
+            <option>九龙</option>
+            <option>新界</option>
+            <option>其他</option>
+        </select>
+        <select class="cities">
+            <option>澳门半岛</option>
+            <option>澳门离岛</option>
+            <option>其他</option>
+        </select>
+        <select class="cities">
+            <option>基隆</option>
+            <option>新竹</option>
+            <option>台中</option>
+            <option>嘉义</option>
+            <option>台南</option>
+            <option>其他</option>
+        </select>
+        <select class="cities">
+            <option></option>
+        </select>
+    </div>
+</body>
+
+</html>

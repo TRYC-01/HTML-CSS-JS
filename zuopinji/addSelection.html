@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>动态操作下拉选项</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            padding: 0;
+            margin: 0
+        }
+
+        #wrap {
+            width: 500px;
+            height: 100%;
+            margin: 200px auto;
+        }
+
+        .selection {
+            display: block;
+            margin: 10px 0;
+        }
+
+        .btnadd,
+        .btnremove {
+            color: dodgerblue;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var btnadd = document.getElementsByClassName("btnadd")[0];
+            var btnremove = document.getElementsByClassName("btnremove")[0];
+            var selection = document.getElementsByClassName("selection")[0];
+            var context = document.getElementsByClassName("context")[0];
+
+            //注册add事件
+            btnadd.onclick = function add() {
+                var text = context.value;
+                var newNode = document.createElement("option");
+                var textNode = document.createTextNode(text);
+                if (text) {//判断选项是否为空
+                    newNode.appendChild(textNode);
+                    selection.appendChild(newNode);
+                    context.value="";
+                }
+                else alert("选项不能为空");
+            }
+
+            //注册remove事件
+            btnremove.onclick = function remove() {
+                if (selection.childNodes) {//判断是否存在下拉option选项
+                    selection.removeChild(selection[selection.length - 1])
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <input class="context" type="text">
+        <input class="btnadd" type="button" value="添加" />
+        <select class="selection"></select>
+        <input class="btnremove" type="button" value="删除" />
+    </div>
+</body>
+
+</html>

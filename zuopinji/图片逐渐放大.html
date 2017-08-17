@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>图片逐渐放大</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #container {
+            position: relative;
+            margin: 200px auto; 
+            width: 750px;
+            height: 496px;
+        }
+         .glass{
+            position:absolute;
+            left:0;
+            top:0;
+            width:750px;
+            height:496px;
+            opacity:0.3;
+            border:1px dashed #f00;
+            background:#fff;
+             z-index:2; 
+        } 
+        .image{
+            position:relative;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var div = document.getElementById("container");
+            var btn = div.getElementsByClassName("smallImage")[0];
+            var img = document.getElementsByTagName("img")[0];
+            var pos=document.getElementsByClassName("image")[0];
+            var maxTimer = clearInterval();
+            var endWidth = img.width * 1.30;
+            div.onclick = function () {
+                setInterval(function () {
+                    if (endWidth > img.width) {
+                        img.width = img.width * 1.03;
+                        img.height = img.height * 1.03;  
+                    } else setInterval(maxTimer);
+                }, 100);
+               
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <div class="image">
+            <a href="#">
+                <img class="smallImage" src="../images/7.jpg" alt="被放大图片">
+            </a>
+        </div>
+        <div class="glass"></div>
+            
+    </div>
+
+</body>
+
+</html>

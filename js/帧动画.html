@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .demo {
+            width: 110px;
+            height: 80px;
+        }
+        .rabbit{
+            width:120px;
+            height:80px;
+        }
+        .walk{
+            width:102px;
+            height:80px;
+        }
+        div{display: inline-block;}
+    </style>
+    <script>
+        window.onload = function () {
+            var ele = document.getElementsByClassName("demo")[0];
+            var imgurl = "../images/rabbit-lose.png";
+            var arr = ["0% 0%", "20% 0%", "40% 0%", "60% 0%", "80% 0%",
+                "100% 0%", "0% 50%", "20% 50%", "40% 50%", "60% 50%", "80% 50%", "100% 50%",
+                "0% 100%"];
+            var rabbit=document.getElementsByClassName("rabbit")[0];
+            var url="../images/rabbit-win.png";
+            var arr1=["0% 0%","25% 0%","50% 0%",
+            "75% 0%","100% 0%","0% 33%","25% 33%","50% 33%","75% 33%","100% 33%","0% 66%","25% 66%",
+            "50% 66%","75% 66%","100% 66%","0% 100%","25% 100%","50% 100%","75% 100%"];
+            var oDiv=document.getElementsByClassName("walk")[0];
+            var arr2=["0px -854px","-174px -852px","-349px -852px","-524px -852px","-698px -852px","-873px -848px"];
+            var url2="../images/rabbit-big.png";
+            animate(oDiv,arr2,url2);
+            animate(rabbit,arr1,url)
+            animate(ele, arr, imgurl);
+            function animate(ele, positions, imgurl) {
+                ele.style.backgroundImage = "url(" + imgurl + ")";
+                ele.style.backgroundRepeat = "no-repeat";
+                var index = 0;
+                function run() {
+                    if(arr[index])
+                    ele.style.backgroundPosition = positions[index];
+                    index++;
+                    if (index >= arr.length) {
+                        index = 0;
+                    }
+                    setTimeout(run,50)
+                }
+                run();
+            }
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="demo">
+    </div>
+    <div class="rabbit"></div>
+    <div class="walk"></div>
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>单张无限轮播</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            width: 600px;
+            height: 400px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden; 
+        }
+        .imgs {
+            position: absolute;
+            width: 20000px;
+            left: -600px;
+            overflow: hidden;
+        }
+        .btns {
+            margin: 0 auto;
+            width: 200px;
+            position: absolute;
+            left: 43%;
+            bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin: 5px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .active {background: rgb(255, 130, 40);}
+        .pre,
+        .next {
+            position: absolute;
+            display: none;
+            top: 50%;
+            margin-top:-20px; 
+            width: 40px;
+            height: 40px;
+            line-height: 40px;   
+            padding:5px; 
+            text-align: center;
+            font-size: 40px;
+            color:#eee;
+        }
+        .pre {left: 20px;}
+        .next {right: 20px;}
+        .header:hover .pre,
+        .header:hover .next {
+            display: block;
+            background:rgba(80,80,80,0.6);
+        }
+
+        .header:hover .pre:hover,
+        .header:hover .next:hover {
+            cursor: pointer;
+            background: rgba(255, 10, 10, 1);
+        }
+        img{
+            display:block;
+            float:left;
+        }
+        /* .img {
+            float: left;
+            width: 550px;
+            height: 240px;
+            color: #f00;
+            font-size: 30px;
+            text-align: center;
+        } */
+        .img:nth-child(1) {
+            background: #ae0;
+        }
+        .img:nth-child(2) {
+            background: #00f;
+        }
+
+        .img:nth-child(3) {
+            background: #888;
+        }
+
+        .img:nth-child(4) {
+            background: #777;
+        }
+
+        .img:nth-child(5) {
+            background: #444;
+        }
+
+        .img:nth-child(6) {
+            background: #ae0;
+        }
+
+        .img:nth-child(7) {
+            background: #888;
+        }
+
+
+    </style>
+    <script src="../js/单张滚动.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="imgs">
+             <img src="../images/5 (3).jpg" alt="" />
+            <img src="../images/1 (4).jpg" alt="" />
+            <img src="../images/2 (3).jpg" alt="" />
+            <img src="../images/3 (4).jpg" alt="" />
+            <img src="../images/4 (3).jpg" alt="" />
+            <img src="../images/5 (3).jpg" alt="" />
+            <img src="../images/1 (4).jpg" alt="" />  
+            <!-- <div class="img">5</div>
+            <div class="img">1</div>
+            <div class="img">2</div>
+            <div class="img">3</div>
+            <div class="img">4</div>
+            <div class="img">5</div>
+            <div class="img">1</div> -->
+        </div>
+        <span class="pre">&lt;</span>
+        <span class="next">&gt;</span>
+        <div class="btns">
+            <a href="#" class="btn active"></a>
+            <a href="#" class="btn"></a>
+            <a href="#" class="btn"></a>
+            <a href="#" class="btn"></a>
+            <a href="#" class="btn"></a>
+        </div>
+    </div>
+</body>
+
+</html>

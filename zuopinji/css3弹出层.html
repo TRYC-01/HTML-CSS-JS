@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    /* body{
+        width:100%;
+        height: 100%;
+    } */
+    .wrap {
+        margin: 0 auto;
+        color: #eee;
+        height: 600px;
+        background: rgb(40, 40, 40);
+    }
+
+    .container {
+        width: 1200px;
+        margin: 0 auto;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .container-title-l {
+        font-size: 24px;
+    }
+
+    .container-title-r {
+        font-size: 30px;
+    }
+
+    .container-title-l,
+    .container-title-r {
+        color: rgb(231, 56, 53);
+    }
+
+    hr {
+        margin: 3px auto 5px auto;
+        width: 130px;
+        height: 2px;
+        border: 1px solid #444;
+        background: #444;
+    }
+
+    .container-list {
+        box-sizing: border-box;
+        width: 100%;
+        margin-top: 20px;
+        list-style: none;
+    }
+
+    .container-list-item {
+        float: left;
+        position: relative;
+        width: 190px;
+        height: 190px;
+        margin: 10px;
+        padding: 5px;
+        cursor: pointer;
+        border: 5px solid #333;
+        overflow: hidden;
+    }
+    .container-list-item-rotate {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        width: 190px;
+        height: 190px;
+        text-align: center;
+        transform-origin: 195px 190px;
+        transform: rotate(90deg);
+        transition: all 0.2s linear;
+        overflow: hidden;
+    }
+    .container-list-item:hover .container-list-item-rotate {
+        transition: transform 0.2s;
+        transform: rotate(0deg);
+    }
+
+    .container-list-item-layer {
+        background: rgb(231, 56, 53);
+        opacity: 0.8;
+    }
+
+    .container-list-item-info {
+         padding-top: 50px; 
+    }
+    .container-list-item-info p{
+        font-size:15px;
+        height: 35px;
+        overflow: hidden;
+    }
+    .more {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        margin: 5px auto;
+        line-height: 40px;
+        font-size: 40px;
+        border-radius: 50%;
+        text-decoration: none;
+        color: rgb(231, 56, 53);
+        background: #eee;
+    }
+    .name {
+        font-size: 20px;
+        padding: 5px;
+    }
+    .bottomlayer {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        background: #555;
+        opacity: 0.7;
+    }
+
+    .detail {
+        clear: both;
+        position: absolute;
+        left: 40%;
+        top: -500px;
+        width: 700px;
+        height: 500px;
+        overflow: hidden;
+        background: #fff;
+        z-index: 11111;
+    }
+    .detail img {
+        float: left;
+    }
+    .detail-right-info {
+        padding: 5px;
+        margin: 10px;
+        border-bottom-style: dashed;
+        color: #888;
+    }
+    .detail-right p {
+        line-height: 20px;
+        padding: 10px 0;
+    }
+    .detail a {
+        position: absolute;
+        right: 0;
+        top: 0;
+        text-decoration: none;
+        text-align: center;
+        width: 20px;
+        height: 20px;
+        background: #f00;
+    }
+</style>
+<script>
+    // function getmatrix(a, b, c, d, e, f) {
+    //     var aa = Math.round(180 * Math.asin(a) / Math.PI);
+    //     var bb = Math.round(180 * Math.acos(b) / Math.PI);
+    //     var cc = Math.round(180 * Math.asin(c) / Math.PI);
+    //     var dd = Math.round(180 * Math.acos(d) / Math.PI);
+    //     var deg = 0;
+    //     if (aa == bb || -aa == bb) {
+    //         deg = dd;
+    //     } else if (-aa + bb == 180) {
+    //         deg = 180 + cc;
+    //     } else if (aa + bb == 180) {
+    //         deg = 360 - cc || 360 - dd;
+    //     }
+    //     return deg >= 360 ? 0 : deg;
+    //     //return (aa+','+bb+','+cc+','+dd);  
+    // }
+    window.onload = function () {
+        var more = document.getElementsByClassName("more");
+        var oDiv1 = document.getElementsByClassName("bottomlayer")[0];
+        var oDiv2 = document.getElementsByClassName("detail")[0];
+        var closeA = document.getElementById("close");
+        for (var i = 0; i < more.length; i++) {
+            more[i].onclick = function () {
+                show(this);
+            }
+        }
+        function show(obj) {
+            oDiv1.style.display = "block";
+            slide(oDiv2, 200)
+        }
+        function slide(obj, target) {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function () {
+                var curY = parseFloat(window.getComputedStyle(obj).top);
+                var speed = (target - curY) / 3;
+                speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+                if (speed != 0) {
+                    obj.style.top = curY + speed + "px";
+                }
+                else {
+                    clearInterval(obj.timer);
+                }
+            }, 20)
+        }
+        closeA.onclick = function () {
+            slide(oDiv2,-500)
+            oDiv1.style.display = "none";
+        }
+    }
+
+</script>
+
+<body>
+    <div class="wrap">
+        <div class="container">
+            <span class="container-title-l">TA</span><span class="container-title-r">在联想</span>
+            <hr>
+            <ul class="container-list">
+                <li class="container-list-item">
+                    <img src="../images/n8_10.png" alt="Dillon">
+                    <div class="container-list-item-layer container-list-item-rotate"></div>
+                    <div class="container-list-item-info container-list-item-rotate">
+                        <a href="#" class="more">＋</a>
+                        <h2 class="name">Dillon</h2>
+                        <p classs="selfinfo">来自哈佛的的战略伙伴经理</p>
+                    </div>
+                </li>
+                <li class="container-list-item">
+                    <img src="../images/n8_07.png" alt="成渝晟">
+                    <div class="container-list-item-layer container-list-item-rotate"></div>
+                    <div class="container-list-item-info container-list-item-rotate">
+                        <a href="#" class="more">＋</a>
+                        <h2 class="name">成渝晟</h2>
+                        <p classs="selfinfo">技术宅服务器工程师</p>
+                    </div>
+                </li>
+                <li class="container-list-item">
+                    <img src="../images/n8_13.png" alt="段路路">
+                    <div class="container-list-item-layer container-list-item-rotate"></div>
+                    <div class="container-list-item-info container-list-item-rotate">
+                        <a href="#" class="more">＋</a>
+                        <h2 class="name">段路路</h2>
+                        <p classs="selfinfo">爱生活的百变游戏MM</p>
+                    </div>
+                </li>
+                <li class="container-list-item">
+                    <img src="../images/n8_18.png" alt="Said">
+                    <div class="container-list-item-layer container-list-item-rotate"></div>
+                    <div class="container-list-item-info container-list-item-rotate">
+                        <a href="#" class="more">＋</a>
+                        <h2 class="name">Said</h2>
+                        <p classs="selfinfo">开朗健谈的中国通</p>
+                    </div>
+                </li>
+                <li class="container-list-item">
+                    <img src="../images/n8_15.png" alt="宋琦">
+                    <div class="container-list-item-layer container-list-item-rotate"></div>
+                    <div class="container-list-item-info container-list-item-rotate">
+                        <a href="#" class="more">＋</a>
+                        <h2 class="name">宋琦</h2>
+                        <p classs="selfinfo">小清新专利保护女超人</p>
+                    </div>
+                </li>
+                <li class="container-list-item">
+                    <img src="../images/n8_25.png" alt="孙小清">
+                    <div class="container-list-item-layer container-list-item-rotate"></div>
+                    <div class="container-list-item-info container-list-item-rotate">
+                        <a href="#" class="more">＋</a>
+                        <h2 class="name">孙小清</h2>
+                        <p classs="selfinfo">懂管理的大客户销售</p>
+                    </div>
+                </li>
+                <li class="container-list-item">
+                    <img src="../images/n8_26.png" alt="孙玉莎">
+                    <div class="container-list-item-layer container-list-item-rotate"></div>
+                    <div class="container-list-item-info container-list-item-rotate">
+                        <a href="#" class="more">＋</a>
+                        <h2 class="name">孙玉莎</h2>
+                        <p classs="selfinfo">联想给了我更大的舞台</p>
+                    </div>
+                </li>
+                <li class="container-list-item">
+                    <img src="../images/n8_27.png" alt="田羽丰">
+                    <div class="container-list-item-layer container-list-item-rotate"></div>
+                    <div class="container-list-item-info container-list-item-rotate">
+                        <a href="#" class="more">＋</a>
+                        <h2 class="name">田羽丰</h2>
+                        <p classs="selfinfo">开朗又细心的会计暖男</p>
+                    </div>
+                </li>
+                <li class="container-list-item">
+                    <img src="../images/n8_28.png" alt="许力诺">
+                    <div class="container-list-item-layer container-list-item-rotate"></div>
+                    <div class="container-list-item-info container-list-item-rotate">
+                        <a href="#" class="more">＋</a>
+                        <h2 class="name">许力诺</h2>
+                        <p classs="selfinfo">不安于现状</br>但乐于知足的人力妹子</p>
+                    </div>
+                </li>
+                <li class="container-list-item">
+                    <img src="../images/n8_29.png" alt="于乐">
+                    <div class="container-list-item-layer container-list-item-rotate"></div>
+                    <div class="container-list-item-info container-list-item-rotate">
+                        <a href="#" class="more">＋</a>
+                        <h2 class="name">于乐</h2>
+                        <p classs="selfinfo">与联想同龄的研发工程师</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="bottomlayer">
+    </div>
+    <div class="detail">
+        <img src="../images/j4.jpg" alt="">
+        <div class="detail-right">
+            <div class="detail-right-info">
+                <span>段路路</span>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;爱生活的百变游戏MM</span><br/>
+                <span>Duan Lu Lu</span>
+            </div>
+            <p>2013年加入联想，联想游戏中心最霸气的女商务，性格大大咧咧，柔弱的外表下有一颗强大的心。自诩内可安邦定天下，外可御敌千里外。</p>
+            <p>联想游戏中心作为北研最靓丽的风景线，不仅有着最潮、最流行的游戏可以玩，有各种精美的游戏周边随便拿，最关键的是有这样娇(ba)媚(qi)可(shi)人(zu)的女汉子陪聊，陪工作，陪吃饭。总之一句话，联想游戏中心，你值得拥有。</p>
+        </div>
+        <a href="#" id="close">X</a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>全选复选框</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        div {
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        .wrap {
+            position: relative;
+            width: 500px;
+            height: 300px;
+        }
+
+        input {
+            width: 100px;
+            background: #fff;
+            z-index: 2;
+        }
+
+        select {
+            width: 120px;
+            height: 22px;
+            border: 1px solid #00f;
+        }
+
+        select,
+        input {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var text = document.getElementsByTagName("input")[0];
+            var slc = document.getElementsByTagName("select")[0];
+            text.onkeypress = function (event) {
+                var opt = document.createElement("option");
+                var textNode = document.createTextNode(text.value)
+                opt.appendChild(textNode);
+                if (event.keyCode == 13 && text.value != "") {
+                    slc.appendChild(opt);
+                    text.value = ""
+                }
+            }
+            slc.onchange = function () {
+                text.value = slc.value;
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <div>
+        <div class="wrap">
+            <input type="text">
+            <select>
+            </select>
+        </div>
+    </div>
+</body>
+
+</html>

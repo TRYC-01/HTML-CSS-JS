@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>静止复制和粘贴</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .demo {
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        span {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        input {
+            margin: 5px auto;
+        }
+
+        input[type="submit"] {
+            background: black;
+            color: #fff;
+            border-radius: 5px;
+            width: 100px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            // var text=document.getElementsByClassName("text");
+            // for(i=0;i<text.length;i++){
+            //     text[i].index=i;
+            //     text[i].onkeydown=text[i].oncontextmenu=function(){
+            //     forbiden();
+            // }
+            // }  
+            // function forbiden(){
+            //     if(event.ctrlKey||event.type=="contextmenu"){
+            //         event.preventDefault();
+            //     }
+            // }
+            //效果2
+            var text = document.getElementsByClassName("text");
+            for (i = 0; i < text.length; i++) {
+                text[i].oncopy = text[i].onpaste = function () {
+                    return false;
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="demo">
+        <span>用户名</span><input class="text" type="text"><br/>
+        <span>密码</span><input class="text" type="password"><br/>
+        <input type="submit" value="提交">
+    </div>
+</body>
+
+</html>

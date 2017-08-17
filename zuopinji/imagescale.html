@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>图片放大镜</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #container {
+            width: 750px;
+            height: 496px;
+            position: relative;
+            left: 100px;
+            top: 50px;
+        }
+
+        .small {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+
+        .glass {
+            width: 187.5px;
+            height: 124px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            filter: alpha(30);
+            opacity: 0.3;
+            border: 1px solid #000;
+            background: #ccc;
+            display: none;
+        }
+
+        .max {
+            position: absolute;
+            left: 760px;
+            top: 0;
+            width: 750px;
+            height: 496px;
+            overflow: hidden;
+            border: 2px solid #888;
+            display: none;
+        }
+
+        .max img {
+            position: absolute;
+            width: 3000px;
+            height: 1984px;
+            left: 0;
+            top: 0;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var container = document.getElementById("container");
+            var glass = document.getElementsByClassName("glass")[0];
+            var small = document.getElementsByClassName("small")[0];
+            var max = document.getElementsByClassName("max")[0];
+            var bigImage = document.getElementsByClassName("bigImage")[0];
+            small.onmousemove = function (e) {
+                this.style.cursor = "move";
+                glass.style.display = "block";
+                max.style.display = "block";
+                var t = e.clientY - container.offsetTop - glass.clientHeight / 2;
+                var l = e.clientX - container.offsetLeft - glass.clientHeight / 2;
+                if (t < 0) {
+                    t = 0;
+                } else if (t > container.clientHeight - glass.clientHeight) {
+                    t = container.clientHeight - glass.clientHeight;
+                }
+                if (l < 0) {
+                    l = 0;
+                } else if (l > container.clientWidth - glass.clientWidth) {
+                    l = container.clientWidth - glass.clientWidth;
+                }
+                var scaleX = l / (container.clientWidth - glass.clientWidth);
+                var scaleY = t / (container.clientHeight - glass.clientHeight);
+                glass.style.top = t + "px";
+                glass.style.left = l + "px";
+                bigImage.style.top = -scaleY * (bigImage.clientHeight - max.clientHeight) + "px";
+                bigImage.style.left = -scaleX * (bigImage.clientWidth - max.clientWidth) + "px";
+            }
+            small.onmouseout = function () {
+                glass.style.display = "none";
+                max.style.display = "none";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <div class="small">
+            <span class="glass"></span>
+            <img class="smallImage" src="../images/7.jpg" alt="被放大图片"></div>
+        <div class="max">
+            <img class="bigImage" src="../images/7.jpg" alt="放大图片">
+        </div>
+    </div>
+</body>
+
+</html>

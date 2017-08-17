@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>确认用户输入</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .wrap {
+            width: 1000px;
+            height: 500px;
+            margin: 250px auto;
+            
+        }
+        form{
+            width:40%;
+            color:cornflowerblue;
+            margin:0 auto;
+        }
+        .form {
+            margin: 15px auto;
+        }
+        textarea {
+            margin-top: 20px;
+            resize: none;
+            display:inline-block;
+            width:170px;
+            height:100px;
+
+        }
+        .cl {
+            width: 50px;
+            height: 30px;
+            background: gray;
+            border: none;
+            padding: 5px;
+            margin: 10px;
+        }
+        span {
+            position:relative;
+            color: red;
+            font-size: 10px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var btn = document.getElementsByClassName("cl")[0];
+            var userName = document.getElementsByClassName("userName")[0];//***** value属性为表单属性,但是此处不能直接把value值赋予obj，这是为什么呢
+            var pw = document.getElementsByClassName("pw")[0];
+            var attUserName = document.createElement("span");
+            var attUserNameText = document.createTextNode("*用户名不能为空");
+            var attpw = document.createElement("span");
+            var attPwText = document.createTextNode("*密码不能为空")
+            btn.onclick = function () {
+                 if (userName.value === "" || pw.value === "") {
+                    if (userName.value === "" & pw.value === "") {//添加提示，同时返回false禁止提交表单
+                        attUserName.appendChild(attUserNameText);
+                        userName.parentNode.appendChild(attUserName);
+                        attpw.appendChild(attPwText);
+                        pw.parentNode.appendChild(attpw);
+                        return false;
+                    }
+                    else if (userName.value === "") {
+                        attUserName.appendChild(attUserNameText);
+                        userName.parentNode.appendChild(attUserName);
+                        return false;
+                    }
+
+                    else if (pw.value === "") {
+                        attpw.appendChild(attPwText);
+                        pw.parentNode.appendChild(attpw);
+                        return false;
+                    }
+                } else return true;//check successfuly
+            }
+
+            //注册onfocus事件，当返回输入用户名和密码时，新添加的提示信息消失
+            userName.onfocus = function () {
+                var div = document.getElementsByClassName('form')[0];
+                var span = div.getElementsByTagName('span')[0];
+                if (span) {//***，
+                    userName.parentNode.removeChild(attUserName);
+                }
+            }
+            pw.onfocus = function () {
+                var div = document.getElementsByClassName('password')[0];
+                var span = div.getElementsByTagName('span')[0];
+                if (span) {//提示消息存在，则对它进行移除操作
+                    pw.parentNode.removeChild(attpw);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <iframe name="frame" style="display:none;"></iframe>
+        <!-- 消除submit时屏幕闪动的情况 -->
+        <form method="post" target="frame">
+            <div class="form">
+                用户名:<input class="userName" name="user" type="text" placeholder="用户名">
+                <!-- <span>*请输入ID</span>-->
+                <!-- input为内联元素 -->
+            </div>
+            <div class="password">
+                密&nbsp;&nbsp;&nbsp;码:<input class="pw" name="password" type="password" placeholder="密码">
+
+            </div>
+            <div class="textarea">
+                备注：<textarea placeholder="备注"></textarea><br/>
+                <input type="checkbox" name="remenber">记住我<br/>
+                <input class="cl" type="submit" value="提交">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

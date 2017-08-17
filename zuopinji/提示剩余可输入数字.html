@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>文本内容关键字过滤</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .wrap {
+            margin: 20px auto;
+            width: 1000px;
+        }
+
+        textarea {
+            width: 500px;
+            height: 300px;
+            font-size: 20px;
+            resize: none;
+            /* 固定大小 */
+        }
+
+        .btn {
+            width: 100px;
+            border-radius: 2px;
+            text-align: center;
+            background-color: #88e;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        span {
+            font-size: 20px;
+            color: #f00;
+        }
+
+        .tooltiptext {
+            display: none;
+            text-align: center;
+            padding: 5px 0;
+            border-radius: 6px;
+            /* 定位 */
+            position: absolute;
+            margin-left: 20px;
+            z-index: 1;
+            background: #ccc;
+        }
+
+        .tooltiptext::after {
+            content: " ";
+            position: absolute;
+            right: 100%;
+            border-style: solid;
+            margin-top: 4px;
+            border-width: 10px;
+            border-color: transparent #ccc transparent transparent;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var text = document.getElementsByClassName("text-in")[0];
+            var num = document.getElementsByClassName("num")[0];
+            var alarm = document.getElementsByClassName("alarm")[0];
+            text.oninput = text.onpropertychange = function (event) {//****onkeypress不行
+                var textLen = text.value.length;
+                if (textLen > 140) {
+                    alarm.style.display = "inline-block";
+                    text.value = text.value.substr(0, 140);
+                }
+                else {
+                    num.innerHTML = 140 - textLen;
+                    alarm.style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="in tooltip">
+            <textarea class="text-in" cols="30" rows="10"></textarea>
+            <span class="alarm tooltiptext">超过最大数字限制了</span>
+        </div>
+        <p class="info">还可以输入<span class="num">140</span>字</p>
+        <input class="btn" type="button" value="提交">
+    </div>
+</body>
+
+</html>

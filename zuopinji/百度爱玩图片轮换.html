@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>百度爱玩</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            background: rgb(134, 50, 45);
+            color: #fff;
+        }
+
+        #wrap {
+            position: relative;
+            width: 1015px;
+            height: 300px;
+            margin: 0 auto;
+        }
+
+        #left {
+            position: relative;
+            width: 757px;
+            height: 300px;
+             overflow: hidden;    
+        }
+
+        #left ul {
+            position: relative;
+            width: 20000px;
+            top: 20px;
+        }
+
+        #left li {
+            float: left;
+            position: relative;
+            width: 237px;
+            height: 283px;
+            margin-right: 23px;
+            list-style: none;
+        }
+
+        .num {
+            width: inherit;
+        }
+
+        .number {
+            font-size: 50px;
+        }
+
+        .intro {
+            display: inline-block;
+        }
+
+        .cosplay {
+            color: #ff7a01;
+            font-size: 14px;
+        }
+
+        .btn {
+            display: none;
+            width: 100px;
+            position: relative;
+            left: 70px;
+            bottom: 5px;
+            margin-right: 0;
+            color: #fff;
+            background: #ff710a;
+            border: none;
+        }
+
+        a {
+            text-decoration: none;
+            padding: 5px;
+        }
+
+        #right {
+            position: absolute;
+            right: 0;
+            top: 20px;
+            margin-left: 20px;
+            width: 230px;
+            height: 280px;
+            background: #333;
+            overflow: hidden;
+        }
+
+        #right h1 {
+            text-align: center;
+            font-size: 12px;
+            letter-spacing: 2px;
+            padding: 10px;
+            background: #777;
+        }
+
+        #right li {
+            list-style: none;
+        }
+
+        #right img {
+            width: 33%;
+            height: 33%
+        }
+
+        #right a {
+            display: block;
+            width: 220px;
+            margin-top: 5px;
+        }
+
+        #right a:hover {
+            transition: color 2s;
+            background: #444;
+        }
+
+        .name {
+            color: #fff;
+        }
+
+        .sidecata {
+            color: #888;
+        }
+
+        .logo {
+            color: #ff7a01;
+        }
+
+        .nav {
+            display: none;
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            font-size: 60px;
+            font-weight: bold;
+            line-height: 60px;
+            text-align: center;
+            border-radius: 50%;
+            background: #333;
+            /* opacity: 0.8; */
+        }
+
+        .navleft {
+            left: 10px;
+            top: 20%;
+        }
+
+        .navright {
+            right: 10px;
+            top: 20%;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var lis = document.getElementById("left");
+            var li = lis.getElementsByTagName("li");
+            var nav = document.getElementsByClassName("nav");
+            var left = document.getElementById("left");
+            var ul = document.getElementById("turn");
+            var timer = setInterval(move, 5000)
+            left.addEventListener("mouseover", function () {
+                for (var i = 0; i < nav.length; i++) {
+                    nav[i].style.display = "initial";
+                    this.style.cursor = "pointer";
+                }
+            }, false)
+
+            left.addEventListener("mouseout", function () {
+                for (var i = 0; i < nav.length; i++) {
+                    nav[i].style.display = "none";
+                }
+            }, false)
+            for (var i = 0; i < li.length; i++) {
+                li[i].addEventListener("mouseover", function () {
+                    var a = this.querySelector(".btn")
+                    a.style.display = "initial";
+                    this.style.cursor = "pointer";
+                }, false)
+                li[i].addEventListener("mouseout", function () {
+                    var a = this.querySelector(".btn")
+                    a.style.display = "none";
+                }, false)
+            }
+            for (var i = 0; i < nav.length; i++) {
+                nav[i].index = i;
+                nav[i].onclick = function () {
+                    clkmove(this.index);
+                }
+            }
+            function clkmove(index) {
+                if (index == 0) {
+                    move();
+                }
+                else if (index == 1) {
+                    back()
+                }
+            }
+
+            /*
+            button next功能 的调用函数
+            */
+            function back() {
+                // var lis=document.querySelectorAll("#left")[0];
+                // var li=lis.querySelectorAll("li");
+                // var ul=document.querySelector("#turn");
+
+                //先将后面的3个li放在前面
+                var lis = document.querySelector("#left");
+                    var li = lis.querySelectorAll("li");
+                    var ul = document.getElementById("turn");
+                    for (var i = li.length - 1; i > 2; i--) {
+                        ul.insertBefore(li[i], ul.firstChild);
+                    }
+                    for (var i = 0; i < li.length; i++) {
+                        li[i].style.left = -780 + "px";
+                    }
+                //设置动画定时，判断到达left目标值
+                var timer = null;
+                clearInterval(timer);
+                timer = setInterval(function () {
+                    var target = 0;
+                    var slis = document.getElementById("left");
+                    var sli = slis.getElementsByTagName("li");
+                    var sul = document.getElementById("turn");
+                    for (var i=0; i < sli.length; i++) {
+                        var curCss = window.getComputedStyle(sli[i]).left;
+                        var curX =curCss.substr(1, curCss.length - 3);//***注意返回的是字符串
+                        if (-curX < target) {
+                            sli[i].style.left=-curX+35+"px";
+                        }
+                        else clearInterval(timer);
+                    }
+                }, 25)
+            }
+        }
+        /* 
+        轮播调用函数，注意运用querySelectorAll()及querySelector()
+        对DOM进行插入/删除操作(静态快照)
+        */
+        function move() {
+            var timer = null;
+            clearInterval(timer);
+            // var lis = document.getElementById("left");
+            var lis = document.querySelectorAll("#left")[0];
+            var li = lis.querySelectorAll("li");
+            // var li = lis.getElementsByTagName("li");
+            var ul = document.querySelectorAll("#turn")[0];
+            // var ul = document.getElementById("turn");
+            var target = (-780);
+            timer = setInterval(function () {
+                for (var i = 0; i < li.length; i++) {
+                    var curCss = window.getComputedStyle(li[i]).left;
+                    var curX = curCss.substr(0, curCss.length - 2);
+                    if (curX > target) {
+                        li[i].style.left = curX - 35 + "px";
+                    }
+                    else if (curX <= target) {
+                        for (var i = 0; i < 3; i++) {
+                            ul.appendChild(li[i]);
+                        }
+                        for (var i = 0; i < li.length; i++) {
+                            li[i].style.left = 0 + "px";
+                        }
+                        clearInterval(timer)
+                    }
+                }
+            }, 25)
+        }
+    </script>
+</head>
+
+<body>
+    <div class="content">
+        <div id="wrap">
+            <div id="left">
+                <ul id="turn">
+                    <li>
+                        <img src="..//images/4.jpg" alt="剑圣">
+                        <span class="number">1</span>
+                        <p class="intro">
+                            <span>剑圣</span><br/>
+                            <span class="cosplay">角色扮演</span>
+                            <a href="#" class="btn" type="button">开始游戏</a>
+                        </p>
+                        <p class="gameintro">亢龙有悔</p>
+                    </li>
+                    <li>
+                        <img src="..//images/5.jpg" alt="剑宗">
+
+                        <span class="number">2</span>
+                        <p class="intro">
+                            <span class="car">刺客</span><br/>
+                            <span class="cosplay">角色扮演</span>
+                            <a href="#" class="btn" type="button">开始游戏</a>
+                        </p>
+                        <p class="gameintro">孤独的行者</p>
+                    </li>
+                    <li><img src="..//images/6.jpg" alt="剑宗">
+
+                        <span class="number">3</span>
+                        <p class="intro">
+                            <span class="car">枪神</span><br/>
+                            <span class="cosplay">角色扮演</span>
+                            <a href="#" class="btn" type="button">开始游戏</a>
+                        </p>
+                        <p class="gameintro">华丽的舞姿</p>
+                    </li>
+                    <li><img src="..//images/1.jpg" alt="剑宗">
+
+                        <span class="number">4</span>
+                        <p class="intro">
+                            <span class="car">皮蛋</span><br/>
+                            <span class="cosplay">角色扮演</span>
+                            <a href="#" class="btn" type="button">开始游戏</a>
+                        </p>
+                        <p class="gameintro">努力\付出\天赋</p>
+                    </li>
+                    <li><img src="..//images/2.jpg" alt="剑宗">
+
+                        <span class="number">5</span>
+                        <p class="intro">
+                            <span class="car">鬼泣</span></br>
+                            <span class="cosplay">角色扮演</span>
+                            <a href="#" class="btn" type="button">开始游戏</a>
+                        </p>
+
+                        <p class="gameintro">第七死神</p>
+                    </li>
+                    <li><img src="..//images/3.jpg" alt="剑宗">
+
+                        <span class="number">6</span>
+                        <p class="intro">
+                            <span class="car">前端攻城狮</span></br>
+                            <span class="cosplay">角色扮演</span>
+                            <a href="#" class="btn" type="button">开始游戏</a>
+                        </p>
+
+                        <p class="gameintro">仅仅需要一份热爱，处处是坑</p>
+                    </li>
+                </ul>
+                <div class="nav navleft">&lt;</div>
+                <div class="nav navright">&gt;</div>
+            </div>
+            <div id="right">
+                <h1 class="side">大家都爱玩</h1>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="../images/s1.jpg" alt=""/>
+                        <p class="intro">
+                            <span class="name">大天使之剑</span><br/>
+                            <span class="sidecata">战争策略</span><br/>
+                            <span class="logo">37游戏</span><br/>
+                        </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../images/s2.jpg" alt=""/>
+                        <p class="intro">
+                            <span class="name">大天使之剑</span><br/>
+                            <span class="sidecata">战争策略</span><br/>
+                            <span class="logo">37游戏</span><br/>
+                        </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../images/s3.jpg" alt=""/>
+                        <p class="intro">
+                            <span class="name">大天使之剑</span><br/>
+                            <span class="sidecata">战争策略</span><br/>
+                            <span class="logo">37游戏</span><br/>
+                        </p>
+                        </a>
+                    </li>
+                </ul>
+
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
