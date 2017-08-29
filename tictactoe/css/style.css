@@ -1,0 +1,137 @@
+.wrap{
+    max-width:500px;
+    height: 500px;
+     margin:50px auto; 
+    color:#fff;
+}
+.desk{
+    width:100%;
+    height:100%;
+    position: relative; 
+}
+.list{
+    height: 100%;
+}
+.list .item{
+    width:33.333%;
+    height: 33.333%;
+    float:left;
+    line-height: 166.6667px;
+    text-align:center;
+    background:rgb(85,80,80);
+}
+.item:hover{
+    cursor:pointer;
+}
+.h1,.h2{
+    width:100%;
+    border-top:1px solid gray;
+}
+.v1,.v2{
+    width:1px;
+    height: 100%;
+    border-right:1px solid gray;
+}
+.h1,.h2,.v1,.v2,.hdash,.rotate1,.rotate2,.vdash{
+    position: absolute;
+}
+.hdash,.rotate1,.rotate2,.vdash{
+     display: none; 
+}
+.h1{
+    top:33.33%;
+}
+.h2{
+    top:66.667%;
+}
+.v1{
+    left:33.33%;
+    top:0;
+}
+.v2{
+    left:66.667%;
+    top:0;
+}
+.hdash{
+    width:100%;
+    border-top:1px dashed #fff;
+    top:16.6665%;
+}
+.vdash{
+    width:1px;
+    height: 100%;
+    border-left: 1px dashed #fff;
+    left:16.66665%;
+    top:0;
+}
+.rotate1,.rotate2{
+    width:750px;
+    height: 1px;
+    border-top:1px dashed #fff;
+    left:0;
+}
+.rotate1{
+    top:0;
+    transform-origin: 0 0;
+    transform: rotate(45deg); 
+}
+.rotate2{
+    top:100%;
+    transform-origin: 0 100%; 
+    transform: rotate(-45deg); 
+}
+/*遮罩层*/
+.layer{
+    width:100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+.mask{
+    /* position: absolute;   */
+    width:100%;
+    height: 100%;
+    background:rgba(80,80,80,0.8); 
+}
+.selection{
+    position: absolute;
+    width:400px;
+    height: 200px;
+    left:50%;
+    top:-200px;
+    margin-left:-200px;
+    border:1px solid gray;
+    text-align: center;
+    background:#eee;
+    border-radius: 5px;
+}
+.selection p{
+    margin:30px auto;
+}
+.selection a{
+    display: inline-block;
+    width:100px;
+    height: 30px;
+    line-height: 30px;
+    color:#fff;
+    background:gray;
+    border-radius: 5px;
+}
+.selection a:hover{
+    background:#555;
+}
+.selection .close{
+    width:40px;
+    height: 43px;
+    position: absolute;
+    right: 2px;
+    top:0;
+    background:url("../images/close.jpg") no-repeat 0 -2px;
+    cursor: pointer;
+}
+.tb{
+    color:#fff;
+    background: red;
+}

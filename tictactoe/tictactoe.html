@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>tictactoe</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link href="css/style.css" rel="stylesheet"> 
+    <link href="css/reset.css" rel="stylesheet">
+    <script src="js/tictactoe.js"></script>
+</head>
+
+<body>
+    <div class="layer">
+        <div class="mask"></div>
+        <div class="selection">
+            <p>请选择角色</p>
+            <a href="javascript:">O</a>
+            <a href="javascript:">X</a>
+            <div class="close"></div>
+        </div>
+    </div>
+    <div class="wrap">
+        <div class="desk">
+            <ul class="list">
+                <li class="item"><span class="symbol"></span></li>
+                <li class="item"><span class="symbol"></span></li>
+                <li class="item"><span class="symbol"></span></li>
+                <li class="item"><span class="symbol"></span></li>
+                <li class="item"><span class="symbol"></span></li>
+                <li class="item"><span class="symbol"></span></li>
+                <li class="item"><span class="symbol"></span></li>
+                <li class="item"><span class="symbol"></span></li>
+                <li class="item"><span class="symbol"></span></li>
+            </ul>
+            <table class="tb">
+                <tbody>
+                    <tr>
+                        <th>角色</th>
+                        <th>胜</th>
+                        <th>负</th>
+                        <th>平</th>
+                    </tr>
+                    <tr class="player">
+                        <th>player</th>
+                        <td class="win">0</td>
+                        <td class="lose">0</td>
+                        <td class="peace">0</td>
+                    </tr>
+                    <tr class="computer">
+                        <th>computer</th>
+                        <td class="win">0</td>
+                        <td class="lose">0</td>
+                        <td class="peace">0</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="h1"></div>
+            <div class="h2"></div>
+            <div class="v1"></div>
+            <div class="v2"></div>
+            <div class="hdash"></div>
+            <div class="rotate1"></div>
+            <div class="rotate2"></div>
+            <div class="vdash"></div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/log.css" rel="stylesheet">
+    <script src="js/log.js" tyep="text/javascript"></script>
+</head>
+
+<body>
+    <div class="log">
+        <div class="top clearfix">
+            <a class="home" href="index.html">返回首页</a>
+            <span class="login">没有账户?<a href="reg.html">去注册</a></span><br/>
+        </div>
+        <div class="white-area">
+            <div class="header">
+                <div class="logowrap">
+                    <a class="logo" href="index.html"></a>
+                </div>
+                <div class="toggle">
+                    <a id="change" href="javascript:">扫码登陆</a>
+                    <div class="bgwrap">
+                        <span class="pwd"></span>
+                        <span class="code"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="desk">
+                <div class="toggle-btn">
+                    <a class="active" href="javascript:">账号密码登录</a>
+                    <a class="" href="javascript:">手机动态码登录</a>
+                </div>
+                <form action="xxx.php" method="post">
+                    <div class="pwdtext">
+                        <input class="text" length="11" type="text" maxlength="11" name="number" placeholder="手机号/账户名/邮箱    ">
+                        <span class="info">你还没有输入账户名</span>
+                        <span class="info">请点击获取验证码按钮</span>
+                        <input class="text" type="text" name="checking" placeholder="密码">
+                        <span class="info">你还没有输入密码</span>
+                        <span class="gray clearfix"><input type="checkbox">下次自动登录<a href="javascript:">忘记密码</a></span>
+                    </div>
+                    <div class="codetext">
+                        <input class="text" length="11" type="text" maxlength="11" name="number" placeholder="手机号">
+                        <a class="getnumber" href="javascript:">获取动态码</a>
+                        <span class="info">请输入手机号</span>
+                        <span class="info">请填写正确的手机号</span>
+                        <input class="text" type="text" name="checking" placeholder="动态码">
+                        <span class="info">请填写正确的手机动态码</span>
+                        <span class="gray"><input type="checkbox">下次自动登录</span>
+                    </div>
+                    <input class="submit-btn" type="button" value="登录">
+                </form>
+                <div class="method">
+                    <a class="qq-link" href="javascript:"><span class="qq"></span>QQ登录</a>
+                    <a class="wechat-link" href="javascript:"><span class="wechat"></span>微信登录</a>
+                    <a class="weibo-link" href="javascript:"><span class="weibo"></span>微博登录</a>
+                </div>
+            </div>
+            <!--desk结束-->
+            <div class="mobile">
+                <p>扫码登陆</p>
+                <div class="qrcode-wrap">
+                    <span class="qrcode">
+                    <img class="qrcode-pic"src="images/icon/showqrcode.jpg" alt="qrcode">
+                    <i></i>
+                </span>
+                </div>
+                打开58APP，扫描二维码 | 下载<a href="javascript">58APP</a>
+            </div>
+            <!--mobile结束-->
+        </div>
+        <div class="bottom">
+            <span>&copy;58.com</span> |
+            <a href="javascript:">商盾登录</a> |
+            <a href="javascript:">联系客服</a>|<a href="javascript:">帮助</a>
+        </div>
+    </div>
+</body>
+
+</html>

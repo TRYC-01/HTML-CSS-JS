@@ -1,0 +1,273 @@
+body{
+    width:100%;
+    font-size:100%;
+    background:url("../images/reg-bg.png") no-repeat;
+    background-attachment: fixed; 
+    background-size: 100% 100%; 
+}
+.log{
+    max-width:37.5em;  
+    margin:0 auto;
+}
+.top{
+    width:100%;
+    height: 1.875em;
+    line-height: 1.875em; 
+    margin:0.5em 0;
+}
+.top a,.top{
+    color:#fff;
+}
+.top a:hover{
+    text-decoration: underline;
+}
+.top .login{
+    float: right;
+}
+.white-area{
+    border-radius:5px;
+    background:#fff;
+}
+.header{
+    padding-bottom: 10em;
+    position: relative;
+}
+.logowrap .logo{
+    display: inline-block;
+    width:22.6667%; 
+    height: 2.875em;
+    margin:3.3333em auto;
+    background:url('../images/logo.png') no-repeat;
+    background-size:100%;
+}
+.logowrap{
+    text-align: center;
+    height: 6.875em;
+} 
+.header .toggle{
+    position: absolute;
+    width:30.333%;
+    right:1.25em;
+    top:0.625em;
+}
+ 
+.toggle .bgwrap{
+    float: right;  
+    width:54.945%;
+    height:54.945%;  
+}
+ .toggle .pwd{
+    display: inline-block;
+      /* width:100%;   */
+      /* height: 100%;   */
+      width:100px;  
+      height: 100px;  
+    cursor: pointer;
+     background:url(../images/icon/pc_login_sprite.png) no-repeat -416px -231px; 
+
+} 
+.toggle .pwd:hover{
+     background:url(../images/icon/pc_login_sprite.png) no-repeat -556px -231px; 
+} 
+.toggle .code{
+     width:96px; 
+     height: 96px; 
+    cursor: pointer;
+     background:url(../images/icon/pc_login_sprite.png) no-repeat 0 -496px; 
+} 
+.toggle .code:hover{
+     background:url(../images/icon/pc_login_sprite.png) no-repeat -96px -496px; 
+} 
+.toggle a{
+    float: left;
+    width:43.956%;
+    text-align: center;
+    color:#FF8C14;
+    border:1px solid;
+}
+
+/****/
+.desk{
+    /* display: none; */
+    padding-bottom: 10px;
+    position: relative;
+}
+.toggle-btn{
+    width:90%;
+    margin:0 auto;
+    text-align: center;
+    overflow: hidden;
+}
+.toggle-btn a{
+    float: left;
+    width:50%;
+    color:#aaa;
+    padding:10px 0;
+    margin-bottom: 30px;
+    border-bottom:1px solid;
+}
+.toggle-btn .active{
+    color:#ff552e;
+}
+.codetext{
+       display: none;   
+}
+form{
+    position: relative;
+    width:90%;
+    margin: 0 auto;
+}
+form .text{
+    width:100%;
+    height:50px;
+    margin:10px 0;
+    border:1px solid #ccc;
+}
+form .text:focus{
+    border:1px solid #888;
+}
+form .phone-input{
+    position: relative;
+}
+form .getnumber{
+    position: absolute;
+    width:16.7%;
+    height: 30px;
+    right: 10px;
+    top:22px;
+    line-height: 30px;
+    text-align: center;
+    background:#F6F6F6;
+    color:#ccc;
+    overflow: hidden;
+}
+.info{
+    display: none; 
+    color:#ff112c;
+    height: 35px;
+    line-height: 35px;
+    padding-left:37px;
+    background:url("../images/icon/warning.png") no-repeat;
+}
+.gray{
+    color:#aaa;
+    display: block;
+    overflow: hidden;
+}
+.gray a{
+    color:#888;
+    float: right;
+}
+.submit-btn{
+    display: inline-block;
+    width:100%;
+    height: 50px;
+    margin:1.25em 0;
+    text-align: center;
+    line-height: 50px;
+    background:#ff552c;
+    color:#fff;
+    cursor:pointer;
+    border:none;
+    transition:background 0.3s linear;
+}
+.submit-btn:hover{
+    background:#ff112c;
+}
+.method{
+    width:90%;
+    margin:0.625em auto;
+    text-align: center;
+}
+.method a{
+    padding:0 10px;
+    color:#aaa;
+}
+.method a span{
+    vertical-align: middle;
+    margin-right: 0.625em;
+}
+.method .qq,.method .wechat,.method .weibo{
+    display: inline-block;
+    height: 84px;
+    width:84px;
+}
+.method .qq{
+    background:url(../images/icon/pc_login_sprite.png) no-repeat -276px -496px;
+}
+.method .wechat{
+    background:url(../images/icon/pc_login_sprite.png) no-repeat -612px -496px;
+}
+.method .weibo{
+    background:url(../images/icon/pc_login_sprite.png) no-repeat -528px -496px;
+}
+.method .qq-link:hover .qq{
+    background:url(../images/icon/pc_login_sprite.png) no-repeat -360px -496px;
+}
+.method .wechat-link:hover .wechat{
+    background:url(../images/icon/pc_login_sprite.png) no-repeat -193px -496px;
+}
+
+.method .weibo-link:hover .weibo{
+    background:url(../images/icon/pc_login_sprite.png) no-repeat -443px -496px;
+}
+.bottom{
+    margin:40px 0;
+    text-align: center;
+}
+.bottom,.bottom a{
+    color:#fff;
+    
+}
+.bottom a:hover{
+    text-decoration: underline;
+}
+.bottom span{
+    margin-right: 40px;
+}
+.bottom a{
+    padding:0 20px;
+}
+/*mobile*/
+.mobile{
+    display: none;
+    width:100%;
+    margin: 0 auto;
+    padding-bottom:40px;
+    text-align: center;
+}
+.mobile p{
+    width:90%;
+    margin: 0 auto;
+    font-size:18px;
+}
+.qrcode-wrap{
+    height: 12.5em;
+    margin:1.875em 0;
+}
+.qrcode{
+    display: inline-block;
+    
+}
+.qrcode .qrcode-pic{
+    width:26.667%;
+    display: inline-block;
+}
+.qrcode span{
+    display: inline-block;
+    width:62.5%;
+    height: 62.5%;
+    overflow: hidden;
+}
+.qrcode i{
+    display:none;
+    width:69.333%;
+    height: 66%;
+    background:url("../images/icon/pc_login_sprite.png") no-repeat;
+}
+.mobile a{
+    color:#f4691c;
+}
+.mobile a:hover{
+    text-decoration: underline;
+}

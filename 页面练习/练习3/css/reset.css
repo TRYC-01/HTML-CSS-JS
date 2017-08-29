@@ -1,0 +1,23 @@
+p,h1,h2,h3,h4,h5,h6,ul,ol,li,body{
+    margin:0;
+    padding:0;
+}
+a{
+    text-decoration: none;
+}
+ul,ol{
+    list-style: none;
+}
+input,textarea{
+    border:none;
+}
+.clearfix::after{
+     display: block; 
+    content:"";
+    width:0;
+    height: 0;
+    clear: both;
+}
+img{
+    display: block;
+}

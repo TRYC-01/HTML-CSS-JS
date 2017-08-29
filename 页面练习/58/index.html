@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9">
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <script src="js/searchbar.js"></script>
+</head>
+
+<body>
+    <div class="searchbar">
+        <div class="clearfix">
+            <a class="searchbarlogo"href="javascript:"></a>
+            <input class="searchbar-search"type="text"placeholder="找工作 找房子 找服务"><input type="button"value="搜 索">
+            <a class="free" href="javascript:">免费发布信息</a>
+        </div>
+    </div><!--searchbar结束-->
+    <div class="top">
+        <div class="login clearfix">
+            <div class="city clearfix">
+                <div class="location">
+                    <span class="location-city">深圳</span>
+                    <span class="leftsymbol">[</span>
+                    <a href="javascript::">切换城市</a>
+                    <a href="javascript::">香港</a>
+                    <a href="javascript::">东莞</a>
+                    <a href="javascript::">珠海</a>
+                    <span class="rightsymbol">]</span>
+                </div>
+                <div class="weather">
+                    <div class="weather-summary">
+                        <span>雷阵雨 36~26℃</span>
+                        <img class="level" src="images/level.png" alt="">
+                    </div>
+                    <div class="detail">
+                        <div class="detail-title clearfix">
+                            <span>今日深圳空气质量指数(AQI)：<em class="index">42</em></span>
+                            <span class="moji">更多天气查看<a href="javascript::">墨迹天气</a></span>
+                        </div>
+                        <div class="detail-more clearfix">
+                            <div class="three-days">
+                                <span class="center">
+                                    <span>今天(<span class="weekday">周二</span>)</span><br/>
+                                <img src="images/cloud.png" alt="">
+                                <span class="weather-range">36 ~ 26℃</span><br/>
+                                <span class="rainOr">雷阵雨</span><br/>
+                                <span class="wind-level">北风1级</span>
+                                </span>
+                            </div>
+                            <div class="three-days">
+                                <span class="center">
+                                <span>明天(<span class="weekday">周三</span>)</span><br/>
+                                <img src="images/cloud.png" alt="">
+                                <span class="weather-range">31 ~ 26℃</span><br/>
+                                <span class="rainOr">暴雨</span><br/>
+                                <span class="wind-level">东南风11~12级</span>
+                                </span>
+                            </div>
+                            <div class="three-days">
+                                <span class="center">
+                                <span>后天(<span class="weekday">周四</span>)</span><br/>
+                                <img src="images/cloud.png" alt="">
+                                <span class="weather-range">30 ~ 26℃</span><br/>
+                                <span class="rainOr">大雨</span><br/>
+                                <span class="wind-level">东北风1级</span>
+                                </span>
+                            </div>
+                        </div>
+                        <p><span class="prompt">温馨提示：</span>今天有雨，有些热了，记得多喝水。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="user">
+                <div class="user-login">
+                    <a href="log.html">登陆</a>/<a href="reg.html">注册</a>
+                </div>
+                <ul class="list user-nav">
+                    <li class="item1" class="item"><a class="link1" href="javascript::">个人中心</a><i></i>
+                        <ul class="list2">
+                            <li class="item2"><a href="javascript::">我的发布</a></li>
+                            <li class="item2"><a href="javascript::">账户设置</a></li>
+                            <li class="item2"><a href="javascript::">招聘/简历</a></li>
+                            <li class="item2"><a href="javascript::">买家交易</a></li>
+                            <li class="item2"><a href="javascript::">个人卖家</a></li>
+                            <li class="item2"><a href="javascript::">客户服务</a></li>
+                        </ul>
+                    </li>
+                    <li class="item1" class="item"><a class="link1" href="javascript::">商家中心</a><i></i>
+                        <ul class="list2">
+                            <li class="item2"><a href="javascript::">信息管理</a></li>
+                            <li class="item2"><a href="javascript::">账户自理</a></li>
+                            <li class="item2"><a href="javascript::">我的资金</a></li>
+                        </ul>
+                    </li>
+                    <li class="item1" class="item"><a class="link1" href="javascript::">帮助中心</a></li>
+                    <li class="item1" class="item"><a class="link1" href="javascript::">最近浏览</a><i></i>
+                        <ul class="list2">
+                            <li class="item2">暂无浏览记录</li>
+                        </ul>
+                    </li>
+                    <li id="site" class="item1" class="item"><a class="link1" href="javascript::">网站导航</a><i></i>
+                        <div class="sites">
+                            <div class="catogory">
+                                <h2 class="common catogory-detail">房产</h2>
+                                <div class="common catogory-detail-model">
+                                    <a class="detail-title" href="javascript::">房屋出租</a><br/>
+                                    <span class="site-detail"><a class="detail-link" href="javascript:">整租</a> | <a class="detail-link" href="javascript:">合租</a> | <a class="detail-link" href="javascript:">公寓</a></span>
+                                </div>
+                                <div class="common catogory-detail-model">
+                                    <a class="detail-title" href="javascript::">房屋买卖</a><br/>
+                                    <span class="site-detail"><a class="detail-link" href="javascript:">二手房</a> | <a class="detail-link" href="javascript:">新房</a> | <a class="detail-link" href="javascript:">卖房</a></span>
+                                </div>
+                                <div class="common catogory-detail-model">
+                                    <a class="detail-title" href="javascript::">商业地产</a><br/>
+                                    <span class="site-detail"><a class="detail-link" href="javascript:">商铺出租</a> | <a class="detail-link" href="javascript:">商铺出售</a><br/>
+                                        <a class="detail-link" href="javascript:">写字楼出租</a> | <a class="detail-link" href="javascript:">生意转让</a><br/>
+                                        <a class="detail-link" href="javascript:">厂房</a> | <a class="detail-link" href="javascript:">仓库</a> | <a class="detail-link" href="javascript:">土地</a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="catogory">
+                                <h2 class="common catogory-detail">汽车</h2>
+                                <div class="common catogory-detail-model">
+                                    <a class="detail-title" href="javascript::">车辆买卖</a><br/>
+                                    <span class="site-detail"><a class="detail-link" href="javascript:">二手车</a> | <a class="detail-link" href="javascript:">新车</a> | <a class="detail-link" href="javascript:">卖车</a><br/><a class="detail-link" href="javascript:">车价评估</a></span>
+                                </div>
+                                <div class="common catogory-detail-model">
+                                    <a class="detail-title" href="javascript::">车辆服务</a><br/>
+                                    <span class="site-detail"><a class="detail-link" href="javascript:">拼车</a> | <a class="detail-link" href="javascript:">驾校教练</a> | <a class="detail-link" href="javascript:">租车</a></span>
+                                </div>
+                                <div class="common catogory-detail-model">
+                                    <a class="detail-title" href="javascript::">维修保养</a><br/>
+                                    <span class="site-detail"><a class="detail-link" href="javascript:">4S店</a> | <a class="detail-link" href="javascript:">保险</a> | <a class="detail-link" href="javascript:">过户验车</a><br/>
+                                        <a class="detail-link" href="javascript:">汽配</a> | <a class="detail-link" href="javascript:">保养</a> | <a class="detail-link" href="javascript:">美容</a><br/>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="catogory">
+                                <h2 class="common catogory-detail">二手</h2>
+                                <div class="common catogory-detail-model">
+                                    <a class="detail-title" href="javascript::">电子/机械</a><br/>
+                                    <span class="site-detail"><a class="detail-link" href="javascript:">手机</a> | <a class="detail-link" href="javascript:">电脑</a> | <a class="detail-link" href="javascript:">数码</a> | <a class="detail-link" href="javascript:">设备</a></span>
+                                </div>
+                                <div class="common catogory-detail-model">
+                                    <a class="detail-title" href="javascript::">家电/家具</a><br/>
+                                    <span class="site-detail"><a class="detail-link" href="javascript:">家电</a> | <a class="detail-link" href="javascript:">家具</a> | <a class="detail-link" href="javascript:">母婴</a></span>
+                                </div>
+                                <div class="common catogory-detail-model">
+                                    <a class="detail-title" href="javascript::">票务转让</a><br/>
+                                    <span class="site-detail"><a class="detail-link" href="javascript:">演出票</a> | <a class="detail-link" href="javascript:">电影票</a> <br/>
+                                    </span>
+                                </div>
+                                <h2 class="common catogory-detail">宠物</h2>
+                                <div class="common">
+                                    <span class="site-detail"><a class="detail-link" href="javascript:">狗</a> | <a class="detail-link" href="javascript:">猫</a> | <a class="detail-link" href="javascript:">花鸟虫鱼</a></span>
+                                </div>
+                            </div>
+                            <div class="catogory">
+                                <h2 class="common catogory-detail">招聘</h2>
+                                <div class="common catogory-detail-model">
+                                    <a class="detail-title" href="javascript::">求职找工作</a><br/>
+                                    <span class="site-detail"><a class="detail-link" href="javascript:">全职</a> | <a class="detail-link" href="javascript:">兼职</a> | <a class="detail-link" href="javascript:">创建简历</a><br/>
+                                        <a class="detail-link" href="javascript:">热招职位</a> | <a class="detail-link" href="javascript:">同城速递</a><br/>
+                                        <a class="detail-link" href="javascript:">北京招聘会</a></span>
+                                </div>
+                                <div class="common catogory-detail-model">
+                                    <a class="detail-title" href="javascript::">企业招人才</a><br/>
+                                    <span class="site-detail"><a class="detail-link" href="javascript:">简历搜索</a> | <a class="detail-link" href="javascript:">发布职位</a></span>
+                                </div>
+                            </div>
+                            <div class="catogory">
+                                <h2 class="common catogory-detail">同城服务</h2>
+                                <div class="common catogory-detail-model">
+                                    <span class="site-detail same-city">
+                                        <a class="detail-link" href="javascript:">家政服务</a> | <a class="detail-link" href="javascript:">婚庆摄影</a><br/>
+                                        <a class="detail-link" href="javascript:">装修建材</a> | <a class="detail-link" href="javascript:">商务服务</a><br/>
+                                        <a class="detail-link" href="javascript:">教育培训</a> | <a class="detail-link" href="javascript:">创业加盟</a><br/>
+                                        <a class="detail-link" href="javascript:">旅游酒店</a> | <a class="detail-link" href="javascript:">休闲娱乐</a><br/>
+                                        <a class="detail-link" href="javascript:">餐饮美食</a> | <a class="detail-link" href="javascript:">批发采购</a><br/>
+                                        <a class="detail-link" href="javascript:">农林牧副</a> | <a class="detail-link" href="javascript:">二手回收</a><br/>
+                                        <a class="detail-link" href="javascript:">丽人</a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="catogory appdiv">
+                                <h2 class="common catogory-detail">手机应用</h2>
+                                <div class="common catogory-detail-model">
+                                    <span class="app site-detail same-city"><a class="detail-link" href="javascript:"><img src="images/app58.png" alt="">58同城</a></span>
+                                    <span class="app site-detail same-city"><a class="detail-link" href="javascript:"><img src="images/apphome.png" alt="">58到家</a></span>
+                                    <span class="app site-detail same-city"><a class="detail-link" href="javascript:"><img src="images/apppig.png" alt="">转转</a></span>
+                                    <span class="app site-detail same-city"><a class="detail-link" href="javascript:"><img src="images/appanjuke.png" alt="">安居客</a></span>
+                                    <span class="app site-detail same-city"><a class="detail-link" href="javascript:"><img src="images/appzhaocaimao.png" alt="">招财猫</a></span>
+                                    <span class="app site-detail same-city"><a class="detail-link" href="javascript:"><img src="images/appyingcai.png" alt="">中华英才</a></span>
+                                    <span class="app site-detail same-city"><a class="detail-link" href="javascript:"><img src="images/appcar.png" alt="">驾校必备</a></span>
+                                    <span class="app site-detail same-city"><img src="images/58wechat.png" alt=""style="width:130px;"><a class="detail-link" href="javascript:">58 微信公众账号</a></span>
+                                    <span class="app site-detail same-city"><img src="images/58qq.png" alt=""style="width:130px;"><a class="detail-link" href="javascript:">58 qq公众账号</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--top结束-->
+    <div class="mainbody-warp">
+        <div class="mainbody">
+            <div class="search clearfix">
+                <a class="left-area" href="#"><img src="images/logo.png" alt=""></a>
+                <div class="right-area">
+                    <div class="search-text">
+                        <input class="text" type="text" name="product" placeholder="找工作 找房子 找服务"><input class="btn-search"
+                            type="button" value="搜索">
+                        <ul class="search-hot-list">
+                            <li class="search-hot-item"><a href="javascript:">淘宝美工</a></li>
+                            <li class="search-hot-item"><a href="javascript:">外贸业务员</a></li>
+                            <li class="search-hot-item"><a href="javascript:">smt</a></li>
+                            <li class="search-hot-item"><a href="javascript:">实习生</a></li>
+                            <li class="search-hot-item"><a href="javascript:">仓管</a></li>
+                            <li class="search-hot-item"><a href="javascript:">销售急聘</a></li>
+                            <li class="search-hot-item"><a href="javascript:">车质量咨询</a></li>
+                            <li class="search-hot-item"><a href="javascript:">装修公司</a></li>
+                            <li class="search-hot-item"><a href="javascript:">优质好客</a></li>
+                            <li class="search-hot-item"><a href="javascript:">家教老师</a></li>
+                        </ul>
+                    </div>
+                    <div class="ad">
+                        <a class="show" href="javascript:">免费发布信息</a><br/>
+                        <a class="change" href="javascript:">修改/删除信息</a>
+                    </div>
+                </div>
+            </div>
+            <!--search结束-->
+            <div class="nav">
+                <a class="home" href="#">首页</a>
+                <ul class="nav-list nav-listapp">
+                    <li class="nav-item"><a href="javascript:"><img class="phone"src="images/phone.png" alt="">58APP</a><i></i>
+                        <div class="nav-item2-wrap">
+                            <div class="nav-item2">
+                                <span class="pic1 pic"></span>
+                                <span class="nav-item2-right">
+                                <span>
+                                    <span class="app-name">58App</span><br/> 扫描二维码
+                                <br/> 安装58客户端
+                                </span>
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="javascript:">商家APP</a><i></i>
+                        <div class="nav-item2-wrap">
+                            <div class="nav-item2">
+                                <span class="pic2 pic"></span>
+                                <span class="nav-item2-right">
+                                <span>
+                                    <span class="app-name">招财猫直聘</span><br/> 帮老板快速招人
+                                <br/> 8小时闪电入职
+                                </span>
+                                </span>
+                                <span class="pic3 pic"></span>
+                                <span class="nav-item2-right">
+                                <span>
+                                    <span class="app-name">58车商通</span><br/> 收车卖车无忧
+                                <br/> 车商必装APP
+                                </span>
+                                </span>
+                            </div>
+                            <div class="nav-item2">
+                                <span class="pic4 pic"></span>
+                                <span class="nav-item2-right">
+                                <span>
+                                    <span class="app-name">58商家通</span><br/> 商机一点即通
+                                <br/> 业务轻松搞定
+                                </span>
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a>58公众号</a><i></i>
+                        <div class="nav-item2-wrap">
+                            <div class="nav-item2">
+                                <span class="pic5 pic"></span>
+                                <span class="nav-item2-right">
+                                <span>
+                                    <span class="app-name">58微信公众号</span><br/> 重要提醒不错过
+                                <br/> 核心操作更简单
+                                </span>
+                                </span>
+                                <span class="pic6 pic"></span>
+                                <span class="nav-item2-right">
+                                <span>
+                                    <span class="app-name">58QQ公众号</span><br/> 1秒扫码
+                                <br/> 用QQ轻松上58
+                                </span>
+                                </span>
+                            </div>
+                            <div class="nav-item2">
+                                <span class="pic7 pic"></span>
+                                <span class="nav-item2-right">
+                                <span>
+                                    <span class="app-name">58微信订阅号</span><br/> 干货,福利通通有
+                                <br/> 撩我就快来扫我!
+                                </span>
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a>小程序</a><i></i>
+                        <div class="nav-item2-wrap nav-item2-wrap4">
+                            <div class="nav-item2">
+                                <span class="pic8 pic"></span>
+                                <span class="nav-item2-right">
+                                <span>
+                                    <span class="app-name">58同城小程序</span><br/> 扫码即用免下载
+                                <br/> 随用随走功能全
+                                </span>
+                                </span>
+                                <span class="pic9 pic"></span>
+                                <span class="nav-item2-right">
+                                <span>
+                                    <span class="app-name">安居客小程序</span><br/> 免下APP挑好房
+                                <br/> 在线咨询更方便
+                                </span>
+                                </span>
+                            </div>
+                            <div class="nav-item2">
+                                <span class="pic10 pic"></span>
+                                <span class="nav-item2-right">
+                                <span>
+                                    <span class="app-name">驾校一点通</span><br/> 免下APP刷题库
+                                <br/> 扫码学车更轻松
+                                </span>
+                                </span>
+                                <span class="pic11 pic"></span>
+                                <span class="nav-item2-right">
+                                <span>
+                                    <span class="app-name">58到家小程序</span><br/> 微信扫码找服务
+                                <br/> 品质生活有到家
+                                </span>
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav-list nav-list-right">
+                    <li class="nav-item"><a href="javascript:">金融</a></li>
+                    <li class="nav-item"><a href="javascript:">安居客</a></li>
+                    <li class="nav-item"><a href="javascript:">中华英才</a></li>
+                    <li class="nav-item"><a href="javascript:">58车</a></li>
+                    <li class="nav-item"><a href="javascript:">58同镇</a></li>
+                </ul>
+                <a class="more-ad" href="javascript:">我要推广</a>
+            </div>
+            <!--nav结束-->
+            <div class="quicklinks">
+                <div class="quicklinks-left">
+                    <ul class="quicklinks-left-link">
+                        <li>
+                            <a id="employ" class="catogory" href="javascript:">招聘</a><br/>
+                            <a href="javascript">全职</a>/<a href="javascript">兼职</a>/<a href="javascript">简历</a>
+                        </li>
+                        <li>
+                            <a id="house" class="catogory" href="javascript:">房产</a><br/>
+                            <a href="javascript">租房</a>/<a href="javascript">二手房</a>/<a href="javascript">公寓</a>
+                        </li>
+                        <li>
+                            <a id="car" class="catogory" href="javascript:">二手车</a><br/>
+                            <a href="javascript">3万内</a>/<a href="javascript">SUV</a>/<a href="javascript">货车</a>
+                        </li>
+                        <li>
+                            <a id="second" class="catogory" href="javascript:">二手市场</a><br/>
+                            <a href="javascript">手机</a>/<a href="javascript">设备</a>/<a href="javascript">回收</a>
+                        </li>
+                        <li>
+                            <a id="pet" class="catogory" href="javascript:">宠物</a><br/>
+                            <a href="javascript:">狗</a>/<a href="javascript:">猫</a>/<a href="javascript:">鱼</a>/<a href="javascript:">用品</a>
+                        </li>
+                        <li>
+                            <a id="localbusiness" class="catogory" href="javascript:">本地商务</a><br/>
+                            <a href="javascript">工商</a>/<a href="javascript">租赁</a>/<a href="javascript">开店</a>
+                        </li>
+                        <li>
+                            <a id="localservices" class="catogory" href="javascript:">本地服务</a><br/>
+                            <a href="javascript">搬家</a>/<a href="javascript">教育</a>/<a href="javascript">车服务</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="quicklinks-right">
+                    <div class="quicklinks-right-top">
+                        <span class="tohome"><a href="javascript:">58到家自营服务</a><span class="right-top-mes">招保姆上户快<span></span>
+                    </div>
+                    <div class="quicklinks-right-bottom">
+                        <ul class="banner-list"style="left:0px;">
+                            <li class="banner-item">
+                                <a href="javascript:"><img src="images/baojie.png" alt="">保洁</a>
+                            </li>
+                            <li class="banner-item">
+                                <a href="javascript:"><img src="images/yuesao.png" alt="">月嫂</a>
+                            </li>
+                            <li class="banner-item">
+                                <a href="javascript:"><img src="images/yuersao.png" alt="">育儿嫂</a>
+                            </li>
+                            <li class="banner-item">
+                                <a href="javascript:"><img src="images/baomu.png" alt="">保姆</a>
+                            </li>
+                            <li class="banner-item">
+                                <a href="javascript:"><img src="images/meijia.png" alt="">美甲</a>
+                            </li>
+                            <li class="banner-item">
+                                <a href="javascript:"><img src="images/qiyehouqing.png" alt="">企业后勤</a>
+                            </li>
+                            <li class="banner-item">
+                                <a href="javascript:"><img src="images/weixiu.png" alt="">家电维修</a>
+                            </li>
+                            <li class="banner-item">
+                                <a href="javascript:"><img src="images/anmo.png" alt="">推拿按摩</a>
+                            </li>
+                            <li class="banner-item">
+                                <a href="javascript:"><img src="images/peilian.png" alt="">陪练</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pre">&lt;</div>
+                    <div class="next">&gt;</div>
+                    <div class="btnindex">
+                        <a href="javascript:" class="rbtn active"></a>
+                        <a href="javascript:" class="rbtn"></a>
+                    </div>
+                </div>
+            </div>
+            <!--quicklinks结束-->
+            <div class="mainbody-detail">
+                <div class="colleft">
+                    <div class="col1">
+                        <div class="col1-house col-common">
+                            <div class="caption"><a class="title" href="javascript:">深圳房产</a></div>
+                            <div class="collinks">
+                                <ul class="clearfix">
+                                    <li><a href="javascript:">房屋出租</a></li>
+                                    <li><a href="javascript:">个人房源</a></li>
+                                    <li><a class="special" href="javascript:">品牌公寓</a></li>
+                                    <li><a href="javascript:">整租</a>/<a href="javascript:">合租</a></li>
+                                    <li><a href="javascript:">二手房</a></li>
+                                    <li><a href="javascript:">新房</a></li>
+                                    <li><a href="javascript:">商铺出售</a></li>
+                                    <li><a href="javascript:">商铺出租</a></li>
+                                    <li><a href="javascript:">生意转让</a></li>
+                                    <li><a href="javascript:">写字楼租售</a></li>
+                                    <li><a href="javascript:">短租</a>/<a href="javascript:">日租公寓</a></li>
+                                    <li class="last"><a href="javascript:">厂房</a> <a href="javascript:">仓库</a> <a href="javascript:">土地</a>                                        <a href="javascript:">车位</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col1-car col-common">
+                            <div>
+                                <div class="caption"><a class="title" href="javascript:">二手车</a><a class="subtitle" href="javascript:">平行进口车</a>
+                                    <a class="subtitle" href="javascript:">车辆评估</a>
+                                </div>
+                                <div class="collinks">
+                                    <ul class="clearfix">
+                                        <li><span class="space"><a href="javascript:">0~3万</a><span>
+                                        <span class="space"><a href="javascript:">3~5万</a></span>
+                                            <span class="space"><a href="javascript:">5~8万</a></span>
+                                            <a href="javascript:">8~10万</a></li>
+                                        <li><span class="space"><a href="javascript:">10~15万</a></span>
+                                            <span class="space"><a href="javascript:">15~20万</a></span>
+                                            <a href="javascript:">&gt;20万</a></li>
+                                        <li><span class="space"><a href="javascript:">轿车</a>/<a href="javascript:">跑车</a></span>
+                                            <span class="space"><a href="javascript:">SUV</a>/<a href="javascript:">MVP</a></span>
+                                            <a class="special" href="javascript:">面包车</a></li>
+                                        <li><span class="space"><a href="javascript:">分期买车</a></span>
+                                            <span class="space"><a href="javascript:">58放心车</a></span>
+                                            <a href="javascript:">底价新车</a></li>
+                                        <li><span class="space"><a href="javascript:">练手车</a></span>
+                                            <span class="space"><a href="javascript:">准新车</a></span></li>
+                                        <li><span class="space"><a class="gray" href="javascript:">全部品牌</a></space>
+                                        <span class="space"><a class="gray" href="javascript:">瓜子二手车</a></space>
+                                        <a class="gray" href="javascript:">急售</a></li>
+                                        <li><span class="space"><a href="javascript:">大众</a></span>
+                                            <span class="space"><a href="javascript:">别克</a></span>
+                                            <span class="space"><a href="javascript:">福特</a></span>
+                                            <span class="space"><a href="javascript:">标致</a></span>
+                                            <a href="javascript:">雪佛兰</a></li>
+                                        <li><span class="space"><a href="javascript:">丰田</a></span>
+                                            <span class="space"><a href="javascript:">本田</a></span>
+                                            <span class="space"><a href="javascript:">现代</a></span>
+                                            <span class="space"><a href="javascript:">日产</a></span>
+                                            <a href="javascript:">马自达</a></li>
+                                        <li><span class="space"><a href="javascript:">五菱</a></span>
+                                            <span class="space"><a href="javascript:">吉利</a></span>
+                                            <span class="space"><a href="javascript:">奇瑞</a></span>
+                                            <span class="space"><a href="javascript:">长安</a></span>
+                                            <a href="javascript:">比亚迪</a></li>
+                                        <li><span class="space"><a href="javascript:">奥迪</a></span>
+                                            <span class="space"><a href="javascript:">宝马</a></span>
+                                            <span class="space"><a href="javascript:">奔弛</a></span>
+                                            <a href="javascript:">雷克萨斯</a></li>
+                                        <li><span class="space"><a href="javascript:">工程车</a></span>
+                                            <a href="javascript:">农用车</a>/<a href="javascript:">挖掘机</a>/<a href="javascript:">叉车</a></li>
+                                        <li><span class="space"><a href="javascript:">货车</a>/<a href="javascript:">客车</a></span>
+                                            <a href="javascript:">东风</a>/<a href="javascript:">福田</a>/<a href="javascript:">江陵</a></li>
+                                        <li><a class="gray" href="javascript:">期望市场</a><span class="space"></span></li>
+                                        <li><a class="gray" href="javascript:">桃园市场</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="caption"><a class="title" href="javascript:">新车</a><a class="subtitle" href="javascript:">选车</a>
+                                    <a class="subtitle" href="javascript:">降价</a>
+                                    <a class="subtitle" href="javascript:">降价新车</a>
+                                </div>
+                                <div class="collinks">
+                                    <ul class="clearfix">
+                                        <li><span class="space2"><a href="javascript:">CX-X5</a>/<a href="javascript:">哈弗</a></span></li>
+                                        <li><a href="javascript:">阿特兹</a>/<a href="javascript:">CRV</a></li>
+                                        <li><span class="space2"><a href="javascript:">天籁</a>/<a href="javascript:">TIIDA</a></span></li>
+                                        <li><a href="javascript:">路虎</a>/<a href="javascript:">Q5</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="caption"><a class="title" href="javascript:">汽车服务</a><a class="subtitle" href="javascript:">驾驶证</a>
+                                    <a class="subtitle" href="javascript:">宝驾租车</a>
+                                </div>
+                                <div class="collinks">
+                                    <ul class="clearfix">
+
+                                        <li><span class="space"><a href="javascript:">租车</a></span></i>
+                                            <a href="javascript:">货车</a>/<a href="javascript:">大巴</a>/<a href="javascript:">中巴</a>/
+                                            <span class="space"><a href="javascript:">面包</a></li>
+                                        <li><a class="moreleft" href="javascript:">买车</a>
+                                            <div class="moreright">
+                                                <a href="javascript:">4S店</a>/<a href="javascript:">保险</a>/<a href="javascript:">过户验车</a>
+                                                <a href="javascript:">以租代购</a>
+                                            </div>
+                                            
+                                        </li>
+                                        <li><a class="moreleft" href="javascript:">用车</a>
+                                            <div class="moreright">
+                                                <a href="javascript:">改装保护</a>/<a href="javascript:">汽车配件</a>
+                                            </div>
+                                        </li>
+                                            
+                                        <li><a class="moreleft" href="javascript:">养车</a>
+                                            <div class="moreright">
+                                            <a href="javascript:">维修保养</a>/<a href="javascript:">美容装饰</a>
+                                            </div>
+                                        </li>
+                                        <li><a class="moreleft" href="javascript:">拼车</a>
+                                            <div class="moreright">
+                                            <a href="javascript:">长途专车</a>/<a href="javascript:">上下班</a>/<a href="javascript:">包车</a>
+                                            </div>
+                                        </li>
+                                        <li><a class="moreleft" href="javascript:">学车</a>
+                                            <div class="moreright">
+                                            <a href="javascript:">驾校</a>/<a href="javascript:">教练</a>/<a href="javascript:">陪练</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col1-enducation col-common">
+                            <div class="caption"><a class="title" href="javascript:">教育培训</a>
+                                <a class="subtitle" href="javascript:">优客</a>
+                                <a class="subtitle" href="javascript:">教师证</a>
+                                <a class="subtitle" href="javascript:">留学</a>
+                            </div>
+                            <div class="collinks">
+                                <ul class="clearfix">
+                                    <li><a class="moreleft" href="javascript:">家教</a>
+                                        <div class="moreright">
+                                        <a class="special" href="javascript:">机构</a>/<a href="javascript:">个人</a>/<a href="javascript:">课外辅导</a>
+                                        </div>
+                                    </li>
+                                    <li><a class="moreleft" href="javascript:">培训</a>
+                                        <div class="moreright">
+                                            <a href="javascript:">职业</a>/<a href="javascript:">管理</a>/<a href="javascript:">设计</a>/
+                                            <a href="javascript:">IT</a>/
+                                            <a href="javascript:">艺术</a>/<a href="javascript:">体育</a>/<a href="javascript:">语言</a>/
+                                            <a href="javascript:">拼班</a>
+                                        </div>
+                                    </li>
+                                    <li><a class="moreleft" href="javascript:">育儿</a>
+                                        <div class="moreright">
+                                            <a href="javascript:">胎教</a>/<a href="javascript:">亲子</a>/<a href="javascript:">幼婴</a>/
+                                            <a href="javascript:">学前</a>
+                                        </div>
+                                    </li>
+                                    <li><a class="moreleft" href="javascript:">学历</a>
+                                        <div class="moreright">
+                                            <a href="javascript:">成考</a>/<a href="javascript:">自考</a>/<a href="javascript:">考研</a>/
+                                            <a href="javascript:">考博</a>
+                                        </div>
+                                    </li>
+                                    <li><a class="moreleft" href="javascript:">留学</a>
+                                        <div class="moreright">
+                                        <a href="javascript:">美国</a>/<a href="javascript:">日本</a>/<a href="javascript:">英国</a>/
+                                        <a href="javascript:">排名</a>
+                                        </div>
+                                    </li>
+                                    <li><a class="moreleft" href="javascript:">移民</a>
+                                        <div class="moreright">
+                                            <a href="javascript:">美国</a>/<a href="javascript:">加拿大</a>/<a href="javascript:">澳洲</a>
+                                        </div>
+                                    </li>
+                                    <li><a class="moreleft" href="javascript:">优学</a>
+                                        <div class="moreright">
+                                            <a href="javascript:">职业培训</a>/<a href="javascript:">学历培训</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col1-services col-common">
+                            <div class="caption"><a class="title" href="javascript:">放心服务区</a></div>
+                            <div class="collinks">
+                                <ul class="clearfix">
+                                    <li><a href="javascript:">装修</a>｜<a href="javascript:">保姆</a>｜<a href="javascript:">保洁</a>｜
+                                        <a href="javascript:">租车</a>｜<a href="javascript:">宠物</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div><!--col1结束-->
+                    <div class="col2">
+                            <div class="col1-house col-common">
+                                <div class="caption"><a class="title" href="javascript:">二手市场</a>
+                                    <a class="subtitle" href="javascript:">官方质检iPhone</a>
+                                </div>
+                                <div class="collinks">
+                                    <ul class="clearfix">
+                                        <li><a href="javascript:">摩托卖场</a></li>
+                                        <li><a href="javascript:">高性价比家电</a></li>
+                                        <li class="gray">数码 通讯</li>
+                                    </ul>
+                                    <ul class="clearfix">
+                                        <li><a class="special" href="javascript:">二手手机</a></li>
+                                        <li><a href="javascript:">苹果</a>/<a href="javascript:">三星</a>/<a href="javascript:">小米</a></li>
+                                        <li><a href="javascript:">台式电脑</a></li>
+                                        <li><a href="javascript:">台式机</a>/<a href="javascript:">硬件</a></li>
+                                        <li><a href="javascript:">笔记本</a></li>
+                                        <li><a href="javascript:">苹果</a>/<a href="javascript:">联想</a></li>
+                                        <li><a href="javascript:">平板电脑</a></li>
+                                        <li><a href="javascript:">三星</a>/<a href="javascript:">iPad</a></li>
+                                        <li><a href="javascript:">数码产品</a></li>
+                                        <li><a href="javascript:">相机</a>/<a href="javascript:">游戏机</a></li>
+                                        <li><a href="javascript:">通信业务</a>/<a href="javascript:">电信</a></li>
+                                    </ul>
+                                    <ul class="clearfix">
+                                        <li class="gray">家具 家电 车辆</li>
+                                        <li class="gray"><span class="space"><a href="javascript:">家具送货上门</a></span></li>
+                                        <li><a href="javascript:">二手家电</a></li>
+                                        <li><a href="javascript:">空调</a>/<a href="javascript:">电视</a>/<a href="javascript:">冰箱</a></li>
+                                        <li><a href="javascript:">二手家具</a></li>
+                                        <li><a href="javascript:">沙发</a>/<a href="javascript:">床</a>/<a href="javascript:">桌椅</a></li>
+                                        <li><a class="special" href="javascript:">摩托车</a></li>
+                                        <li><a href="javascript:">雅马哈</a>/<a href="javascript:">本田</a></li>
+                                        <li><a class="special" href="javascript:">电动车</a></li>
+                                        <li><a href="javascript:">自行车</a>/<a href="javascript:">三轮车</a></li>
+                                    </ul>
+                                    <ul class="clearfix">
+                                        <li class="gray">百货 设备</li>
+                                        <li class="gray"><span class="space"><a href="javascript:">换季衣服便宜清</a></span></li>
+                                        <li><a href="javascript:">家居日用</a></li>
+                                        <li><a href="javascript:">厨具</a>/<a href="javascript:">灯具</a>/<a href="javascript:">床品</a></li>
+                                        <li><a href="javascript:">母婴用品</a></li>
+                                        <li><a href="javascript:">婴幼服</a>/<a href="javascript:">床</a>/<a href="javascript:">玩具</a></li>
+                                        <li><a href="javascript:">服装箱包</a></li>
+                                        <li><a href="javascript:">手表</a>/<a href="javascript:">箱包</a>/<a href="javascript:">服饰</a></li>
+                                        <li><a class="special" href="javascript:">二手设备</a></li>
+                                        <li><a href="javascript:">机床</a>/<a href="javascript:">挖机</a>/<a href="javascript:">叉车</a></li>
+                                        <li><a href="javascript:">文体户外</a></li>
+                                        <li><a href="javascript:">健身</a>/<a href="javascript:">钢琴</a>/<a href="javascript:">麻将</a></li>
+                                        <li><a href="javascript:">艺术收藏</a></li>
+                                        <li><a href="javascript:">古玩</a>/<a href="javascript:">把件</a>/<a href="javascript:">字画</a></li>
+                                        <li><a href="javascript:">成人用品</a></li>
+                                        <li><a href="javascript:">美容保健</a></li>
+                                        <li><a class="special" href="javascript:">办公设备</a></li>
+                                        <li><a href="javascript:">办公家具</a>/<a href="javascript:">货柜</a></li>
+                                        <li><a href="javascript:">图书音像</a></li>
+                                        <li><a href="javascript:">校园二手</a></li>
+                                        <li><a href="javascript:">礼品转让</a></li>
+                                        <li><a href="javascript:">交换</a>/<a href="javascript:">游戏交易</a></li>
+                                        <li><a href="javascript:">二手求购</a></li>
+                                        <li><a href="javascript:">其他二手</a>/<a href="javascript:">更多</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col1-car col-common">
+                                <div>
+                                    <div class="caption"><a class="title" href="javascript:">宠物/宠物用品</a><a class="subtitle" href="javascript:">买狗防骗指南</a>
+                                    </div>
+                                    <div class="collinks">
+                                        <ul class="clearfix">
+                                            <li><a class="moreleft" href="javascript:">狗狗</a>
+                                                <div class="space moreright"><a href="javascript:">泰迪</a>/<a href="javascript:">柯基</a>/
+                                                    <a href="javascript:">拉布拉多</a>/<a href="javascript:">哈士奇</a>/<a href="javascript:">金毛</a>                                                    /
+                                                    <a href="javascript:">阿拉斯加</a>/<a href="javascript:">斗牛犬</a>/<a href="javascript:">博美</a>                                                    /
+                                                    <a href="javascript:">萨摩耶</a>
+                                                </div>
+                                            </li>
+                                            <li><a class="moreleft" href="javascript:">猫猫</a>
+                                                <div class="space moreright"><a href="javascript:">短毛猫</a>/<a href="javascript:">加菲猫</a>/
+                                                    <a href="javascript:">蓝猫</a>
+                                                </div>
+                                            </li>
+                                            <li><a class="moreleft" href="javascript:">小宠</a>
+                                                <div class="space moreright"><a href="javascript:">鱼</a>/<a href="javascript:">鸟</a>/
+                                                    <a href="javascript:">花</a>/<a href="javascript:">其他</a>/<a href="javascript:">龟</a>
+                                                </div>
+                                            </li>
+                                            <li><a class="moreleft" href="javascript:">用品</a>
+                                                <div class="space moreright"><a href="javascript:">服务</a>/<a href="javascript:">鱼缸</a>/
+                                                    <a href="javascript:">宠物寄养</a>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col1-enducation col1-house col-common">
+                                <div class="caption"><a class="title" href="javascript:">票务/卡券</a>
+                                </div>
+                                <div class="collinks">
+                                    <ul class="clearfix">
+                                        <li><a href="javascript:">演出票</a></li>
+                                        <li><a href="javascript:">电影票卡</a></li>
+                                        <li><a href="javascript:">体育赛事</a></li>
+                                        <li><a href="javascript:">游乐景点</a></li>
+                                        <li><a href="javascript:">购物卡</a></li>
+                                        <li><a class="special" href="javascript:">健身卡</a></li>
+                                        <li><a href="javascript:">游泳卡</a></li>
+                                        <li><a href="javascript:">其他票务</a></li>
+                                        <li><a href="javascript:">特价机票</a></li>
+                                        <li><a href="javascript:">火车票查询</a></li>
+                                        <li><a href="javascript:">优惠券</a>/<a href="javascript:">代金券</a></li>
+                                        <li><a href="javascript:">彩票</a>/<a href="javascript:">双色球</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col1-car col-common">
+                                <div class="caption"><a class="title" href="javascript:">58便当</a>
+                                    <a class="subtitle" href="javascript:">解决生活难题</a>
+                                </div>
+                                <div class="collinks">
+                                    <ul class="clearfix">
+                                        <li><a class="moreleft" href="javascript:">用车</a>
+                                            <div class="space moreright"><a href="javascript:">购买攻略</a>/<a href="javascript:">驾驶技巧</a>/
+                                                <a href="javascript:">养车</a>
+                                            </div>
+                                        </li>
+                                        <li><a class="moreleft" href="javascript:">职场</a>
+                                            <div class="space moreright"><a href="javascript:">经验分享</a>/<a href="javascript:">晋升</a>/
+                                                <a href="javascript:">题库</a>
+                                            </div>
+                                        </li>
+                                        <li><a class="moreleft" href="javascript:">创业</a>
+                                            <div class="space moreright"><a href="javascript:">营业执照</a>/<a href="javascript:">公司经营</a>/
+                                                <a href="javascript:">财税</a>
+                                            </div>
+                                        </li>
+                                        <li><a class="moreleft" href="javascript:">留学</a>
+                                            <div class="space moreright"><a href="javascript:">美国</a>/<a href="javascript:">加拿大</a>/
+                                                <a href="javascript:">英国</a>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--col2结束-->
+                        <div class="col3">
+                            <div class="col1-house col-common ">
+                                <div class="caption"><a class="title" href="javascript:">深圳招聘</a>
+                                    <a class="subtitle" href="javascript:">深圳求职简历</a>
+                                    <a class="subtitle" href="javascript:">急速招聘</a>
+                                    <a class="subtitle" href="javascript:">热门兼职</a>
+                                </div>
+                                <div class="collinks">
+                                    <ul class="clearfix">
+                                        <li class="three"><a href="javascript:">年底双薪</a></li>
+                                        <li class="three"><a class="special" href="javascript:">包吃住</a></li>
+                                        <li class="three"><a href="javascript:">五险一金</a></li>
+                                        <li class="three"><a href="javascript:">淘宝店招聘</a></li>
+                                        <li class="three"><a href="javascript:">周末双休</a></li>
+                                        <li class="three"><a href="javascript:">学生求职</a></li>
+                                    </ul>
+                                    <a class="gray" href="javascript:">精品推荐</a>
+                                    <a class="gray" href="javascript:">写简历</a>
+
+                                    <ul class="clearfix">
+                                        <li class="three"><a class="special" href="javascript:">万元高薪</a></li>
+                                        <li class="three"><a class="special" href="javascript:">人才招聘会</a></li>
+                                        <li class="three"><a href="javascript:">名企直招</a></li>
+                                        <li class="three"><a href="javascript:">急招专区</a></li>
+                                        <li class="three"><a href="javascript:">热门兼职</a></li>
+                                        <li class="three"><a href="javascript:">职业测评</a></li>
+                                    </ul>
+                                    <a class="gray" href="javascript:">热招职位</a>
+                                    <a class="gray" href="javascript:">家政好工作，报名速上岗</a>
+                                    <ul class="clearfix">
+                                        <li class="four"><a href="javascript:">销售</a></li>
+                                        <li class="four"><a href="javascript:">客服</a></li>
+                                        <li class="four"><a class="special" href="javascript:">司机</a></li>
+                                        <li class="four"><a href="javascript:">营业员</a></li>
+                                        <li class="four"><a class="special" href="javascript:">文员</a></li>
+                                        <li class="four"><a href="javascript:">助理</a></li>
+                                        <li class="four"><a href="javascript:">普工</a></li>
+                                        <li class="four"><a href="javascript:">导购员</a></li>
+                                        <li class="four"><a href="javascript:">前台</a></li>
+                                        <li class="four"><a href="javascript:">编辑</a></li>
+                                        <li class="four"><a href="javascript:">电工</a></li>
+                                        <li class="four"><a href="javascript:">收银员</a></li>
+                                        <li class="four"><a href="javascript:">会计</a></li>
+                                        <li class="four"><a href="javascript:">幼教</a></li>
+                                        <li class="four"><a href="javascript:">技工</a></li>
+                                        <li class="four"><a href="javascript:">理货员</a></li>
+                                        <li class="four"><a href="javascript:">出纳</a></li>
+                                        <li class="four"><a href="javascript:">保洁</a></li>
+                                        <li class="four"><a href="javascript:">木工</a></li>
+                                        <li class="four"><a href="javascript:">店长</a></li>
+                                        <li class="four"><a href="javascript:">人事</a></li>
+                                        <li class="four"><a href="javascript:">保姆</a></li>
+                                        <li class="four"><a href="javascript:">操作工</a></li>
+                                        <li class="four"><a class="special" href="javascript:">服务员</a></li>
+                                        <li class="four"><a href="javascript:">行政</a></li>
+                                        <li class="four"><a href="javascript:">月嫂</a></li>
+                                        <li class="four"><a href="javascript:">保安</a></li>
+                                        <li class="four"><a href="javascript:">厨师</a></li>
+                                        <li class="four"><a href="javascript:">网管</a></li>
+                                        <li class="four"><a href="javascript:">家政</a></li>
+                                        <li class="four"><a href="javascript:">库管</a></li>
+                                        <li class="four"><a href="javascript:">配菜</a></li>
+                                        <li class="four"><a href="javascript:">足疗师</a></li>
+                                        <li class="four"><a href="javascript:">房产</a></li>
+                                        <li class="four"><a href="javascript:">快递员</a></li>
+                                        <li class="four"><a href="javascript:">学徒</a></li>
+                                        <li class="four"><a href="javascript:">发型师</a></li>
+                                        <li class="four"><a href="javascript:">保险</a></li>
+                                        <li class="four"><a href="javascript:">搬运工</a></li>
+                                        <li class="four"><a href="javascript:">面点师</a></li>
+                                        <li class="four"><a href="javascript:">美容师</a></li>
+                                        <li class="four"><a href="javascript:">钟点工</a></li>
+                                        <li class="four"><a href="javascript:">杂工</a></li>
+                                        <li class="four"><a href="javascript:">洗碗工</a></li>
+                                        <li class="four"><a href="javascript:">化妆师</a></li>
+                                        <li class="four"><a href="javascript:">洗车工</a></li>
+                                        <li class="four"><a href="javascript:">送餐员</a></li>
+                                        <li class="four"><a href="javascript:">大堂经理</a></li>
+                                        <li class="four"><a href="javascript:">摄影师</a></li>
+                                        <li class="four"><a href="javascript:">汽车修理</a></li>
+                                        <li class="four"><a href="javascript:">汽车美容</a></li>
+                                        <li class="four"><a href="javascript:">更多职位</a></li>
+                                    </ul>
+                                    <div class="caption caption-align"><a class="title" href="javascript:">深圳兼职</a>
+                                        <a class="subtitle" href="javascript:">学生兼职</a>
+                                        <a class="subtitle" href="javascript:">工资日结</a>
+                                        <a class="subtitle" href="javascript:">放心兼职</a>
+                                    </div>
+                                    <div class="collinks parttime">
+                                        <ul class="clearfix">
+                                            <li><a class="moreleft" href="javascript:">门槛低</a>
+                                                <div class="moreright"><a href="javascript:">配送</a>/<a href="javascript:">传单派发</a>/
+                                                    <a class="special" href="javascript:">钟点工</a>/<a href="javascript:">促销导购</a>
+                                                </div>
+                                            </li>
+                                            <li><a class="moreleft" href="javascript:">本领强</a>
+                                                <div class="moreright"><a href="javascript:">家教</a>/<a href="javascript:">会计</a>/
+                                                    <a href="javascript:">翻译</a>/<a href="javascript:">美工</a>/<a href="javascript:">法务</a>
+                                                </div>
+                                            </li>
+                                            <li><a class="moreleft" href="javascript:">服务达人</a>
+                                                <div class="moreright"><a href="javascript:">化妆师</a>/<a href="javascript:">健身教练</a>/
+                                                    <a href="javascript:">护工</a>/<a href="javascript:">汽车陪练</a>
+                                                </div>
+                                            </li>
+                                            <li><a class="moreleft" href="javascript:">热门搜</a>
+                                                <div class="moreright">
+                                                    <a href="javascript:">礼仪模特</a>/<a href="javascript:">司仪驻唱</a>/
+                                                    <a href="javascript:">更多&gt;&gt;</a>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                    <div class="caption caption-align"><a class="title" href="javascript:">热门行业</a>
+                                        <a class="subtitle" href="javascript:">急速招聘</a>
+                                    </div>
+                                    <div class="collinks">
+                                        <ul class="clearfix">
+                                            <li class="three"><a class="special" href="javascript:">酒店</a></li>
+                                            <li class="three"><a href="javascript:">仓储</a>/<a href="javascript:">物流</a></li>
+                                            <li class="three"><a href="javascript:">教育</a>/<a href="javascript:">培训</a></li>
+                                            <li class="three"><a href="javascript:">餐饮</a></li>
+                                            <li class="three"><a href="javascript:">建筑</a></li>
+                                            <li class="three"><a href="javascript:">市场</a>/<a href="javascript:">媒介</a></li>
+                                            <li class="three"><a href="javascript:">娱乐</a>/<a href="javascript:">休闲</a></li>
+                                            <li class="three"><a href="javascript:">医疗</a>/<a href="javascript:">护理</a></li>
+                                            <li class="three"><a href="javascript:">计算机</a>/<a href="javascript:">网络</a></li>
+                                            <li class="three"><a href="javascript:">美容</a>/<a href="javascript:">美发</a></li>
+                                            <li class="three"><a href="javascript:">制药</a>/<a href="javascript:">生物</a></li>
+                                            <li class="three"><a href="javascript:">广告</a>/<a href="javascript:">会展</a></li>
+                                            <li class="three"><a href="javascript:">保健按摩</a></li>
+                                            <li class="three"><a href="javascript:">电子电气</a></li>
+                                            <li class="three"><a href="javascript:">美术</a>/<a href="javascript:">设计</a></li>
+                                            <li class="three"><a href="javascript:">运动健身</a></li>
+                                            <li class="three"><a href="javascript:">机械仪器</a></li>
+                                            <li class="three"><a href="javascript:">金融</a>/<a href="javascript:">银行</a></li>
+                                            <li class="three"><a href="javascript:">超市</a>/<a href="javascript:">百货</a></li>
+                                            <li class="three"><a href="javascript:">汽车服务</a></li>
+                                            <li class="three"><a href="javascript:">纺织</a>/<a href="javascript:">食品</a></li>
+                                        </ul>
+                                        <a class="gray" href="javascript:">中高级专业人才</a>
+                                        <ul class="clearfix">
+                                            <li class="four"><a href="javascript:">IT</a>/<a href="javascript:">互联网</a></li>
+                                            <li class="four"><a href="javascript:">市场营销</a></li>
+                                            <li class="four"><a href="javascript:">实习生</a></li>
+                                            <li class="four"><a href="javascript:">平面设计</a></li>
+                                            <li class="four"><a href="javascript:">建筑设计师</a></li>
+                                            <li class="four"><a href="javascript:">Java</a></li>
+                                            <li class="four"><a href="javascript:">人力资源</a></li>
+                                            <li class="four"><a href="javascript:">更多职位</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="caption caption-align"><a class="title" href="javascript:">求职简历</a>
+                                        <a class="subtitle" href="javascript:">简历搜索</a>
+                                    </div>
+                                    <div class="collinks">
+                                        <ul class="clearfix">
+                                            <li class="four"><a href="javascript:">销售</a></li>
+                                            <li class="four"><a href="javascript:">导购</a></li>
+                                            <li class="four"><a href="javascript:">厨师</a></li>
+                                            <li class="four"><a href="javascript:">房产经纪</a></li>
+                                            <li class="four"><a href="javascript:">文员</a></li>
+                                            <li class="four"><a href="javascript:">收银</a></li>
+                                            <li class="four"><a href="javascript:">配菜</a></li>
+                                            <li class="four"><a href="javascript:">保险经纪</a></li>
+                                            <li class="four"><a href="javascript:">前台</a></li>
+                                            <li class="four"><a href="javascript:">营业员</a></li>
+                                            <li class="four"><a href="javascript:">服务员</a></li>
+                                            <li class="four"><a href="javascript:">人事</a>/<a href="javascript:">行政</a></li>
+                                            <li class="four"><a href="javascript:">客服</a></li>
+                                            <li class="four"><a href="javascript:">保安</a></li>
+                                            <li class="four"><a href="javascript:">洗碗工</a></li>
+                                            <li class="four"><a href="javascript:">平面设计</a></li>
+                                            <li class="four"><a href="javascript:">会计</a></li>
+                                            <li class="four"><a href="javascript:">电工</a></li>
+                                            <li class="four"><a href="javascript:">迎宾</a></li>
+                                            <li class="four"><a href="javascript:">仓库管理</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col1-car col-common recylewarp">
+                                <div class="caption"><a class="title" href="javascript:">旧物回收</a>
+                                    <a class="subtitle" href="javascript:">奢侈品回收</a>
+                                    <a class="subtitle" href="javascript:">废纸回收</a>
+                                    <a class="subtitle" href="javascript:">数码回收</a>
+                                </div>
+                                <div class="collinks recyle">
+                                    <ul class="clearfix">
+                                        <li><a class="moreleft" href="javascript:">热门回收</a>
+                                            <div class="space moreright"><a href="javascript:">手背</a>/<a href="javascript:">手机</a>/
+                                                <a href="javascript:">电脑</a>/<a class="special" href="javascript:">礼品</a>/
+                                                <a href="javascript:">金银</a>
+                                            </div>
+                                        </li>
+                                        <li><a class="moreleft" href="javascript:">生活回收</a>
+                                            <div class="space moreright"><a href="javascript:">家具</a>/<a href="javascript:">电器</a>/
+                                                <a href="javascript:">电池</a>/<a href="javascript:">服装鞋帽</a>
+                                            </div>
+                                        </li>
+                                        <li><a class="moreleft" href="javascript:">商业回收</a>
+                                            <div class="space moreright"><a href="javascript:">办公</a>/<a href="javascript:">文体</a>/
+                                                <a href="javascript:">库存</a>/<a href="javascript:">金属</a><a href="javascript:">更多&gt;&gt;</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--col3结束-->
+                    </div>
+                    <!--左侧结束-->
+                    <div class="colright">
+                        <div class="col-right col-common">
+                            <div class="caption"><a class="title" href="javascript:">本地服务大全</a>
+                                <a class="subtitle" href="javascript:">快速办证</a>
+                                <a class="subtitle" href="javascript:">优学优教</a>
+                            </div>
+
+                            <div class="collinks two">
+                                <ul class="clearfix">
+                                    <li><a href="javascript:">靠谱装修公司任您挑</a></li>
+                                    <li><a href="javascript:">开个小店,越赚越多</a></li>
+                                </ul>
+                            </div>
+                            <div class="caption caption-align"><a class="title" href="javascript:">家政服务</a>
+                                <a class="subtitle" href="javascript:">品质搬家服务</a>
+                                <a class="subtitle" href="javascript:">搬家指南</a>
+                                <a class="subtitle" href="javascript:">教你挂号</a>
+                            </div>
+                            <div class="collinks">
+                                <ul class="clearfix">
+                                    <li><a class="moreleft" href="javascript:">搬家</a>
+                                        <div class="space moreright"><a href="javascript:">居民</a>/<a href="javascript:">公司</a>/
+                                            <a href="javascript:">小型</a>/<a href="javascript:">长途</a>/<a href="javascript:">空调移机</a>                                            /
+                                            <a href="javascript:">设备</a>
+                                        </div>
+                                    </li>
+                                    <li><a class="moreleft" href="javascript:">保姆</a>
+                                        <div class="space moreright"><a href="javascript:">月嫂</a>/<a href="javascript:">育儿嫂</a>/
+                                            <a href="javascript:">钟点工</a>/<a href="javascript:">催乳师</a>/<a href="javascript:">保姆</a>
+                                        </div>
+                                    </li>
+                                    <li><a class="moreleft" href="javascript:">保洁</a>
+                                        <div class="space moreright"><a href="javascript:">家庭保洁</a>/<a href="javascript:">开荒</a>/
+                                            <a href="javascript:">油烟机</a>/<a href="javascript:">玻璃</a>/<a href="javascript:">地板</a>
+                                        </div>
+                                    </li>
+                                    <li><a class="moreleft" href="javascript:">家务</a>
+                                        <div class="space moreright"><a href="javascript:">回收</a>/<a href="javascript:">开锁</a>/
+                                            <a href="javascript:">疏通</a>/<a class="special" href="javascript:">鲜花</a>/
+                                            <a href="javascript:">干洗改衣</a> /
+                                            <a href="javascript:">白事</a>/<a href="javascript:">配送</a><a href="javascript:">桶装水</a>                                            /
+                                            <a href="javascript:">跑腿</a>/<a href="javascript:">粮油副食</a>/<a href="javascript:">煤气</a>
+                                        </div>
+                                    </li>
+                                    <li><a class="moreleft" href="javascript:">维修</a>
+                                        <div class="space moreright"><a href="javascript:">家电</a>/<a href="javascript:">房屋</a>/
+                                            <a href="javascript:">家具</a>/<a href="javascript:">电脑</a>/<a href="javascript:">手机</a>                                            /
+                                            <a href="javascript:">空调</a>/<a href="javascript:">数码</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="caption caption-align"><a class="title" href="javascript:">婚庆摄影</a>
+                                <a class="subtitle" href="javascript:">婚庆攻略</a>
+                                <a class="subtitle" href="javascript:">生育证件</a>
+                                <a class="subtitle" href="javascript:">结婚吉日</a>
+                            </div>
+                            <div class="collinks">
+                                <ul class="clearfix">
+                                    <li><a class="moreleft special" href="javascript:">结婚</a>
+                                        <div class="space moreright"><a href="javascript:">婚庆</a>/<a href="javascript:">婚车</a>/
+                                            <a href="javascript:">婚宴</a>/<a href="javascript:">司仪</a>/<a href="javascript:">彩妆</a>                                            /
+                                            <a href="javascript:">用品</a>/<a href="javascript:">跟拍</a>
+                                        </div>
+                                    </li>
+                                    <li><a class="moreleft" href="javascript:">摄影</a>
+                                        <div class="space moreright"><a href="javascript:">婚纱</a>/<a href="javascript:">儿童</a>/
+                                            <a href="javascript:">写真</a>
+                                            <a href="javascript:">庆典</a> <a href="javascript:">演出</a>/<a href="javascript:">场地</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="caption caption-align"><a class="title" href="javascript:">装修建材</a>
+                                <a class="subtitle" href="javascript:">靠谱装修公司</a>
+                                <a class="subtitle" href="javascript:">除甲醛</a>
+                                <a class="subtitle" href="javascript:">装修攻略</a>
+                            </div>
+                            <div class="collinks">
+                                <ul class="clearfix">
+                                    <li><a class="moreleft" href="javascript:">家装</a>
+                                        <div class="space moreright"><a href="javascript:">装修</a>/<a href="javascript:">设计</a>/
+                                            <a href="javascript:">效果图</a> <a href="javascript:">建材</a>/<a href="javascript:">家具</a>/
+                                            /
+                                            <a href="javascript:">家纺</a>
+                                        </div>
+                                    </li>
+                                    <li><a class="moreleft" href="javascript:">工装</a>
+                                        <div class="space moreright"><a href="javascript:">办公室</a>/<a href="javascript:">店铺</a>/
+                                            <a href="javascript:">厂房</a>/<a href="javascript:">餐厅</a>/<a href="javascript:">酒店</a>                                            /
+                                            <a href="javascript:">自建房</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="caption caption-align"><a class="title" href="javascript:">商务服务</a>
+                                <a class="subtitle" href="javascript:">创业资讯</a>
+                                <a class="subtitle" href="javascript:">创业知识</a>
+                                <a class="subtitle" href="javascript:">注册公司</a>
+                            </div>
+                            <div class="collinks">
+                                <ul class="clearfix">
+                                    <li><a class="moreleft" href="javascript:">开业</a>
+                                        <div class="space moreright"><a href="javascript:">工商注册</a>/<a href="javascript:">验资</a>/
+                                            <a href="javascript:">商标专利</a>/<a href="javascript:">法律</a>/<a href="javascript:">起名</a>                                            /
+                                        </div>
+                                    </li>
+                                    <li><a class="moreleft" href="javascript:">财务</a>
+                                        <div class="space moreright"><a class="special" href="javascript:">投资担保</a>/<a href="javascript:">财务会计</a>/
+                                            <a href="javascript:">保险</a>/<a href="javascript:">咨询</a>
+                                        </div>
+                                    </li>
+                                    <li><a class="moreleft" href="javascript:">物流</a>
+                                        <div class="space moreright"><a href="javascript:">货运物流</a>/<a href="javascript:">快递</a>/
+                                            <a href="javascript:">货运专线</a>/<a href="javascript:">货架</a>
+                                        </div>
+                                    </li>
+                                    <li><a class="moreleft" href="javascript:">营销</a>
+                                        <div class="space moreright"><a href="javascript:">广告</a>/<a href="javascript:">设计策划</a>/
+                                            <a href="javascript:">印刷包装</a>/<a class="special" href="javascript:">喷绘</a>/
+                                            <a href="javascript:">制卡</a> /
+                                            <a href="javascript:">礼品定制</a>/<a href="javascript:">展会服务</a><a href="javascript:">翻译速记</a>                                            /
+                                        </div>
+                                    </li>
+                                    <li><a class="moreleft" href="javascript:">IT</a>
+                                        <div class="space moreright"><a href="javascript:">建网站</a>/<a href="javascript:">网络布线</a>/
+                                            <a href="javascript:">app开发</a>/<a href="javascript:">网站推广</a>
+                                        </div>
+                                    </li>
+                                    <li><a class="moreleft" href="javascript:">基建</a>
+                                        <div class="space moreright"><a href="javascript:">机械维修</a>/<a href="javascript:">办公维修</a>/
+                                            <a href="javascript:">建筑维修</a>/<a href="javascript:">租赁</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="caption caption-align"><a class="title" href="javascript:">旅游酒店</a>
+                                <a class="subtitle" href="javascript:">护照办理</a>
+                                <a class="subtitle" href="javascript:">签证办理</a>
+                                <a class="subtitle" href="javascript:">港澳通行证</a>
+                            </div>
+                            <div class="collinks">
+                                <ul class="clearfix">
+                                    <li><a class="moreleft special" href="javascript:">周边</a>
+                                        <div class="space moreright"><a href="javascript:">农家乐</a>/<a href="javascript:">烧烤</a>/
+                                            <a href="javascript:">度假村</a>/<a href="javascript:">温泉</a>/<a href="javascript:">采摘</a>                                            /
+                                            <a href="javascript:">漂流</a>
+                                        </div>
+                                    </li>
+                                    <li><a class="moreleft" href="javascript:">国内</a>
+                                        <div class="space moreright"><a href="javascript:">订房</a>/<a href="javascript:">自驾游</a>/
+                                            <a href="javascript:">旅行社</a>/<a href="javascript:">出境</a>/<a href="javascript:">签证</a>                                            /
+                                            <a href="javascript:">跟团</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="caption caption-align"><a class="title" href="javascript:">招商加盟</a>
+                                <a class="subtitle" href="javascript:">最新加盟资讯</a>
+                                <a class="subtitle" href="javascript:">快速找项目</a>
+                                <a class="subtitle" href="javascript:">饮品小店</a>
+                            </div>
+                            <div class="collinks join">
+                                <ul class="clearfix">
+                                    <li><a class="moreleft special" href="javascript:">小本开店</a>
+                                        <div class="space moreright"><a href="javascript:">餐饮</a>/<a href="javascript:">服装</a>/
+                                            <a href="javascript:">网店</a>/<a href="javascript:">快递</a>/<a href="javascript:">礼品</a>                                            /
+                                            <a href="javascript:">小吃店</a>
+                                        </div>
+                                    </li>
+                                    <li><a class="moreleft" href="javascript:">加盟即赚</a>
+                                        <div class="space moreright"><a href="javascript:">特色</a>/<a href="javascript:">美容</a>/
+                                            <a href="javascript:">建材</a>/<a href="javascript:">家居</a>/<a href="javascript:">教育</a>                                            /
+                                            <a href="javascript:">车服务</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="caption capgion-align"><a class="title" href="javascript:">休闲娱乐</a>
+                                <a class="subtitle" href="javascript:">选好健身运动</a>
+                                <a class="subtitle" href="javascript:">城会玩系列</a>
+                                <a class="subtitle" href="javascript:">签证攻略</a>
+                            </div>
+                            <div class="collinks two">
+                                <ul class="clearfix">
+                                    <li><a class="special" href="javascript:">足疗按摩</a>/<a href="javascript:">洗浴温泉</a></li>
+                                    <li><a href="javascript:">健身</a>/<a href="javascript:">户外</a>/<a href="javascript:">台球</a>/
+                                        <a href="javascript:">桌游</a>
+                                    </li>
+                                    <li><a href="javascript:">茶馆</a>/<a href="javascript:">咖啡厅</a>/<a href="javascript:">手工坊</a></li>
+                                    <li><a href="javascript:">KTV</a>/<a href="javascript:">酒吧</a>/<a href="javascript:">电玩</a>/
+                                        <a href="javascript:">网吧</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="caption caption-align"><a class="title" href="javascript:">餐饮美食</a>
+                                <a class="subtitle" href="javascript:">外卖点这里</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a class="title" href="javascript:">丽人</a>
+                                <a class="subtitle" href="javascript:">舞出好身材</a>
+                            </div>
+                            <div class="collinks two">
+                                <ul class="clearfix">
+                                    <li><a class="special" href="javascript:">外卖</a> <a href="javascript:">快餐</a> <a href="javascript:">宴会</a>                                        <a href="javascript:">蛋糕</a></li>
+                                    <li><a href="javascript:">美容</a>/<a href="javascript:">祛斑</a>/<a href="javascript:">美发</a>/
+                                        <a href="javascript:">美甲</a>
+                                    </li>
+                                    <li><a href="javascript:">美食</a> <a href="javascript:">西餐 </a>/<a href="javascript:">火锅</a>
+                                        <a href="javascript:">自助</a>
+                                    </li>
+                                    <li><a class="special" href="javascript:">SPA</a>/<a href="javascript:">瘦身</a>/<a href="javascript:">舞蹈</a>/
+                                        <a href="javascript:">瑜伽</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="caption caption-align"><a class="title" href="javascript:">农林牧副渔</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a class="title" href="javascript:">批发采购</a>
+                            </div>
+                            <div class="collinks two">
+                                <ul class="clearfix">
+                                    <li><a href="javascript:">农作物</a> <a href="javascript:">农用车</a> <a href="javascript:">种苗</a></li>
+                                    <li><a href="javascript:">化妆品</a>/<a href="javascript:">服装</a>/<a href="javascript:">运动用品</a></li>
+                                    <li><a href="javascript:">畜禽</a> <a href="javascript:">饲料 </a>/<a href="javascript:">园林花卉</a></li>
+                                    <li><a href="javascript:">食品</a>/<a href="javascript:">礼品</a>/<a href="javascript:">商超</a>/
+                                        <a href="javascript:">安防</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="caption caption-align"><a class="title" href="javascript:">健康生活</a>
+                                <a class="subtitle" href="javascript:">住院挂号</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+                                <a class="title" href="javascript:">办证助手</a>
+                            </div>
+                            <div class="collinks two healthy">
+                                <ul class="clearfix">
+                                    <li><a class="special" href="javascript:">按摩理疗</a>/<a href="javascript:">美容</a>/<a href="javascript:">瘦身</a></li>
+                                    <li><a href="javascript:">护照</a>/<a href="javascript:">户口本</a>/<a href="javascript:">社保卡</a></li>
+                                    <li><a href="javascript:">体检团购</a></li>
+                                    <li><a class="special" href="javascript:">会计证</a>/<a href="javascript:">教师证</a>/<a href="javascript:">技工证</a></li>
+                                </ul>
+                                <ul class="clearfix">
+                                    <li class="healthy"><a class="moreleft special" href="javascript:">生育亲子</a>
+                                        <div class="space moreright"><a href="javascript:">准生证</a>/<a href="javascript:">孕妇建档</a>/
+                                            <a href="javascript:">生育报销</a>/<a href="javascript:">疫苗本</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--右侧结束-->
+                    </div>
+                    <!--右侧结束-->
+                </div>
+                <div class="service-for-people">
+                    <div class="caption">便民服务</div>
+                    <div class="career service-common">
+                        <h3>求职晋升</h3>
+                        <a href="javascript"><span><img src="images/credential-paper.png" alt="">职业资格证</span></a>
+                        <a href="javascript"><span><img src="images/promotion.png" alt="">职场晋升</span></a>
+                        <a href="javascript"><span><img src="images/skills.png" alt="">职场技能</span></a>
+                        <a href="javascript"><span><img src="images/adskills.png" alt="">求职技巧</span></a>
+                        <a href="javascript"><span><img src="images/individual-model.png" alt="">简历模版</span></a>
+                        <a href="javascript"><span><img src="images/salary-summary.png" alt="">行业薪资</span></a>
+                    </div>
+                    <div class="tools service-common">
+                        <h3>实用工具</h3>
+                        <a href="javascript"><span><img src="images/caculator.png" alt="">工资计算器</span></a>
+                        <a href="javascript"><span><img src="images/trafic.png" alt="">交通违章</span></a>
+                        <a href="javascript"><span><img src="images/carquality.png" alt="">车质量查询</span></a>
+                        <a href="javascript"><span><img src="images/hospitalnumber.png" alt="">医院挂号</span></a>
+                        <a href="javascript"><span><img src="images/individual-model.png" alt="">装修计算器</span></a>
+                        <a href="javascript"><span><img src="images/housecaculator.png" alt="">行业薪资</span></a>
+                    </div>
+                    <div class="car-out service-common">
+                        <h3>车辆出行</h3>
+                        <a href="javascript"><span><img src="images/carid.png" alt="">驾驶证</span></a>
+                        <a href="javascript"><span><img src="images/driverid.png" alt="">行驶证</span></a>
+                        <a href="javascript"><span><img src="images/bjid.png" alt="">进京证</span></a>
+                        <a href="javascript"><span><img src="images/drivesafe.png" alt="">行车安全</span></a>
+                        <a href="javascript"><span><img src="images/yangche.png" alt="">养车百科</span></a>
+                        <a href="javascript"><span><img src="images/shopping.png" alt="">购买攻略</span></a>
+                    </div>
+                    <div class="experience service-common">
+                        <h3>求职晋升</h3>
+                        <a href="javascript"><span><img src="images/lifetips.png" alt="">生活窍门</span></a>
+                        <a href="javascript"><span><img src="images/movehome.png" alt="">搬家攻略</span></a>
+                        <a href="javascript"><span><img src="images/engaging.png" alt="">婚庆攻略</span></a>
+                        <a href="javascript"><span><img src="images/accessory.png" alt="">装修装饰</span></a>
+                        <a href="javascript"><span><img src="images/workforyourself.png" alt="">创业知识</span></a>
+                        <a href="javascript"><span><img src="images/tax.png" alt="">财税知识</span></a>
+                    </div>
+                    <div class="credential service-common things">
+                        <h3>办证办事</h3>
+                        <a href="javascript"><span><img src="images/abroad.png" alt="">出境入境</span></a>
+                        <a href="javascript"><span><img src="images/son.png" alt="">生育亲子</span></a>
+                        <a href="javascript"><span><img src="images/id.png" alt="">身份户籍</span></a>
+                        <a href="javascript"><span><img src="images/shebao.png" alt="">社保医疗</span></a>
+                        <a href="javascript"><span><img src="images/housebusiness.png" alt="">房产交易</span></a>
+                        <a href="javascript"><span><img src="images/engagingid.png" alt="">结婚领证</span></a>
+                    </div>
+                </div>
+                <!--便民服务结束-->
+            </div>
+        </div>
+    </div>
+    <!--mainbody-warp结束-->
+    <div class="footer">
+        <div class="footer-warp">
+            <div class="info">
+                <a class="footer-logo" href="javascript:"><img src="images/logo.png" alt=""></a>
+                <div class="footer-list">
+                    <ul class="list clearfix">
+                        <li class="item">
+                            <span class="itemlv1">合作伙伴</span>
+                            <div>
+                                <a href="javascript:">安居客</a><br/>
+                                <a href="javascript:">驾校一点通</a><br/>
+                                <a href="javascript:">中华英才网</a><br/>
+                                <a href="javascript:">58车</a><br/>
+                            </div>
+
+                        </li>
+                        <li class="item">
+                            <span class="itemlv1">帮助中心</span>
+                            <div>
+                                <a href="javascript:">常见问题</a><br/>
+                                <a href="javascript:">更多帮助</a><br/>
+                                <a href="javascript:">意见反馈</a><br/>
+                                <a href="javascript:">隐私权条款</a><br/>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <span class="itemlv1">关注我们</span>
+                            <div>
+                                <a href="javascript:">新浪微博</a><br/>
+                                <a href="javascript:">官网微信</a><br/>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <span class="itemlv1">关注58同城</span>
+                            <div>
+                                <a href="javascript:">了解58同城</a><br/>
+                                <a href="javascript:">加入58同城</a><br/>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <span class="itemlv1">服务支持</span>
+                            <div>
+                                <a href="javascript:">推广服务</a><br/>
+                                <a href="javascript:">渠道招商</a><br/>
+                                <a href="javascript:">现行赔付</a><br/>
+                                <a href="javascript:">举报平台</a><br/>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--info结束-->
+            <div class="bottom">
+                <span class="footer-gray">友情链接:<a href="javascript">手机中国</a>｜<a href="javascript">爱帮网</a>
+                ｜<a href="javascript">考研网</a>｜<a href="javascript">深圳汽车网</a>
+                ｜<a href="javascript">企业培训</a>｜<a href="javascript">深圳装修网</a>
+                ｜<a href="javascript">深圳房产网</a>｜<a href="javascript">梦婚网</a>｜<a href="javascript">更多...</a></span><br/>
+                <span class="footer-black">京公网备案信息11010502000809｜<a href="javascript">京ICP证060405</a>｜<a href="javascript">京ICP备10012705号-2</a>
+                ｜京公网备案信息11010502000809｜<a href="javascript">Investor Relations</a>|违法信息举报：4008135858  jubao@58ganji.com<a class="footer-pic"href="javascript">反欺诈联盟</a>|员工舞弊举报：wb@58.com</span><br/>
+                <div class="footer-pic-group">
+                    <a class="footer-pic" href="javascript:"title="58反欺诈联盟"><img src="images/antiliargroup.png" alt="58反欺诈联盟"></a>
+                    <a class="footer-pic" href="javascript:"title="网上有害信息举报专区"><img src="images/jubao.png" alt=""></a>
+                    <a class="footer-pic" href="javascript:"title="网络举报APP下载"><img src="images/netjubao.png" alt=""></a>
+                    <a class="footer-pic" href="javascript:"title="诚信网站"><img src="images/honest.png" alt=""></a>
+                    <a class="footer-pic" href="javascript:"title="企业信用信息"><img src="images/companyinfo.png" alt=""></a>
+                    <a class="footer-pic" href="javascript:"title="防网络诈骗"><img src="images/liar.png" alt=""></a>
+                </div>
+
+            </div>
+            <!--bottom结束-->
+        </div>
+    </div>
+</body>
+
+</html>
