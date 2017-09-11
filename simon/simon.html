@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="modal" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"></div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModaLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;&nbsp;</span>
+                    </button>
+                    <h3 class="modal-title text-info text-center" id="#myModalLabel">通关</h3>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center text-success h2">哇哦，你好厉害!!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default text-center" data-dismiss='modal'>关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div id="wrap">
+            <div class="colorArea" id="green"></div>
+            <!--<div id="green">-->
+            <div class="colorArea" id="red"></div>
+            <!--<div id="red">-->
+            <div class="colorArea" id="yellow"></div>
+            <!--<div id="yellow">-->
+            <div class="colorArea" id="blue"></div>
+            <!--<div id="blue">-->
+            <div id="startArea">
+                <p class="logo">MyHero
+                    <super>&copy;</super>
+                </p>
+                <div id="message">
+                    <div id="count">
+                        <div id="countInfo">
+                            <div id="start" class="off playInfo">
+                                <span class="startIcon"></span>
+                                <span class="startIcon"></span>
+                            </div>
+                            <div id="isPlaying" class="off playInfo">
+                                <span id="step">01</span>
+                            </div>
+                            <div id="error" class="off playInfo">
+                                <span class="errorIconDiv">
+                                    <span class="errorIcon"></span>
+                                </span>
+                                <span class="errorIconDiv">
+                                    <span class="errorIcon"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <p>COUNT</p>
+                    </div>
+                    <div id="startBtn">
+                        <div id="startBtnShape"></div>
+                        <p>START</p>
+                    </div>
+                    <div id="strict">
+                        <div id="strictInfo"></div>
+                        <div id="strictBtnShape"></div>
+                        <p>STRICT</p>
+                    </div>
+                    <div id="on">
+                        OFF
+                        <div id="onArea">
+                            <div id="onBtn" class="off"></div>
+                        </div>
+                        ON
+                    </div>
+                </div>
+            </div>
+            <!--<div id="startArea">-->
+            <div id="voice"></div>
+        </div>
+    </div>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/switch.js"></script>
+    <script src="js/start.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/play.js"></script>
+</body>
+
+</html>
